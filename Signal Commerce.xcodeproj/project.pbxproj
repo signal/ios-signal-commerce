@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		49534F8F1C440938008C6300 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49534F8E1C440938008C6300 /* main.m */; };
 		49534F921C440938008C6300 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49534F911C440938008C6300 /* AppDelegate.m */; };
-		49534F951C440938008C6300 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49534F941C440938008C6300 /* ViewController.m */; };
 		49534F981C440938008C6300 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49534F961C440938008C6300 /* Main.storyboard */; };
 		49534F9A1C440938008C6300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49534F991C440938008C6300 /* Assets.xcassets */; };
 		49534F9D1C440938008C6300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49534F9B1C440938008C6300 /* LaunchScreen.storyboard */; };
 		49534FA81C440938008C6300 /* Signal_CommerceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49534FA71C440938008C6300 /* Signal_CommerceTests.m */; };
+		498D9C2E1C443D93002D72D6 /* SIGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 498D9C2D1C443D93002D72D6 /* SIGCategory.m */; };
+		498D9C331C4440AA002D72D6 /* SIGCategoryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498D9C321C4440AA002D72D6 /* SIGCategoryListController.m */; };
+		498D9C361C444350002D72D6 /* MagentoShoppingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 498D9C351C444350002D72D6 /* MagentoShoppingService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +33,6 @@
 		49534F8E1C440938008C6300 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49534F901C440938008C6300 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		49534F911C440938008C6300 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		49534F931C440938008C6300 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		49534F941C440938008C6300 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		49534F971C440938008C6300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49534F991C440938008C6300 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49534F9C1C440938008C6300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +40,13 @@
 		49534FA31C440938008C6300 /* Signal CommerceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Signal CommerceTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49534FA71C440938008C6300 /* Signal_CommerceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Signal_CommerceTests.m; sourceTree = "<group>"; };
 		49534FA91C440938008C6300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		498D9C2C1C443D93002D72D6 /* SIGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGCategory.h; sourceTree = "<group>"; };
+		498D9C2D1C443D93002D72D6 /* SIGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGCategory.m; sourceTree = "<group>"; };
+		498D9C2F1C443F26002D72D6 /* SIGShoppingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGShoppingService.h; sourceTree = "<group>"; };
+		498D9C311C4440AA002D72D6 /* SIGCategoryListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGCategoryListController.h; sourceTree = "<group>"; };
+		498D9C321C4440AA002D72D6 /* SIGCategoryListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGCategoryListController.m; sourceTree = "<group>"; };
+		498D9C341C444350002D72D6 /* MagentoShoppingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagentoShoppingService.h; sourceTree = "<group>"; };
+		498D9C351C444350002D72D6 /* MagentoShoppingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagentoShoppingService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +88,10 @@
 		49534F8C1C440938008C6300 /* Signal Commerce */ = {
 			isa = PBXGroup;
 			children = (
+				498D9C301C443FAF002D72D6 /* ShoppingPath */,
+				498D9C271C443C1A002D72D6 /* Shopping */,
 				49534F901C440938008C6300 /* AppDelegate.h */,
 				49534F911C440938008C6300 /* AppDelegate.m */,
-				49534F931C440938008C6300 /* ViewController.h */,
-				49534F941C440938008C6300 /* ViewController.m */,
 				49534F961C440938008C6300 /* Main.storyboard */,
 				49534F991C440938008C6300 /* Assets.xcassets */,
 				49534F9B1C440938008C6300 /* LaunchScreen.storyboard */,
@@ -109,6 +116,27 @@
 				49534FA91C440938008C6300 /* Info.plist */,
 			);
 			path = "Signal CommerceTests";
+			sourceTree = "<group>";
+		};
+		498D9C271C443C1A002D72D6 /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				498D9C2C1C443D93002D72D6 /* SIGCategory.h */,
+				498D9C2D1C443D93002D72D6 /* SIGCategory.m */,
+				498D9C2F1C443F26002D72D6 /* SIGShoppingService.h */,
+				498D9C341C444350002D72D6 /* MagentoShoppingService.h */,
+				498D9C351C444350002D72D6 /* MagentoShoppingService.m */,
+			);
+			name = Shopping;
+			sourceTree = "<group>";
+		};
+		498D9C301C443FAF002D72D6 /* ShoppingPath */ = {
+			isa = PBXGroup;
+			children = (
+				498D9C311C4440AA002D72D6 /* SIGCategoryListController.h */,
+				498D9C321C4440AA002D72D6 /* SIGCategoryListController.m */,
+			);
+			name = ShoppingPath;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,9 +239,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49534F951C440938008C6300 /* ViewController.m in Sources */,
+				498D9C2E1C443D93002D72D6 /* SIGCategory.m in Sources */,
+				498D9C361C444350002D72D6 /* MagentoShoppingService.m in Sources */,
 				49534F921C440938008C6300 /* AppDelegate.m in Sources */,
 				49534F8F1C440938008C6300 /* main.m in Sources */,
+				498D9C331C4440AA002D72D6 /* SIGCategoryListController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +432,7 @@
 				49534FAE1C440938008C6300 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49534FAF1C440938008C6300 /* Build configuration list for PBXNativeTarget "Signal CommerceTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +441,7 @@
 				49534FB11C440938008C6300 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

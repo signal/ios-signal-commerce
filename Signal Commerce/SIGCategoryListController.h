@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SIGCategoryListController.h
 //  Signal Commerce
 //
 //  Created by Andrew on 1/11/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SIGCategoryListController : UITableViewController<UITableViewDataSource>
 
 @end
-

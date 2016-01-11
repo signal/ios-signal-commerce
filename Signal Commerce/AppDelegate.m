@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MagentoShoppingService.h"
 
 @interface AppDelegate ()
 
@@ -14,9 +15,10 @@
 
 @implementation AppDelegate
 
+@synthesize shoppingService = _shoppingService;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    _shoppingService = [[MagentoShoppingService alloc] init];
     return YES;
 }
 
