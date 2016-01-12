@@ -10,13 +10,14 @@
 
 @implementation SIGCategory
 
--(instancetype)initWithName:(NSString *)name id:(NSString *)catId {
+-(instancetype)initWithDictionary:(NSDictionary *)dict {
     self = [super init];
     if (!self) {
         return nil;
     }
-    _name = [name copy];
-    _categoryId = [catId copy];
+    _name = [dict[@"name"] copy];
+    _categoryId = [dict[@"category_id"] copy];
+    _memberCount = [dict[@"children_count"] copy];
     return self;
 }
 

@@ -52,7 +52,7 @@ static NSString * const COMMERCE_URL = @"https://commerce.signal.ninja/api/rest"
     NSMutableArray *arr = [[NSMutableArray alloc] init];
     for (NSString *keyVal in [json allKeys]) {
         NSDictionary *value = [json objectForKey:keyVal];
-        [arr addObject: [[SIGCategory alloc] initWithName: [value objectForKey:@"name"] id:keyVal]];
+        [arr addObject: [[SIGCategory alloc] initWithDictionary: value]];
     }
     return [arr copy];
 }

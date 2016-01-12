@@ -46,7 +46,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"CategoryName"];
     cell.textLabel.text = _categories[indexPath.row].name;
-    cell.detailTextLabel.text = @"33";
+    cell.detailTextLabel.text = _categories[indexPath.row].memberCount;
     return cell;
 }
 

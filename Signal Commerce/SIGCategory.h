@@ -12,7 +12,8 @@
 
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) NSString *categoryId;
+@property (copy, nonatomic) NSString *memberCount;
 
--(instancetype)initWithName:(NSString *)name id:(NSString *)catId;
+-(instancetype)initWithDictionary:(NSDictionary *)dict;
 
 @end
