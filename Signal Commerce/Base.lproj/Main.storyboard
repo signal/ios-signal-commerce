@@ -30,6 +30,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="oMY-0i-abu" kind="show" id="Nay-Z1-s5o"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -58,7 +61,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gmp-uB-OVs" userLabel="Item Preview">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gmp-uB-OVs" id="ncV-ty-rli">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>

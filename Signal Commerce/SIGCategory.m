@@ -15,8 +15,8 @@
     if (!self) {
         return nil;
     }
-    _name = name;
-    _categoryId = catId;
+    _name = [name copy];
+    _categoryId = [catId copy];
     return self;
 }
 

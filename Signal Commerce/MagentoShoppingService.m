@@ -8,18 +8,39 @@
 
 #import "MagentoShoppingService.h"
 #import "SIGCategory.h"
+#import "SIGCategoryListResponse.h"
+
+#ifdef DEBUG
+#define SLog(...) NSLog(__VA_ARGS__);
+#else
+#define SLog(...)
+#endif
+
+static NSString * const COMMERCE_URL = @"https://commerce.signal.ninja/api/rest";
 
 @implementation MagentoShoppingService
 
--(NSArray<SIGCategory *> *)findAllCategories {
+-(SIGCategoryListResponse *)findAllCategories {
+    NSString *urlString = [COMMERCE_URL stringByAppendingString: @"/categories"];
+    SLog(@"Fetching %@", urlString);
+    NSURL *myURL = [NSURL URLWithString: urlString];
+    NSURLRequest *myRequest = [NSURLRequest requestWithURL:myURL];
+    NSURLResponse *response = [[NSURLResponse alloc] init];
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:myRequest
+                                         returningResponse: &response error: &error];
+    if (data == nil) {
+        return nil;
+    }
+    NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data
+                                                                 options:0
+                                                                   error:&error];
+    return [[SIGCategoryListResponse alloc] initFromJson:parsedObject];
+}
+
+-(NSArray<SIGProduct *> *)findProductsForCategory:(SIGCategory *)category {
     NSMutableArray *arr = [[NSMutableArray alloc] init];
-    [arr addObject: [[SIGCategory alloc] initWithName: @"Accessories" id: @"6"]];
-    [arr addObject: [[SIGCategory alloc] initWithName: @"Home Decor" id: @"7"]];
-    [arr addObject: [[SIGCategory alloc] initWithName: @"Men" id: @"5"]];
-    [arr addObject: [[SIGCategory alloc] initWithName: @"Sale" id: @"8"]];
-    [arr addObject: [[SIGCategory alloc] initWithName: @"VIP" id: @"9"]];
-    [arr addObject: [[SIGCategory alloc] initWithName: @"Women" id: @"4"]];
-    return arr;
+    return [arr copy];
 }
 
 @end

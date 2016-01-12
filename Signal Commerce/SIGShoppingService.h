@@ -9,9 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @class SIGCategory;
+@class SIGProduct;
+@class SIGCategoryListResponse;
 
 @protocol SIGShoppingService <NSObject>
 
--(NSArray<SIGCategory *> *)findAllCategories;
+-(SIGCategoryListResponse *)findAllCategories;
+
+-(NSArray<SIGProduct *> *)findProductsForCategory:(SIGCategory *)category;
 
 @end
