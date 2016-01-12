@@ -10,11 +10,10 @@
 
 @class SIGCategory;
 @class SIGProduct;
-@class SIGCategoryListResponse;
 
 @protocol SIGShoppingService <NSObject>
 
--(SIGCategoryListResponse *)findAllCategories;
+-(NSArray<SIGCategory *> *)findAllCategories;
 
 -(NSArray<SIGProduct *> *)findProductsForCategory:(SIGCategory *)category;
 

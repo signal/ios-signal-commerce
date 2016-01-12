@@ -15,7 +15,7 @@
 		49534FA81C440938008C6300 /* Signal_CommerceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49534FA71C440938008C6300 /* Signal_CommerceTests.m */; };
 		497B49601C445828006A21EF /* SIGProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B495F1C445828006A21EF /* SIGProduct.m */; };
 		497B49631C446165006A21EF /* SIGMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B49621C446165006A21EF /* SIGMoney.m */; };
-		497B49661C4555E9006A21EF /* SIGCategoryListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B49651C4555E9006A21EF /* SIGCategoryListResponse.m */; };
+		497B496C1C4571C6006A21EF /* SIGProductListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B496B1C4571C6006A21EF /* SIGProductListController.m */; };
 		498D9C2E1C443D93002D72D6 /* SIGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 498D9C2D1C443D93002D72D6 /* SIGCategory.m */; };
 		498D9C331C4440AA002D72D6 /* SIGCategoryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498D9C321C4440AA002D72D6 /* SIGCategoryListController.m */; };
 		498D9C361C444350002D72D6 /* MagentoShoppingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 498D9C351C444350002D72D6 /* MagentoShoppingService.m */; };
@@ -47,8 +47,8 @@
 		497B495F1C445828006A21EF /* SIGProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGProduct.m; sourceTree = "<group>"; };
 		497B49611C446165006A21EF /* SIGMoney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGMoney.h; sourceTree = "<group>"; };
 		497B49621C446165006A21EF /* SIGMoney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGMoney.m; sourceTree = "<group>"; };
-		497B49641C4555E9006A21EF /* SIGCategoryListResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGCategoryListResponse.h; sourceTree = "<group>"; };
-		497B49651C4555E9006A21EF /* SIGCategoryListResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGCategoryListResponse.m; sourceTree = "<group>"; };
+		497B496A1C4571C6006A21EF /* SIGProductListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGProductListController.h; sourceTree = "<group>"; };
+		497B496B1C4571C6006A21EF /* SIGProductListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGProductListController.m; sourceTree = "<group>"; };
 		498D9C2C1C443D93002D72D6 /* SIGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGCategory.h; sourceTree = "<group>"; };
 		498D9C2D1C443D93002D72D6 /* SIGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGCategory.m; sourceTree = "<group>"; };
 		498D9C2F1C443F26002D72D6 /* SIGShoppingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGShoppingService.h; sourceTree = "<group>"; };
@@ -139,8 +139,6 @@
 				497B495F1C445828006A21EF /* SIGProduct.m */,
 				497B49611C446165006A21EF /* SIGMoney.h */,
 				497B49621C446165006A21EF /* SIGMoney.m */,
-				497B49641C4555E9006A21EF /* SIGCategoryListResponse.h */,
-				497B49651C4555E9006A21EF /* SIGCategoryListResponse.m */,
 			);
 			name = Shopping;
 			sourceTree = "<group>";
@@ -150,6 +148,8 @@
 			children = (
 				498D9C311C4440AA002D72D6 /* SIGCategoryListController.h */,
 				498D9C321C4440AA002D72D6 /* SIGCategoryListController.m */,
+				497B496A1C4571C6006A21EF /* SIGProductListController.h */,
+				497B496B1C4571C6006A21EF /* SIGProductListController.m */,
 			);
 			name = ShoppingPath;
 			sourceTree = "<group>";
@@ -254,10 +254,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				497B49661C4555E9006A21EF /* SIGCategoryListResponse.m in Sources */,
 				498D9C2E1C443D93002D72D6 /* SIGCategory.m in Sources */,
 				497B49601C445828006A21EF /* SIGProduct.m in Sources */,
 				498D9C361C444350002D72D6 /* MagentoShoppingService.m in Sources */,
+				497B496C1C4571C6006A21EF /* SIGProductListController.m in Sources */,
 				49534F921C440938008C6300 /* AppDelegate.m in Sources */,
 				497B49631C446165006A21EF /* SIGMoney.m in Sources */,
 				49534F8F1C440938008C6300 /* main.m in Sources */,

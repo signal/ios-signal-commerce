@@ -12,10 +12,13 @@
 
 @interface SIGProduct : NSObject
 
+@property (readonly, nonatomic, strong) NSString *name;
 @property (readonly, nonatomic, strong) NSString *imageUrl;
-@property (readonly, nonatomic, strong) NSString *description;
+@property (readonly, nonatomic, strong) NSString *fullDescription;
 @property (readonly, nonatomic, strong) NSString *sku;
 @property (readonly, nonatomic, strong) NSString *shortDescription;
 @property (readonly, nonatomic, strong) SIGMoney *cost;
+
+-initWithDictionary:(NSDictionary *)dict;
 
 @end
