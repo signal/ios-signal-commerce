@@ -7,6 +7,7 @@
 //
 
 #import "SIGProduct.h"
+#import "SIGMoney.h"
 
 @implementation SIGProduct
 
@@ -19,6 +20,7 @@
     _fullDescription = dict[@"description"];
     _shortDescription = dict[@"short_description"];
     _imageUrl = dict[@"image_url"];
+    _cost = [[SIGMoney alloc] initWithNumber: dict[@"final_price_without_tax"]];
     _sku = dict[@"sku"];
     return self;
 }

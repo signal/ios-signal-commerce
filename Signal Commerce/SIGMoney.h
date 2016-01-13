@@ -10,4 +10,6 @@
 
 @interface SIGMoney : NSObject
 
+-(instancetype)initWithNumber:(NSNumber *)numberValue;
+
 @end

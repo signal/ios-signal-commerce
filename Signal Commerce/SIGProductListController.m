@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "SIGProduct.h"
 #import "SIGCategory.h"
+#import "SIGMoney.h"
 
 @interface SIGProductListController()
 
@@ -49,7 +50,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"ProductDescription"];
-    cell.textLabel.text = _products[indexPath.row].name;
+    SIGProduct *product = _products[indexPath.row];
+    cell.textLabel.text = product.name;
+    cell.detailTextLabel.text = [product.cost description];
     return cell;
 }
 

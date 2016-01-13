@@ -19,6 +19,8 @@
 @property (readonly, nonatomic, strong) NSString *shortDescription;
 @property (readonly, nonatomic, strong) SIGMoney *cost;
 
--initWithDictionary:(NSDictionary *)dict;
+-(instancetype)initWithDictionary:(NSDictionary *)dict;
+
+-(NSString *)description;
 
 @end
