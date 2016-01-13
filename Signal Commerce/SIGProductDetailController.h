@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SIGProduct.h"
 
-@interface SIGProductDetailController : UIViewController
+@interface SIGProductDetailController : UIViewController<UIScrollViewDelegate>
 
 @property (nonatomic, strong) SIGProduct *product;
 

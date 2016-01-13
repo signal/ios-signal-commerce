@@ -16,6 +16,7 @@
     if (!self) {
         return nil;
     }
+    _instock = [dict[@"is_saleable"] boolValue];
     _name = dict[@"name"];
     _fullDescription = dict[@"description"];
     _shortDescription = dict[@"short_description"];
