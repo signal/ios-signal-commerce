@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Show By Department-->
@@ -84,7 +85,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ANn-WJ-r6R" kind="show" id="bP0-7P-fGb"/>
+                                    <segue destination="ANn-WJ-r6R" kind="show" identifier="ShowProductDetail" id="bP0-7P-fGb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -101,7 +102,7 @@
         <!--Product Details-->
         <scene sceneID="iuv-Yp-O97">
             <objects>
-                <viewController title="Product Details" id="ANn-WJ-r6R" userLabel="Product Details" sceneMemberID="viewController">
+                <viewController title="Product Details" id="ANn-WJ-r6R" userLabel="Product Details" customClass="SIGProductDetailController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F95-HT-w6G"/>
                         <viewControllerLayoutGuide type="bottom" id="mxN-YM-J7s"/>
@@ -109,8 +110,30 @@
                     <view key="view" contentMode="scaleToFill" id="e0S-24-OtX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ikN-ek-uTr">
+                                <rect key="frame" x="20" y="72" width="900" height="354"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="kQi-gU-OIR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="In Stock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgJ-hY-am1">
+                                <rect key="frame" x="20" y="446" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90810448229999996" green="0.0084189190120000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ikN-ek-uTr" firstAttribute="leading" secondItem="e0S-24-OtX" secondAttribute="leadingMargin" id="a98-YE-pRp"/>
+                            <constraint firstItem="ikN-ek-uTr" firstAttribute="top" secondItem="F95-HT-w6G" secondAttribute="bottom" constant="15" id="qzz-Jg-iXf"/>
+                            <constraint firstItem="mxN-YM-J7s" firstAttribute="top" secondItem="ikN-ek-uTr" secondAttribute="bottom" constant="130" id="sVd-EY-xrm"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="detailImage" destination="ikN-ek-uTr" id="Bkq-GW-q2q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmM-o3-Anx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

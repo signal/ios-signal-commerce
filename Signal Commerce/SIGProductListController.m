@@ -7,6 +7,7 @@
 //
 
 #import "SIGProductListController.h"
+#import "SIGProductDetailController.h"
 #import "AppDelegate.h"
 #import "SIGProduct.h"
 #import "SIGCategory.h"
@@ -33,7 +34,10 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([segue.identifier isEqualToString:@""]){
+    if([segue.identifier isEqualToString:@"ShowProductDetail"]){
+        SIGProductDetailController *controller = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        controller.product = _products[indexPath.row];
     }
 }
 

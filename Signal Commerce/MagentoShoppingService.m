@@ -27,14 +27,17 @@ static NSString * const COMMERCE_URL = @"https://commerce.signal.ninja/api/rest"
 
 -(NSArray<SIGProduct *> *)findProductsForCategory:(SIGCategory *)category {
 
-    NSString *urlString = [COMMERCE_URL stringByAppendingString: @"/products"];
-    NSDictionary *json = [self request:urlString];
-    return [self parseProducts: json];
+    NSString *urlString = [COMMERCE_URL stringByAppendingFormat: @"/products?limit=100&category_id=%@", category.categoryId];
+    id json = [self request:urlString];
+    if ([json isKindOfClass: [NSDictionary class]]) {
+        return [self parseProducts: json];
+    }
+    return [[NSArray alloc] init];
 }
 
 #pragma mark - private methods
 
-- (NSDictionary *)request:(NSString *)url {
+- (id)request:(NSString *)url {
     SLog(@"Fetching %@", url);
     NSURL *myURL = [NSURL URLWithString: url];
     NSURLRequest *myRequest = [NSURLRequest requestWithURL:myURL];

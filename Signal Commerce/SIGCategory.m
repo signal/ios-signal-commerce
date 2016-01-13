@@ -16,7 +16,7 @@
         return nil;
     }
     _name = [dict[@"name"] copy];
-    _categoryId = [dict[@"category_id"] copy];
+    _categoryId = [dict[@"entity_id"] copy];
     _memberCount = [dict[@"children_count"] copy];
     return self;
 }
