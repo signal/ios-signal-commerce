@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MagentoShoppingService.h"
+#import "SIGImageCache.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     _shoppingService = [[MagentoShoppingService alloc] init];
+    _imageCache = [[SIGImageCache alloc] init];
     return YES;
 }
 

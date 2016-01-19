@@ -12,6 +12,7 @@
 #import "SIGProduct.h"
 #import "SIGCategory.h"
 #import "SIGMoney.h"
+#import "SIGImageCache.h"
 
 @interface SIGProductListController()
 
@@ -53,6 +54,13 @@
     SIGProduct *product = _products[indexPath.row];
     cell.textLabel.text = product.name;
     cell.detailTextLabel.text = [product.cost description];
+    [[self appDelegate].imageCache findPreviewImageForProduct: product onComplete: ^(id <FICEntity> entity, NSString *formatName, UIImage *image) {
+        cell.imageView.image = image;
+        cell.imageView.layer.cornerRadius = 5;
+        cell.imageView.layer.masksToBounds = YES;
+        // without this call, the images won't draw properly
+        [cell setNeedsLayout];
+    }];
     return cell;
 }
 

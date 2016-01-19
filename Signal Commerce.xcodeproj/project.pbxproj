@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492F04EB1C46EAA200F5AF98 /* FICImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 492F04DD1C46EAA200F5AF98 /* FICImageCache.m */; };
+		492F04EC1C46EAA200F5AF98 /* FICImageFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 492F04DF1C46EAA200F5AF98 /* FICImageFormat.m */; };
+		492F04ED1C46EAA200F5AF98 /* FICImageTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 492F04E11C46EAA200F5AF98 /* FICImageTable.m */; };
+		492F04EE1C46EAA200F5AF98 /* FICImageTableChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = 492F04E31C46EAA200F5AF98 /* FICImageTableChunk.m */; };
+		492F04EF1C46EAA200F5AF98 /* FICImageTableEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 492F04E51C46EAA200F5AF98 /* FICImageTableEntry.m */; };
+		492F04F01C46EAA200F5AF98 /* FICUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 492F04E81C46EAA200F5AF98 /* FICUtilities.m */; };
+		492F04F11C46EAA200F5AF98 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 492F04EA1C46EAA200F5AF98 /* Info.plist */; };
+		492F04F41C46F09400F5AF98 /* SIGImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 492F04F31C46F09400F5AF98 /* SIGImageCache.m */; };
 		49534F8F1C440938008C6300 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49534F8E1C440938008C6300 /* main.m */; };
 		49534F921C440938008C6300 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49534F911C440938008C6300 /* AppDelegate.m */; };
 		49534F981C440938008C6300 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49534F961C440938008C6300 /* Main.storyboard */; };
@@ -33,6 +41,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		492F04DA1C46EAA200F5AF98 /* FICEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICEntity.h; sourceTree = "<group>"; };
+		492F04DB1C46EAA200F5AF98 /* FICImageCache+FICErrorLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FICImageCache+FICErrorLogging.h"; sourceTree = "<group>"; };
+		492F04DC1C46EAA200F5AF98 /* FICImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICImageCache.h; sourceTree = "<group>"; };
+		492F04DD1C46EAA200F5AF98 /* FICImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICImageCache.m; sourceTree = "<group>"; };
+		492F04DE1C46EAA200F5AF98 /* FICImageFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICImageFormat.h; sourceTree = "<group>"; };
+		492F04DF1C46EAA200F5AF98 /* FICImageFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICImageFormat.m; sourceTree = "<group>"; };
+		492F04E01C46EAA200F5AF98 /* FICImageTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICImageTable.h; sourceTree = "<group>"; };
+		492F04E11C46EAA200F5AF98 /* FICImageTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICImageTable.m; sourceTree = "<group>"; };
+		492F04E21C46EAA200F5AF98 /* FICImageTableChunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICImageTableChunk.h; sourceTree = "<group>"; };
+		492F04E31C46EAA200F5AF98 /* FICImageTableChunk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICImageTableChunk.m; sourceTree = "<group>"; };
+		492F04E41C46EAA200F5AF98 /* FICImageTableEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICImageTableEntry.h; sourceTree = "<group>"; };
+		492F04E51C46EAA200F5AF98 /* FICImageTableEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICImageTableEntry.m; sourceTree = "<group>"; };
+		492F04E61C46EAA200F5AF98 /* FICImports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICImports.h; sourceTree = "<group>"; };
+		492F04E71C46EAA200F5AF98 /* FICUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICUtilities.h; sourceTree = "<group>"; };
+		492F04E81C46EAA200F5AF98 /* FICUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICUtilities.m; sourceTree = "<group>"; };
+		492F04E91C46EAA200F5AF98 /* FastImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastImageCache.h; sourceTree = "<group>"; };
+		492F04EA1C46EAA200F5AF98 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		492F04F21C46F09400F5AF98 /* SIGImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGImageCache.h; sourceTree = "<group>"; };
+		492F04F31C46F09400F5AF98 /* SIGImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGImageCache.m; sourceTree = "<group>"; };
 		49534F8A1C440938008C6300 /* Signal Commerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Signal Commerce.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49534F8E1C440938008C6300 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49534F901C440938008C6300 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +106,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		492F04D81C46EAA200F5AF98 /* FastImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				492F04D91C46EAA200F5AF98 /* FastImageCache */,
+				492F04E91C46EAA200F5AF98 /* FastImageCache.h */,
+				492F04EA1C46EAA200F5AF98 /* Info.plist */,
+			);
+			path = FastImageCache;
+			sourceTree = "<group>";
+		};
+		492F04D91C46EAA200F5AF98 /* FastImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				492F04DA1C46EAA200F5AF98 /* FICEntity.h */,
+				492F04DB1C46EAA200F5AF98 /* FICImageCache+FICErrorLogging.h */,
+				492F04DC1C46EAA200F5AF98 /* FICImageCache.h */,
+				492F04DD1C46EAA200F5AF98 /* FICImageCache.m */,
+				492F04DE1C46EAA200F5AF98 /* FICImageFormat.h */,
+				492F04DF1C46EAA200F5AF98 /* FICImageFormat.m */,
+				492F04E01C46EAA200F5AF98 /* FICImageTable.h */,
+				492F04E11C46EAA200F5AF98 /* FICImageTable.m */,
+				492F04E21C46EAA200F5AF98 /* FICImageTableChunk.h */,
+				492F04E31C46EAA200F5AF98 /* FICImageTableChunk.m */,
+				492F04E41C46EAA200F5AF98 /* FICImageTableEntry.h */,
+				492F04E51C46EAA200F5AF98 /* FICImageTableEntry.m */,
+				492F04E61C46EAA200F5AF98 /* FICImports.h */,
+				492F04E71C46EAA200F5AF98 /* FICUtilities.h */,
+				492F04E81C46EAA200F5AF98 /* FICUtilities.m */,
+			);
+			path = FastImageCache;
+			sourceTree = "<group>";
+		};
 		49534F811C440938008C6300 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +159,7 @@
 		49534F8C1C440938008C6300 /* Signal Commerce */ = {
 			isa = PBXGroup;
 			children = (
+				492F04D81C46EAA200F5AF98 /* FastImageCache */,
 				498D9C301C443FAF002D72D6 /* ShoppingPath */,
 				498D9C271C443C1A002D72D6 /* Shopping */,
 				49534F901C440938008C6300 /* AppDelegate.h */,
@@ -109,6 +169,8 @@
 				49534F9B1C440938008C6300 /* LaunchScreen.storyboard */,
 				49534F9E1C440938008C6300 /* Info.plist */,
 				49534F8D1C440938008C6300 /* Supporting Files */,
+				492F04F21C46F09400F5AF98 /* SIGImageCache.h */,
+				492F04F31C46F09400F5AF98 /* SIGImageCache.m */,
 			);
 			path = "Signal Commerce";
 			sourceTree = "<group>";
@@ -239,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				492F04F11C46EAA200F5AF98 /* Info.plist in Resources */,
 				49534F9D1C440938008C6300 /* LaunchScreen.storyboard in Resources */,
 				49534F9A1C440938008C6300 /* Assets.xcassets in Resources */,
 				49534F981C440938008C6300 /* Main.storyboard in Resources */,
@@ -260,14 +323,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				498D9C2E1C443D93002D72D6 /* SIGCategory.m in Sources */,
+				492F04EE1C46EAA200F5AF98 /* FICImageTableChunk.m in Sources */,
+				492F04EF1C46EAA200F5AF98 /* FICImageTableEntry.m in Sources */,
 				497B49601C445828006A21EF /* SIGProduct.m in Sources */,
+				492F04F41C46F09400F5AF98 /* SIGImageCache.m in Sources */,
 				498D9C361C444350002D72D6 /* MagentoShoppingService.m in Sources */,
+				492F04ED1C46EAA200F5AF98 /* FICImageTable.m in Sources */,
+				492F04F01C46EAA200F5AF98 /* FICUtilities.m in Sources */,
 				497B496C1C4571C6006A21EF /* SIGProductListController.m in Sources */,
 				49534F921C440938008C6300 /* AppDelegate.m in Sources */,
 				497B49701C45B96B006A21EF /* SIGProductDetailController.m in Sources */,
 				497B49631C446165006A21EF /* SIGMoney.m in Sources */,
 				49534F8F1C440938008C6300 /* main.m in Sources */,
 				498D9C331C4440AA002D72D6 /* SIGCategoryListController.m in Sources */,
+				492F04EB1C46EAA200F5AF98 /* FICImageCache.m in Sources */,
+				492F04EC1C46EAA200F5AF98 /* FICImageFormat.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

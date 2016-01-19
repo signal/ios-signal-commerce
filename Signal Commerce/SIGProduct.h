@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FICEntity.h"
 
 @class SIGMoney;
 
-@interface SIGProduct : NSObject
+@interface SIGProduct : NSObject<FICEntity>
 
 @property (readonly, nonatomic, strong) NSString *name;
 @property (readonly, nonatomic, strong) NSString *imageUrl;
