@@ -141,6 +141,7 @@
 
 -(void)setupLeftMenuButton{
     MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    leftDrawerButton.image = [UIImage imageNamed: @"740-gear"];
     [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
 }
 
