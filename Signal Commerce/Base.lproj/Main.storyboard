@@ -129,7 +129,7 @@
                                                 <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="Cc4-ZD-2Go" userLabel="Dispatch Interval Slider">
                                                     <rect key="frame" x="6" y="8" width="250" height="31"/>
                                                     <connections>
-                                                        <action selector="dispatchIntervalChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="s9V-dK-QwW"/>
+                                                        <action selector="dispatchIntervalChanged:" destination="fji-RZ-LAA" eventType="valueChanged" id="gbz-SW-gc7"/>
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyO-Ib-Mac" userLabel="Dispatch Interval Value">
@@ -155,7 +155,7 @@
                                                 <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="Lpd-tV-USV" userLabel="Message Retry">
                                                     <rect key="frame" x="6" y="8" width="250" height="31"/>
                                                     <connections>
-                                                        <action selector="dispatchIntervalChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="B63-4f-ZYa"/>
+                                                        <action selector="messageRetryChanged:" destination="fji-RZ-LAA" eventType="valueChanged" id="5Dm-e7-QSn"/>
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlY-53-eSg" userLabel="Message Retry Label">
@@ -178,13 +178,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="FhW-r9-gAd" userLabel="Dispatch Interval Slider">
+                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="FhW-r9-gAd" userLabel="Message Expiration Slider">
                                                     <rect key="frame" x="6" y="8" width="250" height="31"/>
                                                     <connections>
-                                                        <action selector="dispatchIntervalChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="ayq-D7-ovu"/>
+                                                        <action selector="messageExpirationChanged:" destination="fji-RZ-LAA" eventType="valueChanged" id="GrI-0i-BCm"/>
                                                     </connections>
                                                 </slider>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5c-8m-kNp" userLabel="Dispatch Interval Value">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5c-8m-kNp" userLabel="Message Expiration Label">
                                                     <rect key="frame" x="14" y="0.0" width="70" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -207,7 +207,7 @@
                                                 <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="Mhd-ll-0dm" userLabel="Max Queued Messages">
                                                     <rect key="frame" x="6" y="8" width="250" height="31"/>
                                                     <connections>
-                                                        <action selector="dispatchIntervalChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="Mnm-uC-Byn"/>
+                                                        <action selector="maxQueuedChanged:" destination="fji-RZ-LAA" eventType="valueChanged" id="nul-Ge-os0"/>
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAN-zt-SUT" userLabel="Max Queued Messages Label">
@@ -239,7 +239,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wcP-cf-c2m" userLabel="Database Debug Switch">
                                                     <rect key="frame" x="209" y="4" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="databaseDebugChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="0J2-b7-R8u"/>
+                                                        <action selector="databaseDebugChanged:" destination="fji-RZ-LAA" eventType="valueChanged" id="yTH-Vp-JzD"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -261,7 +261,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tA9-gL-L5b" userLabel="Debug Switch">
                                                     <rect key="frame" x="208" y="6" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="debugChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="EpD-D1-AqN"/>
+                                                        <action selector="debugChanged:" destination="fji-RZ-LAA" eventType="valueChanged" id="9AM-bh-02a"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -287,7 +287,6 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sKL-ia-D9m" userLabel="Publish on Wifi">
                                                     <rect key="frame" x="208" y="6" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="debugChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="g7H-uO-jMR"/>
                                                         <action selector="wifiOnlyChanged:" destination="fji-RZ-LAA" eventType="valueChanged" id="etu-dR-djb"/>
                                                     </connections>
                                                 </switch>
@@ -314,7 +313,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G2O-Vv-j7q" userLabel="AppName">
                                                     <rect key="frame" x="208" y="6" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="debugChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="i7A-OU-nLp"/>
+                                                        <action selector="toggleAppName:" destination="fji-RZ-LAA" eventType="valueChanged" id="vUo-wv-O55"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -333,10 +332,10 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7UD-cY-ryb" userLabel="AppName">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7UD-cY-ryb" userLabel="App Version">
                                                     <rect key="frame" x="208" y="6" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="debugChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="DfU-pA-rs9"/>
+                                                        <action selector="toggleAppVersion:" destination="fji-RZ-LAA" eventType="valueChanged" id="lT8-Zk-JNh"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -358,7 +357,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Txq-py-UYU" userLabel="Screen Resolution">
                                                     <rect key="frame" x="208" y="6" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="debugChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="RNE-Ao-Aq9"/>
+                                                        <action selector="toggleScreenResolution:" destination="fji-RZ-LAA" eventType="valueChanged" id="BNj-8f-aAv"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -381,6 +380,7 @@
                                                     <rect key="frame" x="208" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="debugChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="uSz-TK-xTY"/>
+                                                        <action selector="toggleScreenOrientation:" destination="fji-RZ-LAA" eventType="valueChanged" id="HCL-W8-Gbs"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -403,6 +403,7 @@
                                                     <rect key="frame" x="208" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="debugChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="8YO-N0-YK8"/>
+                                                        <action selector="toggleUserLanguage:" destination="fji-RZ-LAA" eventType="valueChanged" id="Xot-6g-Zqc"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -425,6 +426,7 @@
                                                     <rect key="frame" x="208" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="debugChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="sj0-Ag-gdU"/>
+                                                        <action selector="toggleTimeZone:" destination="fji-RZ-LAA" eventType="valueChanged" id="uAN-bR-2sM"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -447,6 +449,7 @@
                                                     <rect key="frame" x="208" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="debugChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="Whe-Ej-oFn"/>
+                                                        <action selector="toggleOsVersion:" destination="fji-RZ-LAA" eventType="valueChanged" id="ZWp-SI-jvS"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -469,6 +472,7 @@
                                                     <rect key="frame" x="208" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="debugChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="MGP-ZF-Gao"/>
+                                                        <action selector="toggleCarrierSwitch:" destination="fji-RZ-LAA" eventType="valueChanged" id="Dcw-pF-gpD"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -491,6 +495,7 @@
                                                     <rect key="frame" x="208" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="debugChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="cyS-bT-cUl"/>
+                                                        <action selector="toggleODINSwitch:" destination="fji-RZ-LAA" eventType="valueChanged" id="UXf-wp-IWm"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -513,6 +518,7 @@
                                                     <rect key="frame" x="208" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="debugChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="zGP-se-sKa"/>
+                                                        <action selector="toggleDeviceID:" destination="fji-RZ-LAA" eventType="valueChanged" id="q4m-JY-vPv"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -601,6 +607,7 @@
                                                     <rect key="frame" x="208" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="debugChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="uJJ-1Q-TSb"/>
+                                                        <action selector="toggleActiveNetwork:" destination="fji-RZ-LAA" eventType="valueChanged" id="1dY-pW-rbh"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -623,6 +630,7 @@
                                                     <rect key="frame" x="208" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="debugChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="ela-lD-c0v"/>
+                                                        <action selector="toggleDeviceIdType:" destination="fji-RZ-LAA" eventType="valueChanged" id="cBJ-FQ-Nad"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -645,6 +653,7 @@
                                                     <rect key="frame" x="208" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="debugChanged:" destination="yd9-zg-Blt" eventType="valueChanged" id="jJt-pu-Rxy"/>
+                                                        <action selector="toggleDeviceInfo:" destination="fji-RZ-LAA" eventType="valueChanged" id="fRg-hT-8RU"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -662,7 +671,7 @@
                     <connections>
                         <outlet property="activeNetwork" destination="4RD-UT-Pvj" id="rUI-Et-uYR"/>
                         <outlet property="applicationNameSwitch" destination="G2O-Vv-j7q" id="R7o-wc-mj5"/>
-                        <outlet property="applicationVersionSwitch" destination="B0h-MJ-grW" id="fvJ-da-sWV"/>
+                        <outlet property="applicationVersionSwitch" destination="7UD-cY-ryb" id="t8e-8r-Nhv"/>
                         <outlet property="batteryThreshold" destination="0q7-0z-tfd" id="kiW-sv-uwg"/>
                         <outlet property="batteryThresholdValue" destination="Jfa-0k-d7G" id="b10-Qb-d6R"/>
                         <outlet property="carrierSwitch" destination="oYL-3I-RWj" id="j8T-M7-FFX"/>
@@ -682,7 +691,7 @@
                         <outlet property="messageExpirationValue" destination="i5c-8m-kNp" id="c30-UL-aHj"/>
                         <outlet property="messageRetrySlider" destination="Lpd-tV-USV" id="EZR-85-ybi"/>
                         <outlet property="messageRetryValue" destination="hlY-53-eSg" id="gxt-h5-PgA"/>
-                        <outlet property="networkOnWifiOnlySwitch" destination="9ek-5T-b2P" id="SfV-dL-j8R"/>
+                        <outlet property="networkOnWifiOnlySwitch" destination="sKL-ia-D9m" id="J52-Lu-DfM"/>
                         <outlet property="odinSwitch" destination="xhc-u2-tHB" id="1rk-aA-uGh"/>
                         <outlet property="osVersionSwitch" destination="CGt-WC-Sga" id="F1p-lY-Nyx"/>
                         <outlet property="screenOrientationSwitch" destination="KlH-Eo-eZF" id="88g-95-q5O"/>
