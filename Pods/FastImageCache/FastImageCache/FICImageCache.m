@@ -27,7 +27,6 @@ static NSString *const FICImageCacheEntityKey = @"FICImageCacheEntityKey";
     NSMutableDictionary *_requests;
     __weak id <FICImageCacheDelegate> _delegate;
     
-    BOOL _delegateImplementsWantsSourceImageForEntityWithFormatNameCompletionBlock;
     BOOL _delegateImplementsShouldProcessAllFormatsInFamilyForEntity;
     BOOL _delegateImplementsErrorDidOccurWithMessage;
     BOOL _delegateImplementsCancelImageLoadingForEntityWithFormatName;
@@ -47,7 +46,6 @@ static NSString *const FICImageCacheEntityKey = @"FICImageCacheEntityKey";
     if (delegate != _delegate) {
         _delegate = delegate;
         
-        _delegateImplementsWantsSourceImageForEntityWithFormatNameCompletionBlock = [_delegate respondsToSelector:@selector(imageCache:wantsSourceImageForEntity:withFormatName:completionBlock:)];
         _delegateImplementsShouldProcessAllFormatsInFamilyForEntity = [_delegate respondsToSelector:@selector(imageCache:shouldProcessAllFormatsInFamily:forEntity:)];
         _delegateImplementsErrorDidOccurWithMessage = [_delegate respondsToSelector:@selector(imageCache:errorDidOccurWithMessage:)];
         _delegateImplementsCancelImageLoadingForEntityWithFormatName = [_delegate respondsToSelector:@selector(imageCache:cancelImageLoadingForEntity:withFormatName:)];
@@ -78,17 +76,13 @@ static FICImageCache *__imageCache = nil;
     return __imageCacheDispatchQueue;
 }
 
-- (instancetype)init {
-    return [self initWithNameSpace:@"FICDefaultNamespace"];
-}
-
-- (instancetype)initWithNameSpace:(NSString *)nameSpace {
+- (id)init {
     self = [super init];
-    if (self) {
+    
+    if (self != nil) {
         _formats = [[NSMutableDictionary alloc] init];
         _imageTables = [[NSMutableDictionary alloc] init];
         _requests = [[NSMutableDictionary alloc] init];
-        _nameSpace = nameSpace;
     }
     return self;
 }
@@ -118,9 +112,6 @@ static FICImageCache *__imageCache = nil;
         // Remove any extraneous files in the image tables directory
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSString *directoryPath = [FICImageTable directoryPath];
-        if (self.nameSpace) {
-            directoryPath = [directoryPath stringByAppendingPathComponent:self.nameSpace];
-        }
         NSArray *fileNames = [fileManager contentsOfDirectoryAtPath:directoryPath error:nil];
         for (NSString *fileName in fileNames) {
             if ([imageTableFiles containsObject:fileName] == NO) {
@@ -162,8 +153,6 @@ static FICImageCache *__imageCache = nil;
 }
 
 - (BOOL)_retrieveImageForEntity:(id <FICEntity>)entity withFormatName:(NSString *)formatName loadSynchronously:(BOOL)loadSynchronously completionBlock:(FICImageCacheCompletionBlock)completionBlock {
-    NSParameterAssert(formatName);
-	
     BOOL imageExists = NO;
     
     FICImageTable *imageTable = [_imageTables objectForKey:formatName];
@@ -198,7 +187,7 @@ static FICImageCache *__imageCache = nil;
             }
         };
         
-        if (image == nil) {
+        if (image == nil && _delegate != nil) {
             // No image for this UUID exists in the image table. We'll need to ask the delegate to retrieve the source asset.
             NSURL *sourceImageURL = [entity sourceImageURLWithFormatName:formatName];
             
@@ -211,19 +200,9 @@ static FICImageCache *__imageCache = nil;
                     [_requests setObject:requestDictionary forKey:sourceImageURL];
                     
                     _FICAddCompletionBlockForEntity(formatName, requestDictionary, entity, completionBlock);
-                    UIImage *image;
-                    if ([entity respondsToSelector:@selector(imageForFormat:)]){
-                        FICImageFormat *format = [self formatWithName:formatName];
-                        image = [entity imageForFormat:format];
-                    }
-                    
-                    if (image){
-                        [self _imageDidLoad:image forURL:sourceImageURL];
-                    } else if (_delegateImplementsWantsSourceImageForEntityWithFormatNameCompletionBlock){
-                        [_delegate imageCache:self wantsSourceImageForEntity:entity withFormatName:formatName completionBlock:^(UIImage *sourceImage) {
+                    [_delegate imageCache:self wantsSourceImageForEntity:entity withFormatName:formatName completionBlock:^(UIImage *sourceImage) {
                         [self _imageDidLoad:sourceImage forURL:sourceImageURL];
-                        }];
-                    }
+                    }];
                 } else {
                     // We have an existing request dictionary, which means this URL is currently being fetched.
                     _FICAddCompletionBlockForEntity(formatName, requestDictionary, entity, completionBlock);
@@ -250,7 +229,7 @@ static FICImageCache *__imageCache = nil;
             NSString *formatName = [entityDictionary objectForKey:FICImageCacheFormatKey];
             NSDictionary *completionBlocksDictionary = [entityDictionary objectForKey:FICImageCacheCompletionBlocksKey];
             if (image != nil){
-                [self _processImage:image forEntity:entity completionBlocksDictionary:completionBlocksDictionary];
+                [self _processImage:image forEntity:entity withFormatName:formatName completionBlocksDictionary:completionBlocksDictionary];
             } else {
                 NSArray *completionBlocks = [completionBlocksDictionary objectForKey:formatName];
                 if (completionBlocks != nil) {
@@ -311,21 +290,40 @@ static void _FICAddCompletionBlockForEntity(NSString *formatName, NSMutableDicti
         
         NSString *entityUUID = [entity UUID];
         FICImageTable *imageTable = [_imageTables objectForKey:formatName];
-        if (imageTable) {
-            [imageTable deleteEntryForEntityUUID:entityUUID];
+        [imageTable deleteEntryForEntityUUID:entityUUID];
         
-            [self _processImage:image forEntity:entity completionBlocksDictionary:completionBlocksDictionary];
-        } else {
-            [self _logMessage:[NSString stringWithFormat:@"*** FIC Error: %s Couldn't find image table with format name %@", __PRETTY_FUNCTION__, formatName]];
-        }
+        [self _processImage:image forEntity:entity withFormatName:formatName completionBlocksDictionary:completionBlocksDictionary];
     }
 }
 
-- (void)_processImage:(UIImage *)image forEntity:(id <FICEntity>)entity completionBlocksDictionary:(NSDictionary *)completionBlocksDictionary {
-    for (NSString *formatToProcess in [self formatsToProcessForCompletionBlocks:completionBlocksDictionary
-                                                                         entity:entity]) {
-        FICImageTable *imageTable = [_imageTables objectForKey:formatToProcess];
-        NSArray *completionBlocks = [completionBlocksDictionary objectForKey:formatToProcess];
+- (void)_processImage:(UIImage *)image forEntity:(id <FICEntity>)entity withFormatName:(NSString *)formatName completionBlocksDictionary:(NSDictionary *)completionBlocksDictionary {
+    FICImageFormat *imageFormat = [_formats objectForKey:formatName];
+    NSString *formatFamily = [imageFormat family];
+    NSString *entityUUID = [entity UUID];
+    NSString *sourceImageUUID = [entity sourceImageUUID];
+    
+    if (formatFamily != nil) {
+        BOOL shouldProcessAllFormatsInFamily = YES;
+        if (_delegateImplementsShouldProcessAllFormatsInFamilyForEntity) {
+            shouldProcessAllFormatsInFamily = [_delegate imageCache:self shouldProcessAllFormatsInFamily:formatFamily forEntity:entity];
+        }
+        // All of the formats in a given family use the same source asset, so once we have that source asset, we can generate all of the family's formats.
+        for (FICImageTable *table in [_imageTables allValues]) {
+            FICImageFormat *imageFormat = [table imageFormat];
+            NSString *tableFormatFamily = [imageFormat family];
+            if ([formatFamily isEqualToString:tableFormatFamily]) {
+                NSArray *completionBlocks = [completionBlocksDictionary objectForKey:[imageFormat name]];
+                
+                BOOL imageExistsForEntity = [table entryExistsForEntityUUID:entityUUID sourceImageUUID:sourceImageUUID];
+                BOOL shouldProcessFamilyFormat = shouldProcessAllFormatsInFamily && imageExistsForEntity == NO;
+                if (shouldProcessFamilyFormat || [completionBlocks count] > 0) {
+                    [self _processImage:image forEntity:entity imageTable:table completionBlocks:completionBlocks];
+                }
+            }
+        }
+    } else {
+        FICImageTable *imageTable = [_imageTables objectForKey:formatName];
+        NSArray *completionBlocks = [completionBlocksDictionary objectForKey:formatName];
         [self _processImage:image forEntity:entity imageTable:imageTable completionBlocks:completionBlocks];
     }
 }
@@ -363,58 +361,6 @@ static void _FICAddCompletionBlockForEntity(NSString *formatName, NSMutableDicti
             }
         });
     }
-}
-
-- (NSSet *)formatsToProcessForCompletionBlocks:(NSDictionary *)completionBlocksDictionary entity:(id <FICEntity>)entity {
-    // At the very least, we must process all formats with pending completion blocks
-    NSMutableSet *formatsToProcess = [NSMutableSet setWithArray:completionBlocksDictionary.allKeys];
-
-    // Get the list of format families included by the formats we have to process
-    NSMutableSet *families;
-    for (NSString *formatToProcess in formatsToProcess) {
-        FICImageTable *imageTable = _imageTables[formatToProcess];
-        FICImageFormat *imageFormat = imageTable.imageFormat;
-        NSString *tableFormatFamily = imageFormat.family;
-        if (tableFormatFamily) {
-            if (!families) {
-                families = [NSMutableSet set];
-            }
-            [families addObject:tableFormatFamily];
-        }
-    }
-
-    // The delegate can override the list of families to process
-    if (_delegateImplementsShouldProcessAllFormatsInFamilyForEntity) {
-        [families minusSet:[families objectsPassingTest:^BOOL(NSString *familyName, BOOL *stop) {
-            return ![_delegate imageCache:self shouldProcessAllFormatsInFamily:familyName forEntity:entity];
-        }]];
-    }
-
-    // Ensure that all formats from all of those families are included in the list
-    if (families.count) {
-        for (FICImageTable *table in _imageTables.allValues) {
-            FICImageFormat *imageFormat = table.imageFormat;
-            NSString *imageFormatName = imageFormat.name;
-            // If we're already processing this format, keep looking
-            if ([formatsToProcess containsObject:imageFormatName]) {
-                continue;
-            }
-
-            // If this format isn't included in any referenced family, keep looking
-            if (![families containsObject:imageFormat.family]) {
-                continue;
-            }
-
-            // If the image already exists, keep going
-            if ([table entryExistsForEntityUUID:entity.UUID sourceImageUUID:entity.sourceImageUUID]) {
-                continue;
-            }
-
-            [formatsToProcess addObject:imageFormatName];
-        }
-    }
-
-    return formatsToProcess;
 }
 
 #pragma mark - Checking for Image Existence
@@ -464,9 +410,7 @@ static void _FICAddCompletionBlockForEntity(NSString *formatName, NSMutableDicti
 
 - (void)reset {
     for (FICImageTable *imageTable in [_imageTables allValues]) {
-        dispatch_async([[self class] dispatchQueue], ^{
-            [imageTable reset];
-        });
+        [imageTable reset];
     }
 }
 

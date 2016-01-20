@@ -24,14 +24,6 @@ typedef void (^FICImageRequestCompletionBlock)(UIImage *sourceImage);
  */
 @interface FICImageCache : NSObject
 
-/**
- The namespace of the image cache.
- 
- @discussion Namespace is responsible for isolation of dirrerent image cache instances on file system level. Namespace should be unique across application.
- */
-
-@property (readonly, nonatomic) NSString *nameSpace;
-
 ///----------------------------
 /// @name Managing the Delegate
 ///----------------------------
@@ -45,25 +37,6 @@ typedef void (^FICImageRequestCompletionBlock)(UIImage *sourceImage);
 @property (nonatomic, weak) id <FICImageCacheDelegate> delegate;
 
 ///---------------------------------------
-/// @name Creating Image Cache instances
-///---------------------------------------
-
-/**
- Returns new image cache.
- 
- @return A new instance of `FICImageCache`.
- 
- @param nameSpace The namespace that uniquely identifies current image cahce entity. If no nameSpace given, default namespace will be used.
- 
- @note Fast Image Cache can either be used as a singleton for convenience or can exist as multiple instances. 
- However, all instances of `FICImageCache` will make use same dispatch queue. To separate location on disk for storing image tables namespaces are used.
- 
- @see [FICImageCache dispatchQueue]
- */
-
-- (instancetype)initWithNameSpace:(NSString *)nameSpace;
-
-///---------------------------------------
 /// @name Accessing the Shared Image Cache
 ///---------------------------------------
 
@@ -72,7 +45,8 @@ typedef void (^FICImageRequestCompletionBlock)(UIImage *sourceImage);
  
  @return A shared instance of `FICImageCache`.
  
- @note Shared instance always binded to default namespace.
+ @note Fast Image Cache can either be used as a singleton for convenience or can exist as multiple instances. However, all instances of `FICImageCache` will make use of
+ shared resources, such as the same dispatch queue and the same location on disk for storing image tables.
  
  @see [FICImageCache dispatchQueue]
  */
@@ -148,7 +122,7 @@ typedef void (^FICImageRequestCompletionBlock)(UIImage *sourceImage);
  
  @param entity The entity that uniquely identifies the source image.
  
- @param formatName The format name that uniquely identifies which image table to look in for the cached image. Must not be nil.
+ @param formatName The format name that uniquely identifies which image table to look in for the cached image.
  
  @param completionBlock The completion block that is called when the requested image is available or if an error occurs.
  
@@ -175,7 +149,7 @@ typedef void (^FICImageRequestCompletionBlock)(UIImage *sourceImage);
  
  @param entity The entity that uniquely identifies the source image.
  
- @param formatName The format name that uniquely identifies which image table to look in for the cached image. Must not be nil.
+ @param formatName The format name that uniquely identifies which image table to look in for the cached image.
  
  @param completionBlock The completion block that is called when the requested image is available or if an error occurs.
  
@@ -253,7 +227,7 @@ typedef void (^FICImageRequestCompletionBlock)(UIImage *sourceImage);
  */
 @protocol FICImageCacheDelegate <NSObject>
 
-@optional
+@required
 
 /**
  This method is called on the delegate when the image cache needs a source image.
@@ -282,6 +256,8 @@ typedef void (^FICImageRequestCompletionBlock)(UIImage *sourceImage);
  block to provide the image cache with the source image.
  */
 - (void)imageCache:(FICImageCache *)imageCache wantsSourceImageForEntity:(id <FICEntity>)entity withFormatName:(NSString *)formatName completionBlock:(FICImageRequestCompletionBlock)completionBlock;
+
+@optional
 
 /**
  This method is called on the delegate when the image cache has received an image retrieval cancellation request.
