@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		49174F531C50158D00330C56 /* SIGSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49174F521C50158D00330C56 /* SIGSettingsController.m */; };
+		49174F551C5022A100330C56 /* SignalSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49174F541C5022A100330C56 /* SignalSDK.framework */; };
+		49174F571C5023B900330C56 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49174F561C5023B900330C56 /* CoreTelephony.framework */; };
+		49174F591C5023C700330C56 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49174F581C5023C700330C56 /* SystemConfiguration.framework */; };
 		492F04F41C46F09400F5AF98 /* SIGImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 492F04F31C46F09400F5AF98 /* SIGImageCache.m */; };
 		49534F8F1C440938008C6300 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49534F8E1C440938008C6300 /* main.m */; };
 		49534F921C440938008C6300 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49534F911C440938008C6300 /* AppDelegate.m */; };
@@ -37,6 +40,9 @@
 /* Begin PBXFileReference section */
 		49174F511C50158D00330C56 /* SIGSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGSettingsController.h; sourceTree = "<group>"; };
 		49174F521C50158D00330C56 /* SIGSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGSettingsController.m; sourceTree = "<group>"; };
+		49174F541C5022A100330C56 /* SignalSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SignalSDK.framework; sourceTree = "<group>"; };
+		49174F561C5023B900330C56 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		49174F581C5023C700330C56 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		492F04F21C46F09400F5AF98 /* SIGImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGImageCache.h; sourceTree = "<group>"; };
 		492F04F31C46F09400F5AF98 /* SIGImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGImageCache.m; sourceTree = "<group>"; };
 		49534F8A1C440938008C6300 /* Signal Commerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Signal Commerce.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,7 +79,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49174F591C5023C700330C56 /* SystemConfiguration.framework in Frameworks */,
+				49174F571C5023B900330C56 /* CoreTelephony.framework in Frameworks */,
 				9B1F242C78FEFD537C2B6556 /* Pods_Signal_Commerce.framework in Frameworks */,
+				49174F551C5022A100330C56 /* SignalSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +200,9 @@
 		8EE7AD168C1249FFA87955AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49174F581C5023C700330C56 /* SystemConfiguration.framework */,
+				49174F561C5023B900330C56 /* CoreTelephony.framework */,
+				49174F541C5022A100330C56 /* SignalSDK.framework */,
 				8CA6C37B6A12B30E0F575072 /* Pods_Signal_Commerce.framework */,
 			);
 			name = Frameworks;
@@ -485,8 +497,22 @@
 			baseConfigurationReference = 7D327178267E21127EEC07F3 /* Pods-Signal Commerce.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Signal Commerce/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"FastImageCache\"",
+					"-framework",
+					"\"MMDrawerController\"",
+					"-framework",
+					"\"MMDrawerController_Storyboard\"",
+					"-lsqlite3",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "co.signal.Signal-Commerce";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -497,8 +523,22 @@
 			baseConfigurationReference = ADF1CA390D4DBD2F15F3894A /* Pods-Signal Commerce.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Signal Commerce/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"FastImageCache\"",
+					"-framework",
+					"\"MMDrawerController\"",
+					"-framework",
+					"\"MMDrawerController_Storyboard\"",
+					"-lsqlite3",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "co.signal.Signal-Commerce";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -18,6 +18,7 @@
 #import "SIGProduct.h"
 #import "SIGMoney.h"
 #import "SIGImageCache.h"
+#import <SignalSDK/SignalInc.h>
 
 @interface SIGCategoryListController()
 
@@ -37,6 +38,19 @@
 - (void)viewDidLoad {
     _categories = [[NSArray alloc] init];
     _products = [[NSArray alloc] init];
+    if (_parentCategory == nil) {
+        [SignalInc initInstance:nil config:^(SignalConfig *config) {
+            config.messageRetryCount = 3;
+            config.debug = YES;
+            config.dispatchInterval = 1;
+            config.messageExpiration = 3600;
+            config.maxQueuedMessages = 500;
+//            config.endpoint = @"http://localhost:8091";
+            [config addStandardFields: ApplicationName, OsVersion, DeviceId, DeviceIdMD5, DeviceIdType, nil];
+            [config addCustomFields: @{@"uid":@"d56ead9fffff"}];
+        }];
+        [[SignalInc sharedInstance] trackerWithSiteId:@"C7cIETB"];
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated {
