@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49174F531C50158D00330C56 /* SIGSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49174F521C50158D00330C56 /* SIGSettingsController.m */; };
 		492F04F41C46F09400F5AF98 /* SIGImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 492F04F31C46F09400F5AF98 /* SIGImageCache.m */; };
 		49534F8F1C440938008C6300 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49534F8E1C440938008C6300 /* main.m */; };
 		49534F921C440938008C6300 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49534F911C440938008C6300 /* AppDelegate.m */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49174F511C50158D00330C56 /* SIGSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGSettingsController.h; sourceTree = "<group>"; };
+		49174F521C50158D00330C56 /* SIGSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGSettingsController.m; sourceTree = "<group>"; };
 		492F04F21C46F09400F5AF98 /* SIGImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGImageCache.h; sourceTree = "<group>"; };
 		492F04F31C46F09400F5AF98 /* SIGImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGImageCache.m; sourceTree = "<group>"; };
 		49534F8A1C440938008C6300 /* Signal Commerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Signal Commerce.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49174F501C50153A00330C56 /* Signal Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				49174F511C50158D00330C56 /* SIGSettingsController.h */,
+				49174F521C50158D00330C56 /* SIGSettingsController.m */,
+			);
+			name = "Signal Controllers";
+			sourceTree = "<group>";
+		};
 		49534F811C440938008C6300 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +125,7 @@
 				49534F9E1C440938008C6300 /* Info.plist */,
 				49534F9B1C440938008C6300 /* LaunchScreen.storyboard */,
 				49534F961C440938008C6300 /* Main.storyboard */,
+				49174F501C50153A00330C56 /* Signal Controllers */,
 				498D9C271C443C1A002D72D6 /* Shopping */,
 				498D9C301C443FAF002D72D6 /* ShoppingPath */,
 				492F04F21C46F09400F5AF98 /* SIGImageCache.h */,
@@ -334,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49174F531C50158D00330C56 /* SIGSettingsController.m in Sources */,
 				498D9C2E1C443D93002D72D6 /* SIGCategory.m in Sources */,
 				497B49601C445828006A21EF /* SIGProduct.m in Sources */,
 				492F04F41C46F09400F5AF98 /* SIGImageCache.m in Sources */,

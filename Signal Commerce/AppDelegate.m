@@ -5,6 +5,8 @@
 //  Created by Andrew on 1/11/16.
 //  Copyright © 2016 Signal. All rights reserved.
 //
+#import "MMDrawerController.h"
+#import "MMDrawerVisualState.h"
 
 #import "AppDelegate.h"
 #import "MagentoShoppingService.h"
@@ -21,6 +23,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     _shoppingService = [[MagentoShoppingService alloc] init];
     _imageCache = [[SIGImageCache alloc] init];
+
+    MMDrawerController * drawerController = (MMDrawerController *)self.window.rootViewController;
+    [drawerController setMaximumRightDrawerWidth:200.0];
+    [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    [drawerController setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
+    }];
+
     return YES;
 }
 
