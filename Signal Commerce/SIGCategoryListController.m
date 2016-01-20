@@ -50,6 +50,8 @@
             [config addCustomFields: @{@"uid":@"d56ead9fffff"}];
         }];
         [[SignalInc sharedInstance] trackerWithSiteId:@"C7cIETB"];
+    } else {
+        [self setTitle: _parentCategory.name];
     }
 }
 
