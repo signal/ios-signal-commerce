@@ -13,7 +13,7 @@
 
 @protocol SIGShoppingService <NSObject>
 
--(NSArray<SIGCategory *> *)findAllCategories;
+-(NSArray<SIGCategory *> *)findAllCategories:(NSString *)parentCategory;
 
 -(NSArray<SIGProduct *> *)findProductsForCategory:(SIGCategory *)category;
 

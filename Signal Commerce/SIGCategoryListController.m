@@ -10,44 +10,92 @@
 #import "AppDelegate.h"
 #import "SIGCategory.h"
 #import "SIGCategoryListController.h"
-#import "SIGProductListController.h"
+#import "SIGProductDetailController.h"
+#import "SIGProduct.h"
+#import "SIGMoney.h"
+#import "SIGImageCache.h"
 
 @interface SIGCategoryListController()
 
 @property (strong, nonatomic) NSArray<SIGCategory *> *categories;
+@property (strong, nonatomic) SIGCategory *parentCategory;
+@property (nonatomic, strong) NSArray<SIGProduct *> *products;
 
 @end
 
 @implementation SIGCategoryListController
 
 @synthesize categories = _categories;
+@synthesize products = _products;
 
 #pragma mark - UIViewController overrides
 
 - (void)viewDidLoad {
     _categories = [[NSArray alloc] init];
+    _products = [[NSArray alloc] init];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self refreshCategories];
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(nullable id)sender {
+    return [identifier isEqualToString:@"ShowProductDetail"];
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([segue.identifier isEqualToString:@"ShowProductsForCategory"]){
-        SIGProductListController *controller = segue.destinationViewController;
+    if([segue.identifier isEqualToString:@"ShowProductDetail"]){
+        SIGProductDetailController *controller = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        controller.category = _categories[indexPath.row];
+        controller.product = _products[indexPath.row];
     }
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        SIGCategoryListController *dest = [storyboard instantiateViewControllerWithIdentifier: @"CategoryList"];
+        dest.parentCategory = _categories[indexPath.row];
+        [self.navigationController pushViewController:dest animated:YES];
+    }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
 
 #pragma mark - UITableViewDataSource methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _categories.count;
+    if (section == 0) {
+        return _categories.count;
+    } else {
+        return _products.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"CategoryName"];
-    cell.textLabel.text = _categories[indexPath.row].name;
-    cell.detailTextLabel.text = _categories[indexPath.row].memberCount;
-    return cell;
+    if (indexPath.section == 0) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"CategoryName"];
+        cell.textLabel.text = _categories[indexPath.row].name;
+        cell.detailTextLabel.text = _categories[indexPath.row].memberCount;
+        return cell;
+    } else {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"ProductDescription"];
+        SIGProduct *product = _products[indexPath.row];
+        cell.textLabel.text = product.name;
+        cell.detailTextLabel.text = [product.cost description];
+        [[self appDelegate].imageCache findPreviewImageForProduct: product onComplete: ^(id <FICEntity> entity, NSString *formatName, UIImage *image) {
+            cell.imageView.image = image;
+            cell.imageView.layer.cornerRadius = 5;
+            cell.imageView.layer.masksToBounds = YES;
+            // without this call, the images won't draw properly
+            [cell setNeedsLayout];
+        }];
+        return cell;
+    }
 }
 
 #pragma mark - private methods
@@ -55,8 +103,12 @@
 - (void)refreshCategories {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // TODO: hook in error handling
-        _categories = [[self appDelegate].shoppingService findAllCategories];
+        _categories = [[self appDelegate].shoppingService findAllCategories:_parentCategory.categoryId];
         [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+        if (_parentCategory) {
+            _products = [[self appDelegate].shoppingService findProductsForCategory:_parentCategory];
+            [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+        }
     });
 }
 

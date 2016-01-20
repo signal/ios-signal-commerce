@@ -20,8 +20,11 @@ static NSString * const COMMERCE_URL = @"https://commerce.signal.ninja/api/rest"
 
 @implementation MagentoShoppingService
 
--(NSArray<SIGCategory *> *)findAllCategories {
+-(NSArray<SIGCategory *> *)findAllCategories:(NSString *)parentCategory {
     NSString *urlString = [COMMERCE_URL stringByAppendingString: @"/categories"];
+    if (parentCategory) {
+        urlString = [urlString stringByAppendingFormat:@"/%@", parentCategory];
+    }
     return [self parseCategories: [self request: urlString]];
 }
 

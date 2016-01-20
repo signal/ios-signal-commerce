@@ -8,7 +8,7 @@
         <!--Show By Department-->
         <scene sceneID="qnR-HX-QM1">
             <objects>
-                <tableViewController id="gK8-O0-2JX" userLabel="Show By Department" customClass="SIGCategoryListController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CategoryList" id="gK8-O0-2JX" userLabel="Show By Department" customClass="SIGCategoryListController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QA9-X3-BAN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,38 +37,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="oMY-0i-abu" kind="show" identifier="ShowProductsForCategory" id="Nay-Z1-s5o"/>
-                                </connections>
                             </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="gK8-O0-2JX" id="SF2-mu-Y31"/>
-                            <outlet property="delegate" destination="gK8-O0-2JX" id="ccm-8w-AU6"/>
-                        </connections>
-                    </tableView>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Signal Commerce" id="7dk-cN-ALC">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="wMG-jA-egw" userLabel="Menu"/>
-                        <barButtonItem key="rightBarButtonItem" title="Cart" id="Hna-hr-FKY" userLabel="Cart"/>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GBc-Pt-foR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="216" y="314"/>
-        </scene>
-        <!--Product Listing-->
-        <scene sceneID="vGI-aE-mYa">
-            <objects>
-                <tableViewController id="oMY-0i-abu" userLabel="Product Listing" customClass="SIGProductListController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6Uq-Q0-iaj">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductDescription" textLabel="jn5-vA-pm3" detailTextLabel="GU7-ke-ejb" style="IBUITableViewCellStyleSubtitle" id="gmp-uB-OVs" userLabel="Item Preview">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gmp-uB-OVs" id="ncV-ty-rli">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -96,14 +67,19 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="oMY-0i-abu" id="WRz-P9-sef"/>
-                            <outlet property="delegate" destination="oMY-0i-abu" id="YZl-Mc-ZE4"/>
+                            <outlet property="dataSource" destination="gK8-O0-2JX" id="SF2-mu-Y31"/>
+                            <outlet property="delegate" destination="gK8-O0-2JX" id="ccm-8w-AU6"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Signal Commerce" id="7dk-cN-ALC">
+                        <barButtonItem key="rightBarButtonItem" title="Cart" id="Hna-hr-FKY" userLabel="Cart"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MB1-ru-hgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GBc-Pt-foR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1109" y="314"/>
+            <point key="canvasLocation" x="216" y="314"/>
         </scene>
         <!--Product Details-->
         <scene sceneID="iuv-Yp-O97">
@@ -160,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmM-o3-Anx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1970" y="314"/>
+            <point key="canvasLocation" x="1062" y="314"/>
         </scene>
         <!--Signal Commerce-->
         <scene sceneID="nQr-7M-861">
