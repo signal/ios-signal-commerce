@@ -73,9 +73,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Signal Commerce" id="7dk-cN-ALC">
-                        <barButtonItem key="rightBarButtonItem" title="Cart" id="Hna-hr-FKY" userLabel="Cart"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Signal Commerce" id="7dk-cN-ALC"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBc-Pt-foR" userLabel="First Responder" sceneMemberID="firstResponder"/>
