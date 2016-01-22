@@ -11,6 +11,7 @@
 		49174F551C5022A100330C56 /* SignalSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49174F541C5022A100330C56 /* SignalSDK.framework */; };
 		49174F571C5023B900330C56 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49174F561C5023B900330C56 /* CoreTelephony.framework */; };
 		49174F591C5023C700330C56 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49174F581C5023C700330C56 /* SystemConfiguration.framework */; };
+		49174F831C5183C300330C56 /* iPadMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49174F821C5183C300330C56 /* iPadMain.storyboard */; };
 		492F04F41C46F09400F5AF98 /* SIGImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 492F04F31C46F09400F5AF98 /* SIGImageCache.m */; };
 		49534F8F1C440938008C6300 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49534F8E1C440938008C6300 /* main.m */; };
 		49534F921C440938008C6300 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49534F911C440938008C6300 /* AppDelegate.m */; };
@@ -43,6 +44,7 @@
 		49174F541C5022A100330C56 /* SignalSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SignalSDK.framework; sourceTree = "<group>"; };
 		49174F561C5023B900330C56 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		49174F581C5023C700330C56 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		49174F821C5183C300330C56 /* iPadMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = iPadMain.storyboard; path = ../iPadMain.storyboard; sourceTree = "<group>"; };
 		492F04F21C46F09400F5AF98 /* SIGImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGImageCache.h; sourceTree = "<group>"; };
 		492F04F31C46F09400F5AF98 /* SIGImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGImageCache.m; sourceTree = "<group>"; };
 		49534F8A1C440938008C6300 /* Signal Commerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Signal Commerce.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,12 +135,13 @@
 				49534F991C440938008C6300 /* Assets.xcassets */,
 				49534F9E1C440938008C6300 /* Info.plist */,
 				49534F9B1C440938008C6300 /* LaunchScreen.storyboard */,
+				49174F821C5183C300330C56 /* iPadMain.storyboard */,
 				49534F961C440938008C6300 /* Main.storyboard */,
-				49174F501C50153A00330C56 /* Signal Controllers */,
 				498D9C271C443C1A002D72D6 /* Shopping */,
 				498D9C301C443FAF002D72D6 /* ShoppingPath */,
 				492F04F21C46F09400F5AF98 /* SIGImageCache.h */,
 				492F04F31C46F09400F5AF98 /* SIGImageCache.m */,
+				49174F501C50153A00330C56 /* Signal Controllers */,
 				49534F8D1C440938008C6300 /* Supporting Files */,
 			);
 			path = "Signal Commerce";
@@ -257,15 +260,6 @@
 			attributes = {
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Signal;
-				TargetAttributes = {
-					49534F891C440938008C6300 = {
-						CreatedOnToolsVersion = 7.2;
-					};
-					49534FA21C440938008C6300 = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 49534F891C440938008C6300;
-					};
-				};
 			};
 			buildConfigurationList = 49534F851C440938008C6300 /* Build configuration list for PBXProject "Signal Commerce" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -292,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49534F9D1C440938008C6300 /* LaunchScreen.storyboard in Resources */,
+				49174F831C5183C300330C56 /* iPadMain.storyboard in Resources */,
 				49534F9A1C440938008C6300 /* Assets.xcassets in Resources */,
 				49534F981C440938008C6300 /* Main.storyboard in Resources */,
 			);
@@ -446,7 +441,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -484,7 +479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -502,6 +497,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Signal Commerce/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -515,6 +511,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "co.signal.Signal-Commerce";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -528,6 +525,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Signal Commerce/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -541,6 +539,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "co.signal.Signal-Commerce";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

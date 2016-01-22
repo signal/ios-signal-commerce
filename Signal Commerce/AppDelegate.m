@@ -11,8 +11,9 @@
 #import "AppDelegate.h"
 #import "MagentoShoppingService.h"
 #import "SIGImageCache.h"
+#import "SIGProductDetailController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <UISplitViewControllerDelegate>
 
 @end
 
@@ -24,13 +25,19 @@
     _shoppingService = [[MagentoShoppingService alloc] init];
     _imageCache = [[SIGImageCache alloc] init];
 
-    MMDrawerController * drawerController = (MMDrawerController *)self.window.rootViewController;
-    [drawerController setMaximumRightDrawerWidth:200.0];
-    [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
-    [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
-    [drawerController setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
-    }];
-
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+        UINavigationController *navigationController = [splitViewController.viewControllers firstObject];
+        navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
+        splitViewController.delegate = self;
+    } else {
+        MMDrawerController * drawerController = (MMDrawerController *)self.window.rootViewController;
+        [drawerController setMaximumRightDrawerWidth:200.0];
+        [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+        [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+        [drawerController setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
+        }];
+    }
     return YES;
 }
 
@@ -54,6 +61,19 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
+
+    if ([secondaryViewController isKindOfClass:[UINavigationController class]] &&
+        [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[SIGProductDetailController class]]) {
+        SIGProductDetailController *controller = (SIGProductDetailController *)[(UINavigationController *)secondaryViewController topViewController];
+        return [controller product] == nil;
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 @end

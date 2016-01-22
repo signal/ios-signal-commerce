@@ -69,7 +69,14 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"ShowProductDetail"]){
-        SIGProductDetailController *controller = segue.destinationViewController;
+        SIGProductDetailController *controller;
+        if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+            controller = (SIGProductDetailController *)[[segue destinationViewController] topViewController];
+            controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+            controller.navigationItem.leftItemsSupplementBackButton = YES;
+        } else {
+            controller = segue.destinationViewController;
+        }
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         controller.product = _products[indexPath.row];
     }
@@ -77,7 +84,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        NSString *storyBoardName = ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) ? @"iPadMain" : @"Main";
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyBoardName bundle: nil];
         SIGCategoryListController *dest = [storyboard instantiateViewControllerWithIdentifier: @"CategoryList"];
         dest.parentCategory = _categories[indexPath.row];
         [self.navigationController pushViewController:dest animated:YES];
