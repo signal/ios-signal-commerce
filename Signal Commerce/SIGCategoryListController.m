@@ -46,8 +46,7 @@
             config.dispatchInterval = 1;
             config.messageExpiration = 3600;
             config.maxQueuedMessages = 500;
-//            config.endpoint = @"http://localhost:8091";
-            [config addStandardFields: ApplicationName, OsVersion, DeviceId, DeviceIdMD5, DeviceIdType, nil];
+            [config addStandardFields: ApplicationName, OsVersion, DeviceIdSHA256, DeviceIdType, nil];
             [config addCustomFields: @{@"uid":@"d56ead9fffff"}];
         }];
         [SIGPreferences load];

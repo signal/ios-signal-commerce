@@ -9,6 +9,7 @@
 #import "MagentoShoppingService.h"
 #import "SIGCategory.h"
 #import "SIGProduct.h"
+#import "SIGPreferences.h"
 
 #ifdef DEBUG
 #define SLog(...) NSLog(__VA_ARGS__);
@@ -16,12 +17,11 @@
 #define SLog(...)
 #endif
 
-static NSString * const COMMERCE_URL = @"https://commerce.signal.ninja/api/rest";
 
 @implementation MagentoShoppingService
 
 -(NSArray<SIGCategory *> *)findAllCategories:(NSString *)parentCategory {
-    NSString *urlString = [COMMERCE_URL stringByAppendingString: @"/categories"];
+    NSString *urlString = [[self commerceUrl] stringByAppendingString: @"/categories"];
     if (parentCategory) {
         urlString = [urlString stringByAppendingFormat:@"/%@", parentCategory];
     }
@@ -30,7 +30,7 @@ static NSString * const COMMERCE_URL = @"https://commerce.signal.ninja/api/rest"
 
 -(NSArray<SIGProduct *> *)findProductsForCategory:(SIGCategory *)category {
 
-    NSString *urlString = [COMMERCE_URL stringByAppendingFormat: @"/products?limit=100&category_id=%@", category.categoryId];
+    NSString *urlString = [[self commerceUrl] stringByAppendingFormat: @"/products?limit=100&category_id=%@", category.categoryId];
     id json = [self request:urlString];
     if ([json isKindOfClass: [NSDictionary class]]) {
         return [self parseProducts: json];
@@ -39,6 +39,10 @@ static NSString * const COMMERCE_URL = @"https://commerce.signal.ninja/api/rest"
 }
 
 #pragma mark - private methods
+
+- (NSString *)commerceUrl {
+    return [SIGPreferences magentoServer];
+}
 
 - (id)request:(NSString *)url {
     SLog(@"Fetching %@", url);

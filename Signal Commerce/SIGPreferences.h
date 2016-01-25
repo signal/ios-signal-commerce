@@ -14,4 +14,8 @@
 
 +(void)load;
 
++(void)setMagentoServer:(NSString *)magentoServer;
+
++(NSString *)magentoServer;
+
 @end

@@ -43,6 +43,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *activeNetwork;
 @property (weak, nonatomic) IBOutlet UISwitch *deviceInfoSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *deviceIdTypeSwitch;
+@property (weak, nonatomic) IBOutlet UITextField *magentoField;
 
 @end
 
@@ -72,6 +73,7 @@
 
     [_siteCode setText: config.defaultSiteId];
     [_serverEndpoint setText: config.endpoint];
+    [_magentoField setText: [SIGPreferences magentoServer]];
 
     StandardField standardField;
     NSArray *fieldArr = config.standardFields;
@@ -100,9 +102,16 @@
 - (IBAction)siteCodeChanged:(id)sender {
     [SignalInc sharedInstance].signalConfig.defaultSiteId = [_siteCode text];
 }
+- (IBAction)serverEndpointChanged:(id)sender {
+    [SignalInc sharedInstance].signalConfig.endpoint = [_serverEndpoint text];
+}
 
 -(void)updateDispatchInterval:(float)value {
     [_dispatchIntervalValue setText: [NSString stringWithFormat:@"%1.0fs", value]];
+}
+
+- (IBAction)magentoFieldChanged:(id)sender {
+    [SIGPreferences setMagentoServer: [_magentoField text]];
 }
 
 - (IBAction)databaseDebugChanged:(id)sender {
