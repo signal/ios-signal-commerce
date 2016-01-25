@@ -33,6 +33,8 @@ static NSString * const kMagentoServer = @"SignalMagentoServer";
     [userDefaults setDouble:config.dispatchInterval forKey:kDispatchInterval];
     [userDefaults setObject: config.endpoint forKey: kEndpoint];
     [userDefaults setObject: config.defaultSiteId forKey: kDefaultSiteId];
+    [userDefaults setBool: config.debug forKey: kDebug ];
+    [userDefaults setBool: config.datastoreDebug forKey: kDatastoreDebug];
     [userDefaults setBool:YES forKey:kInitialized];
     [userDefaults synchronize];
 }
@@ -46,6 +48,8 @@ static NSString * const kMagentoServer = @"SignalMagentoServer";
     config.batteryPercentage = [userDefaults boolForKey:kBatteryPercentage];
     config.defaultSiteId = [userDefaults stringForKey:kDefaultSiteId];
     config.endpoint = [userDefaults stringForKey: kEndpoint];
+    config.debug = [userDefaults boolForKey: kDebug];
+    config.datastoreDebug = [userDefaults boolForKey: kDatastoreDebug];
 }
 
 +(void)setMagentoServer:(NSString *)magentoServer {

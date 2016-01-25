@@ -46,10 +46,12 @@
             config.dispatchInterval = 1;
             config.messageExpiration = 3600;
             config.maxQueuedMessages = 500;
+            config.defaultSiteId = @"abcd123";
             [config addStandardFields: ApplicationName, OsVersion, DeviceIdSHA256, DeviceIdType, nil];
             [config addCustomFields: @{@"uid":@"d56ead9fffff"}];
         }];
         [SIGPreferences load];
+        [[SignalInc sharedInstance] trackerWithSiteId: [SignalInc sharedInstance].signalConfig.defaultSiteId];
     } else {
         [self setTitle: _parentCategory.name];
     }
@@ -60,6 +62,9 @@
     [self refreshCategories];
     if (_parentCategory == nil) {
         [self setupLeftMenuButton];
+        [[[SignalInc sharedInstance] defaultTracker] publish: @"view:category_list", nil];
+    } else {
+        [[[SignalInc sharedInstance] defaultTracker] publish: @"view:category_list" withDictionary: @{@"categoryId" : _parentCategory.categoryId}];
     }
 }
 
@@ -157,7 +162,5 @@
 -(void)leftDrawerButtonPress:(id)sender{
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
-
-
 
 @end

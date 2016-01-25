@@ -8,6 +8,7 @@
 
 #import "SIGProductDetailController.h"
 #import "SIGMoney.h"
+#import <SignalSDK/SignalInc.h>
 
 @interface SIGProductDetailController()
 
@@ -38,6 +39,7 @@
         [_instock setTextColor: [UIColor redColor]];
     }
     [_longDescription setText: _product.fullDescription];
+    [[[SignalInc sharedInstance] defaultTracker] publish:@"view_product" withDictionary:@{@"productId" : _product.sku}];
 }
 
 @end
