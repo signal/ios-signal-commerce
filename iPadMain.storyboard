@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Chicago Food Truck Finder-->
+        <!--Signal Commerce-->
         <scene sceneID="1jD-Rz-bSj">
             <objects>
                 <tableViewController storyboardIdentifier="CategoryList" clearsSelectionOnViewWillAppear="NO" id="ZuI-gN-tBG" customClass="SIGCategoryListController" sceneMemberID="viewController">
@@ -70,7 +70,7 @@
                             <outlet property="delegate" destination="ZuI-gN-tBG" id="Ph7-PV-s5a"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Chicago Food Truck Finder" id="tLg-I9-sBG"/>
+                    <navigationItem key="navigationItem" title="Signal Commerce" id="tLg-I9-sBG"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8CY-zO-9ps" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

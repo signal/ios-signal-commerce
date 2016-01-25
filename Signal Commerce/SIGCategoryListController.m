@@ -18,6 +18,7 @@
 #import "SIGProduct.h"
 #import "SIGMoney.h"
 #import "SIGImageCache.h"
+#import "SIGPreferences.h"
 #import <SignalSDK/SignalInc.h>
 
 @interface SIGCategoryListController()
@@ -49,7 +50,7 @@
             [config addStandardFields: ApplicationName, OsVersion, DeviceId, DeviceIdMD5, DeviceIdType, nil];
             [config addCustomFields: @{@"uid":@"d56ead9fffff"}];
         }];
-        [[SignalInc sharedInstance] trackerWithSiteId:@"C7cIETB"];
+        [SIGPreferences load];
     } else {
         [self setTitle: _parentCategory.name];
     }

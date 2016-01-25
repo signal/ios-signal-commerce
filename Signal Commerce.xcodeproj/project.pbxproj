@@ -12,6 +12,7 @@
 		49174F571C5023B900330C56 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49174F561C5023B900330C56 /* CoreTelephony.framework */; };
 		49174F591C5023C700330C56 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49174F581C5023C700330C56 /* SystemConfiguration.framework */; };
 		49174F831C5183C300330C56 /* iPadMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49174F821C5183C300330C56 /* iPadMain.storyboard */; };
+		49174F8E1C52D44000330C56 /* SIGPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 49174F8D1C52D44000330C56 /* SIGPreferences.m */; };
 		492F04F41C46F09400F5AF98 /* SIGImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 492F04F31C46F09400F5AF98 /* SIGImageCache.m */; };
 		49534F8F1C440938008C6300 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49534F8E1C440938008C6300 /* main.m */; };
 		49534F921C440938008C6300 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49534F911C440938008C6300 /* AppDelegate.m */; };
@@ -45,6 +46,8 @@
 		49174F561C5023B900330C56 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		49174F581C5023C700330C56 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		49174F821C5183C300330C56 /* iPadMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = iPadMain.storyboard; path = ../iPadMain.storyboard; sourceTree = "<group>"; };
+		49174F8C1C52D44000330C56 /* SIGPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGPreferences.h; sourceTree = "<group>"; };
+		49174F8D1C52D44000330C56 /* SIGPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGPreferences.m; sourceTree = "<group>"; };
 		492F04F21C46F09400F5AF98 /* SIGImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGImageCache.h; sourceTree = "<group>"; };
 		492F04F31C46F09400F5AF98 /* SIGImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGImageCache.m; sourceTree = "<group>"; };
 		49534F8A1C440938008C6300 /* Signal Commerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Signal Commerce.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +146,8 @@
 				492F04F31C46F09400F5AF98 /* SIGImageCache.m */,
 				49174F501C50153A00330C56 /* Signal Controllers */,
 				49534F8D1C440938008C6300 /* Supporting Files */,
+				49174F8C1C52D44000330C56 /* SIGPreferences.h */,
+				49174F8D1C52D44000330C56 /* SIGPreferences.m */,
 			);
 			path = "Signal Commerce";
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 				492F04F41C46F09400F5AF98 /* SIGImageCache.m in Sources */,
 				498D9C361C444350002D72D6 /* MagentoShoppingService.m in Sources */,
 				49534F921C440938008C6300 /* AppDelegate.m in Sources */,
+				49174F8E1C52D44000330C56 /* SIGPreferences.m in Sources */,
 				497B49701C45B96B006A21EF /* SIGProductDetailController.m in Sources */,
 				497B49631C446165006A21EF /* SIGMoney.m in Sources */,
 				49534F8F1C440938008C6300 /* main.m in Sources */,

@@ -8,8 +8,12 @@
 #import <SignalSDK/SignalInc.h>
 
 #import "SIGSettingsController.h"
+#import "SIGPreferences.h"
 
 @interface SIGSettingsController()
+
+@property (weak, nonatomic) IBOutlet UITextField *siteCode;
+@property (weak, nonatomic) IBOutlet UITextField *serverEndpoint;
 @property (weak, nonatomic) IBOutlet UISlider *batteryThreshold;
 @property (weak, nonatomic) IBOutlet UILabel *batteryThresholdValue;
 @property (weak, nonatomic) IBOutlet UISlider *dispatchIntervalSlider;
@@ -66,6 +70,9 @@
     [_databaseDebugSwitch setOn: config.datastoreDebug];
     [_networkOnWifiOnlySwitch setOn: config.networkOnWifiOnly];
 
+    [_siteCode setText: config.defaultSiteId];
+    [_serverEndpoint setText: config.endpoint];
+
     StandardField standardField;
     NSArray *fieldArr = config.standardFields;
     for (standardField=ApplicationName; standardField < DeviceIdType; standardField++) {
@@ -75,13 +82,23 @@
 
 }
 
+-(void)viewDidDisappear:(BOOL)animated {
+    [SIGPreferences save];
+}
+
+
 - (IBAction)debugChanged:(id)sender {
     [SignalInc sharedInstance].signalConfig.debug = [_debugSwitch isOn];
 }
+
 - (IBAction)dispatchIntervalChanged:(id)sender {
     float value = [_dispatchIntervalSlider value];
     [SignalInc sharedInstance].signalConfig.dispatchInterval = value;
     [self updateDispatchInterval: value];
+}
+
+- (IBAction)siteCodeChanged:(id)sender {
+    [SignalInc sharedInstance].signalConfig.defaultSiteId = [_siteCode text];
 }
 
 -(void)updateDispatchInterval:(float)value {
@@ -215,7 +232,6 @@
         [self removeStandardField:field];
     }
 }
-
 
 -(UISwitch *)mappedControl:(StandardField)field {
     switch (field) {
