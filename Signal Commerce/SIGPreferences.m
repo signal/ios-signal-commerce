@@ -22,6 +22,7 @@ static NSString * const kSocketReadTimeout = @"SignalSocketReadTimeout";
 static NSString * const kNetworkOnWifiOnly = @"SignalnetworkOnWifiOnly";
 static NSString * const kInitialized = @"SignalInitialized";
 static NSString * const kMagentoServer = @"SignalMagentoServer";
+static NSString * const kLoggedInUser = @"SignalLoggedInUser";
 
 
 @implementation SIGPreferences
@@ -65,6 +66,18 @@ static NSString * const kMagentoServer = @"SignalMagentoServer";
         return url;
     }
     return @"https://commerce.signal.ninja/api/rest";
+}
+
+
++(void)setLoggedInUser:(NSString *)loggedInUser {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
+    [userDefaults setObject:loggedInUser forKey:kLoggedInUser];
+}
+
++(NSString *)loggedInUser {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    return [userDefaults stringForKey: kLoggedInUser];
 }
 
 @end

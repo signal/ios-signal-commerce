@@ -26,6 +26,7 @@
 		498D9C2E1C443D93002D72D6 /* SIGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 498D9C2D1C443D93002D72D6 /* SIGCategory.m */; };
 		498D9C331C4440AA002D72D6 /* SIGCategoryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498D9C321C4440AA002D72D6 /* SIGCategoryListController.m */; };
 		498D9C361C444350002D72D6 /* MagentoShoppingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 498D9C351C444350002D72D6 /* MagentoShoppingService.m */; };
+		49DE1E971C57F09D00294D79 /* SIGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DE1E961C57F09D00294D79 /* SIGLoginViewController.m */; };
 		9B1F242C78FEFD537C2B6556 /* Pods_Signal_Commerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA6C37B6A12B30E0F575072 /* Pods_Signal_Commerce.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,8 @@
 		498D9C321C4440AA002D72D6 /* SIGCategoryListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGCategoryListController.m; sourceTree = "<group>"; };
 		498D9C341C444350002D72D6 /* MagentoShoppingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagentoShoppingService.h; sourceTree = "<group>"; };
 		498D9C351C444350002D72D6 /* MagentoShoppingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagentoShoppingService.m; sourceTree = "<group>"; };
+		49DE1E951C57F09D00294D79 /* SIGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGLoginViewController.h; sourceTree = "<group>"; };
+		49DE1E961C57F09D00294D79 /* SIGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGLoginViewController.m; sourceTree = "<group>"; };
 		7D327178267E21127EEC07F3 /* Pods-Signal Commerce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Signal Commerce.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Signal Commerce/Pods-Signal Commerce.debug.xcconfig"; sourceTree = "<group>"; };
 		8CA6C37B6A12B30E0F575072 /* Pods_Signal_Commerce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Signal_Commerce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF1CA390D4DBD2F15F3894A /* Pods-Signal Commerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Signal Commerce.release.xcconfig"; path = "Pods/Target Support Files/Pods-Signal Commerce/Pods-Signal Commerce.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +109,8 @@
 			children = (
 				49174F511C50158D00330C56 /* SIGSettingsController.h */,
 				49174F521C50158D00330C56 /* SIGSettingsController.m */,
+				49DE1E951C57F09D00294D79 /* SIGLoginViewController.h */,
+				49DE1E961C57F09D00294D79 /* SIGLoginViewController.m */,
 			);
 			name = "Signal Controllers";
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 				49534F921C440938008C6300 /* AppDelegate.m in Sources */,
 				49174F8E1C52D44000330C56 /* SIGPreferences.m in Sources */,
 				497B49701C45B96B006A21EF /* SIGProductDetailController.m in Sources */,
+				49DE1E971C57F09D00294D79 /* SIGLoginViewController.m in Sources */,
 				497B49631C446165006A21EF /* SIGMoney.m in Sources */,
 				49534F8F1C440938008C6300 /* main.m in Sources */,
 				498D9C331C4440AA002D72D6 /* SIGCategoryListController.m in Sources */,

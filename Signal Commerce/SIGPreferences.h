@@ -18,4 +18,8 @@
 
 +(NSString *)magentoServer;
 
++(void)setLoggedInUser:(NSString *)loggedInUser;
+
++(NSString *)loggedInUser;
+
 @end

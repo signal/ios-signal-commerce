@@ -98,4 +98,15 @@ typedef NS_ENUM(NSUInteger, StandardField) {
  */
 
 - (void)addCustomFields:(NSDictionary * _Nonnull)dictionary;
+
+/*!
+ Removes a standard field from the list of fields that are sent to the server.
+ */
+- (void)removeStandardField:(StandardField)field;
+
+/*!
+ Removes a custom field from the list of fields that are sent to the server.
+ */
+- (void)removeCustomField:(NSString * _Nonnull)fieldName;
+
 @end

@@ -62,6 +62,7 @@
     [self refreshCategories];
     if (_parentCategory == nil) {
         [self setupLeftMenuButton];
+        [self setupRightMenuButton];
         [[[SignalInc sharedInstance] defaultTracker] publish: @"view:category_list", nil];
     } else {
         [[[SignalInc sharedInstance] defaultTracker] publish: @"view:category_list" withDictionary: @{@"categoryId" : _parentCategory.categoryId}];
@@ -158,9 +159,19 @@
     [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
 }
 
+-(void)setupRightMenuButton {
+    MMDrawerBarButtonItem * rightDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(rightDrawerButtonPress:)];
+    rightDrawerButton.image = [UIImage imageNamed: @"973-user"];
+    [self.navigationItem setRightBarButtonItem:rightDrawerButton animated:YES];
+
+}
 
 -(void)leftDrawerButtonPress:(id)sender{
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+}
+
+-(void)rightDrawerButtonPress:(id)sender {
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideRight animated:YES completion:nil];
 }
 
 @end
