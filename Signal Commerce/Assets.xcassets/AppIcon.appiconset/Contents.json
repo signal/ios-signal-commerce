@@ -3,79 +3,79 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "signallogo120x120-1.png",
+      "filename" : "boutique_111_120.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "signallogo180x180-1.png",
+      "filename" : "boutique_111_180.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "signallogo120x120-2.png",
+      "filename" : "boutique_111_120-1.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "signallogo180x180-2.png",
+      "filename" : "boutique_111_180-1.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "signallogo120x120.png",
+      "filename" : "boutique_111_120-2.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "signallogo180x180.png",
+      "filename" : "boutique_111_180-2.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "signallogo29x29.png",
+      "filename" : "boutique_111_29.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "signallogo58x58.png",
+      "filename" : "boutique_111_58.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "signallogo60x60.png",
+      "filename" : "boutique_111_60.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "signallogo120x120-3.png",
+      "filename" : "boutique_111_120-3.png",
       "scale" : "2x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "signallogo76x76.png",
+      "filename" : "boutique_111_76.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "signallogo152x152.png",
+      "filename" : "boutique_111_152.png",
       "scale" : "2x"
     },
     {
       "size" : "83.5x83.5",
       "idiom" : "ipad",
-      "filename" : "signallogo167x167.png",
+      "filename" : "boutique_111_167.png",
       "scale" : "2x"
     }
   ],
