@@ -279,4 +279,11 @@
     }
 }
 
+- (IBAction)openSiteCode:(id)sender {
+    NSString *stringURL = [@"http://commerce.signal.ninja/?siteid=" stringByAppendingString: [_siteCode text]];
+    NSURL *url = [NSURL URLWithString:stringURL];
+    [[UIApplication sharedApplication] openURL:url];
+
+}
+
 @end
