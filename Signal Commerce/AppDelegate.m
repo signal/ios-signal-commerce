@@ -25,7 +25,7 @@
     _shoppingService = [[MagentoShoppingService alloc] init];
     _imageCache = [[SIGImageCache alloc] init];
 
-    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+    if ([self usingSplitView]) {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
         UINavigationController *navigationController = [splitViewController.viewControllers firstObject];
         navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
@@ -74,6 +74,11 @@
     } else {
         return NO;
     }
+}
+
+-(BOOL)usingSplitView {
+    return NO;
+//return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
 }
 
 @end

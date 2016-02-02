@@ -17,5 +17,8 @@
 @property (strong, nonatomic) id<SIGShoppingService> shoppingService;
 @property (strong, nonatomic) SIGImageCache *imageCache;
 
+
+-(BOOL)usingSplitView;
+
 @end
 
