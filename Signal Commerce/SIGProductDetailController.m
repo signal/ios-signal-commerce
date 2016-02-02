@@ -25,7 +25,6 @@
 @implementation SIGProductDetailController
 
 -(void)viewDidLoad {
-    NSLog(@"View did load");
     _pageControl.numberOfPages = 1;
     [_pageControl setPageIndicatorTintColor: [UIColor lightGrayColor]];
     [_pageControl setCurrentPageIndicatorTintColor: [UIColor grayColor]];
@@ -91,18 +90,17 @@
 }
 
 - (IBAction)pageUpdated:(id)sender {
-    [self updateImageAt:_pageControl.currentPage];
+    [self updateImageAt: (int)_pageControl.currentPage];
 }
 
 -(void)leftSwipe {
     _pageControl.currentPage = _pageControl.currentPage+1;
-    [self updateImageAt: _pageControl.currentPage];
+    [self updateImageAt: (int)_pageControl.currentPage];
 }
 
 -(void)rightSwipe {
-    NSLog(@"right");
     _pageControl.currentPage = _pageControl.currentPage-1;
-    [self updateImageAt: _pageControl.currentPage];
+    [self updateImageAt: (int)_pageControl.currentPage];
 }
 
 @end
