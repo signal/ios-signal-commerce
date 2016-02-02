@@ -38,6 +38,17 @@
     return [[NSArray alloc] init];
 }
 
+-(NSArray<NSString *> *)findAllImagesForProduct:(NSString *)productId {
+    NSString *urlString = [[self commerceUrl] stringByAppendingFormat: @"/products/%@/images", productId];
+    id json = [self request:urlString];
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    for (NSDictionary *dict in json) {
+        [arr addObject: dict[@"url"]];
+    }
+    return [arr copy];
+}
+
+
 #pragma mark - private methods
 
 - (NSString *)commerceUrl {
@@ -75,5 +86,6 @@
     }
     return [arr copy];
 }
+
 
 @end

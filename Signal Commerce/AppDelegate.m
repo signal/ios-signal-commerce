@@ -33,8 +33,8 @@
     } else {
         MMDrawerController * drawerController = (MMDrawerController *)self.window.rootViewController;
         [drawerController setMaximumRightDrawerWidth:200.0];
-        [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
-        [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+        [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
+        [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeNone];
         [drawerController setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
         }];
     }
