@@ -25,15 +25,13 @@
 @implementation SIGProductDetailController
 
 -(void)viewDidLoad {
+    NSLog(@"View did load");
     _pageControl.numberOfPages = 1;
-    _productImages = @[_product.imageUrl];
     [_pageControl setPageIndicatorTintColor: [UIColor lightGrayColor]];
     [_pageControl setCurrentPageIndicatorTintColor: [UIColor grayColor]];
 
-    [self refreshImages];
     [self setTitle:_product.name];
 
-    [self updateImageAt:0];
     [_price setText: [_product.cost description]];
 
     if (_product.instock) {
@@ -44,19 +42,33 @@
         [_instock setTextColor: [UIColor redColor]];
     }
     [_longDescription setText: _product.fullDescription];
-    [[[SignalInc sharedInstance] defaultTracker] publish:@"view_product" withDictionary:@{@"productId" : _product.sku}];
+    // this path will only happen on the iPad in splitview mode
+    if (!_product.imageUrl) {
+        [_instock setHidden: YES];
+        [_pageControl setHidden: YES];
+        _productImages = [[NSArray alloc] init];
+        // this would be the case on the iPad
+    } else {
+        _productImages = @[_product.imageUrl];
+        [self refreshImages];
+        [self updateImageAt:0];
 
-    UISwipeGestureRecognizer *swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipe)];
-    [swipeRightRecognizer setDirection:UISwipeGestureRecognizerDirectionRight];
-    [[self view] addGestureRecognizer:swipeRightRecognizer];
+        UISwipeGestureRecognizer *swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipe)];
+        [swipeRightRecognizer setDirection:UISwipeGestureRecognizerDirectionRight];
+        [[self view] addGestureRecognizer:swipeRightRecognizer];
 
-    UISwipeGestureRecognizer *leftRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipe)];
-    [leftRightRecognizer setDirection:UISwipeGestureRecognizerDirectionLeft];
-    [[self view] addGestureRecognizer:leftRightRecognizer];
+        UISwipeGestureRecognizer *leftRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipe)];
+        [leftRightRecognizer setDirection:UISwipeGestureRecognizerDirectionLeft];
+        [[self view] addGestureRecognizer:leftRightRecognizer];
+        [[[SignalInc sharedInstance] defaultTracker] publish:@"view_product" withDictionary:@{@"productId" : _product.sku}];
+    }
 
 }
 
 -(void)updateImageAt:(int)index {
+    if (index < 0 || index >= _productImages.count) {
+        return;
+    }
     NSURL *url = [NSURL URLWithString:_productImages[index]];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *img = [[UIImage alloc] initWithData: data];
@@ -79,10 +91,10 @@
 }
 
 - (IBAction)pageUpdated:(id)sender {
+    [self updateImageAt:_pageControl.currentPage];
 }
 
 -(void)leftSwipe {
-    NSLog(@"left");
     _pageControl.currentPage = _pageControl.currentPage+1;
     [self updateImageAt: _pageControl.currentPage];
 }
