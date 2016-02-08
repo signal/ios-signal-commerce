@@ -10,4 +10,7 @@
 
 @interface SIGLoginViewController : UIViewController
 
+@property (strong, nonatomic) UIViewController *handoff;
+@property (strong, nonatomic) UIViewController *parent;
+
 @end

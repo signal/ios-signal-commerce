@@ -19,6 +19,8 @@
 #import "SIGMoney.h"
 #import "SIGImageCache.h"
 #import "SIGPreferences.h"
+#import "SIGLoginViewController.h"
+
 #import <SignalSDK/SignalInc.h>
 
 @interface SIGCategoryListController()
@@ -69,7 +71,7 @@
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(nullable id)sender {
-    return [identifier isEqualToString:@"ShowProductDetail"] || [identifier isEqualToString:@"ShowShoppingCart"];
+    return [identifier isEqualToString:@"ShowProductDetail"] || [identifier isEqualToString:@"ShowShoppingCart"] || [identifier isEqualToString:@"ShowLogin"];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -163,6 +165,19 @@
     rightDrawerButton.image = [UIImage imageNamed: @"973-user"];
     [self.navigationItem setRightBarButtonItem:rightDrawerButton animated:YES];
 
+}
+- (IBAction)openAccount:(id)sender {
+    UIViewController* accountController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SIGAccountOverview"];
+    if ([SIGPreferences loggedInUser]) {
+        [self.navigationController pushViewController:accountController animated:NO];
+    } else {
+        SIGLoginViewController* rootController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SIGLoginViewController"];
+
+        rootController.handoff = accountController;
+        rootController.parent = self;
+        [self presentViewController:rootController animated:YES completion:^{
+        }];
+    }
 }
 
 -(void)leftDrawerButtonPress:(id)sender{

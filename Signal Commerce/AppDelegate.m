@@ -12,6 +12,7 @@
 #import "MagentoShoppingService.h"
 #import "SIGImageCache.h"
 #import "SIGProductDetailController.h"
+#import "SIGCart.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -24,6 +25,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     _shoppingService = [[MagentoShoppingService alloc] init];
     _imageCache = [[SIGImageCache alloc] init];
+    _cart = [[SIGCart alloc] init];
 
     if ([self usingSplitView]) {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;

@@ -8,6 +8,7 @@
 
 #import "SIGProductDetailController.h"
 #import "SIGMoney.h"
+#import "SIGCart.h"
 #import "AppDelegate.h"
 #import <SignalSDK/SignalInc.h>
 
@@ -101,6 +102,10 @@
 -(void)rightSwipe {
     _pageControl.currentPage = _pageControl.currentPage-1;
     [self updateImageAt: (int)_pageControl.currentPage];
+}
+
+- (IBAction)addToCartClicked:(id)sender {
+    [[self appDelegate].cart add: _product withQuantity: 1];
 }
 
 @end

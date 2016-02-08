@@ -22,17 +22,9 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear: animated];
-    NSString *loggedinUser = [SIGPreferences loggedInUser];
-    if ([loggedinUser length] != 0) {
-        [_loginButton setTitle:@"Logout" forState: UIControlStateNormal];
-    } else {
-        [_loginButton setTitle:@"Login" forState: UIControlStateNormal];
-    }
-    [_userText setText: loggedinUser];
 }
 
 - (IBAction)loginPressed:(id)sender {
-    MMDrawerController * drawerController = (MMDrawerController *)self.parentViewController;
     NSString *loggedinUser = [SIGPreferences loggedInUser];
 
     // TODO: this is a crappy way to do this.
@@ -41,12 +33,20 @@
         [[SignalInc sharedInstance].signalConfig removeCustomField:@"uid-hashed-email-sha256"];
 
     } else {
-        [SIGPreferences setLoggedInUser: [_userText text]];
-        [[SignalInc sharedInstance].signalConfig addCustomFields:@{@"uid-hashed-email-sha256" : [SignalHashes sha256:[_userText text]] }];
 
     }
-    [drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
-        return;
+}
+
+- (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+    }];
+}
+
+- (IBAction)login:(id)sender {
+    [SIGPreferences setLoggedInUser: [_userText text]];
+    [[SignalInc sharedInstance].signalConfig addCustomFields:@{@"uid-hashed-email-sha256" : [SignalHashes sha256:[_userText text]] }];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [_parent.navigationController pushViewController:_handoff animated:NO];
     }];
 }
 

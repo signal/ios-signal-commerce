@@ -27,6 +27,10 @@
 		498D9C331C4440AA002D72D6 /* SIGCategoryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498D9C321C4440AA002D72D6 /* SIGCategoryListController.m */; };
 		498D9C361C444350002D72D6 /* MagentoShoppingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 498D9C351C444350002D72D6 /* MagentoShoppingService.m */; };
 		49DE1E971C57F09D00294D79 /* SIGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DE1E961C57F09D00294D79 /* SIGLoginViewController.m */; };
+		49E1F9071C69017B0084408A /* SIGCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E1F9061C69017B0084408A /* SIGCart.m */; };
+		49E1F90A1C6901AA0084408A /* SIGCartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E1F9091C6901AA0084408A /* SIGCartItem.m */; };
+		49E1F90D1C69198A0084408A /* SIGCartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E1F90C1C69198A0084408A /* SIGCartController.m */; };
+		49E1F9101C69439F0084408A /* SIGAccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E1F90F1C69439F0084408A /* SIGAccountController.m */; };
 		9B1F242C78FEFD537C2B6556 /* Pods_Signal_Commerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA6C37B6A12B30E0F575072 /* Pods_Signal_Commerce.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +81,14 @@
 		498D9C351C444350002D72D6 /* MagentoShoppingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagentoShoppingService.m; sourceTree = "<group>"; };
 		49DE1E951C57F09D00294D79 /* SIGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGLoginViewController.h; sourceTree = "<group>"; };
 		49DE1E961C57F09D00294D79 /* SIGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGLoginViewController.m; sourceTree = "<group>"; };
+		49E1F9051C69017B0084408A /* SIGCart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGCart.h; sourceTree = "<group>"; };
+		49E1F9061C69017B0084408A /* SIGCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGCart.m; sourceTree = "<group>"; };
+		49E1F9081C6901AA0084408A /* SIGCartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGCartItem.h; sourceTree = "<group>"; };
+		49E1F9091C6901AA0084408A /* SIGCartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGCartItem.m; sourceTree = "<group>"; };
+		49E1F90B1C69198A0084408A /* SIGCartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGCartController.h; sourceTree = "<group>"; };
+		49E1F90C1C69198A0084408A /* SIGCartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGCartController.m; sourceTree = "<group>"; };
+		49E1F90E1C69439F0084408A /* SIGAccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGAccountController.h; sourceTree = "<group>"; };
+		49E1F90F1C69439F0084408A /* SIGAccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGAccountController.m; sourceTree = "<group>"; };
 		7D327178267E21127EEC07F3 /* Pods-Signal Commerce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Signal Commerce.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Signal Commerce/Pods-Signal Commerce.debug.xcconfig"; sourceTree = "<group>"; };
 		8CA6C37B6A12B30E0F575072 /* Pods_Signal_Commerce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Signal_Commerce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF1CA390D4DBD2F15F3894A /* Pods-Signal Commerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Signal Commerce.release.xcconfig"; path = "Pods/Target Support Files/Pods-Signal Commerce/Pods-Signal Commerce.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +123,8 @@
 				49174F521C50158D00330C56 /* SIGSettingsController.m */,
 				49DE1E951C57F09D00294D79 /* SIGLoginViewController.h */,
 				49DE1E961C57F09D00294D79 /* SIGLoginViewController.m */,
+				49E1F90E1C69439F0084408A /* SIGAccountController.h */,
+				49E1F90F1C69439F0084408A /* SIGAccountController.m */,
 			);
 			name = "Signal Controllers";
 			sourceTree = "<group>";
@@ -186,6 +200,10 @@
 				497B495F1C445828006A21EF /* SIGProduct.m */,
 				497B49611C446165006A21EF /* SIGMoney.h */,
 				497B49621C446165006A21EF /* SIGMoney.m */,
+				49E1F9051C69017B0084408A /* SIGCart.h */,
+				49E1F9061C69017B0084408A /* SIGCart.m */,
+				49E1F9081C6901AA0084408A /* SIGCartItem.h */,
+				49E1F9091C6901AA0084408A /* SIGCartItem.m */,
 			);
 			name = Shopping;
 			sourceTree = "<group>";
@@ -197,6 +215,8 @@
 				498D9C321C4440AA002D72D6 /* SIGCategoryListController.m */,
 				497B496E1C45B96B006A21EF /* SIGProductDetailController.h */,
 				497B496F1C45B96B006A21EF /* SIGProductDetailController.m */,
+				49E1F90B1C69198A0084408A /* SIGCartController.h */,
+				49E1F90C1C69198A0084408A /* SIGCartController.m */,
 			);
 			name = ShoppingPath;
 			sourceTree = "<group>";
@@ -367,6 +387,10 @@
 				49174F531C50158D00330C56 /* SIGSettingsController.m in Sources */,
 				498D9C2E1C443D93002D72D6 /* SIGCategory.m in Sources */,
 				497B49601C445828006A21EF /* SIGProduct.m in Sources */,
+				49E1F90D1C69198A0084408A /* SIGCartController.m in Sources */,
+				49E1F9071C69017B0084408A /* SIGCart.m in Sources */,
+				49E1F9101C69439F0084408A /* SIGAccountController.m in Sources */,
+				49E1F90A1C6901AA0084408A /* SIGCartItem.m in Sources */,
 				492F04F41C46F09400F5AF98 /* SIGImageCache.m in Sources */,
 				498D9C361C444350002D72D6 /* MagentoShoppingService.m in Sources */,
 				49534F921C440938008C6300 /* AppDelegate.m in Sources */,
