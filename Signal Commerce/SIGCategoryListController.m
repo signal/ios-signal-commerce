@@ -62,7 +62,6 @@
     [self refreshCategories];
     if (_parentCategory == nil) {
         [self setupLeftMenuButton];
-        [self setupRightMenuButton];
         [[[SignalInc sharedInstance] defaultTracker] publish: @"view:category_list", nil];
     } else {
         [[[SignalInc sharedInstance] defaultTracker] publish: @"view:category_list" withDictionary: @{@"categoryId" : _parentCategory.categoryId}];
@@ -70,7 +69,7 @@
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(nullable id)sender {
-    return [identifier isEqualToString:@"ShowProductDetail"];
+    return [identifier isEqualToString:@"ShowProductDetail"] || [identifier isEqualToString:@"ShowShoppingCart"];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -155,7 +154,7 @@
 
 -(void)setupLeftMenuButton{
     MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
-    leftDrawerButton.image = [UIImage imageNamed: @"740-gear"];
+    leftDrawerButton.image = [UIImage imageNamed: @"740-gear-toolbar"];
     [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
 }
 
