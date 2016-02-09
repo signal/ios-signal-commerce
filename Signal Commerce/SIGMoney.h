@@ -10,6 +10,10 @@
 
 @interface SIGMoney : NSObject
 
+-(instancetype)init;
+
 -(instancetype)initWithNumber:(NSNumber *)numberValue;
+
+-(SIGMoney *)add:(SIGMoney *)money;
 
 @end

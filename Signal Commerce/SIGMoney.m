@@ -16,13 +16,25 @@
 
 @implementation SIGMoney
 
+-(instancetype)init {
+    return [self initWithInternalNumber: 0];
+}
+
 -(instancetype)initWithNumber:(NSNumber *)numberValue {
+    return [self initWithInternalNumber:(int)[numberValue floatValue] * 100];
+}
+
+// default initializer
+-(instancetype)initWithInternalNumber:(int)value {
     self = [super init];
     if (self) {
-        _value = (int)[numberValue floatValue] * 100;
-        return self;
+        _value = value;
     }
-    return nil;
+    return self;
+}
+
+-(SIGMoney *)add:(SIGMoney *)money {
+    return [[SIGMoney alloc] initWithInternalNumber: money.value + _value];
 }
 
 -(NSString *)description {

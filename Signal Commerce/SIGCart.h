@@ -10,11 +10,14 @@
 
 @class SIGProduct;
 @class SIGCartItem;
+@class SIGMoney;
 
 @interface SIGCart : NSObject
 
 -(void)add:(SIGProduct *)product withQuantity:(int)quantity;
 
 -(NSArray<SIGCartItem *> *)cartItems;
+
+-(SIGMoney *)subtotal;
 
 @end

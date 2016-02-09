@@ -9,6 +9,7 @@
 #import "SIGCart.h"
 #import "SIGCartItem.h"
 #import "SIGProduct.h"
+#import "SIGMoney.h"
 
 @interface SIGCart()
 
@@ -32,6 +33,15 @@
 
 -(NSArray<SIGCartItem *> *)cartItems {
     return [_items copy];
+}
+
+-(SIGMoney *)subtotal {
+    SIGMoney *money = [[SIGMoney alloc] init];
+    for (SIGCartItem *item in _items) {
+        // TODO: handle quantity
+        money = [item.product.cost add: money];
+    }
+    return money;
 }
 
 @end
