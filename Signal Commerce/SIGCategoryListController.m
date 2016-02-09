@@ -9,6 +9,7 @@
 #import "MMDrawerController.h"
 #import "MMDrawerBarButtonItem.h"
 #import "UIViewController+MMDrawerController.h"
+#import <BBBadgeBarButtonItem/BBBadgeBarButtonItem.h>
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
@@ -20,6 +21,8 @@
 #import "SIGImageCache.h"
 #import "SIGPreferences.h"
 #import "SIGLoginViewController.h"
+#import "SIGCart.h"
+#import "SIGCartController.h"
 
 #import <SignalSDK/SignalInc.h>
 
@@ -57,6 +60,19 @@
     } else {
         [self setTitle: _parentCategory.name];
     }
+
+    UIBarButtonItem *userButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed: @"973-user-toolbar" ] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(openAccount)];
+    UIButton *cartView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    [cartView addTarget:self action:@selector(shoppingCartClick) forControlEvents:UIControlEventTouchUpInside];
+    [cartView setImage: [[UIImage imageNamed: @"952-shopping-cart-toolbar"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    [cartView setUserInteractionEnabled:YES];
+
+    BBBadgeBarButtonItem *cartButton = [[BBBadgeBarButtonItem alloc] initWithCustomUIButton:cartView];
+    cartButton.badgeValue = [self cartAmount];
+    cartButton.badgeMinSize = 2;
+    cartButton.badgePadding = 3;
+    cartButton.shouldHideBadgeAtZero = YES;
+    [self.navigationItem setRightBarButtonItems:@[userButton, cartButton]];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -68,6 +84,8 @@
     } else {
         [[[SignalInc sharedInstance] defaultTracker] publish: @"view:category_list" withDictionary: @{@"categoryId" : _parentCategory.categoryId}];
     }
+    BBBadgeBarButtonItem *cartButton = (BBBadgeBarButtonItem *)self.navigationItem.rightBarButtonItems[1];
+    cartButton.badgeValue = [self cartAmount];
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(nullable id)sender {
@@ -154,19 +172,13 @@
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
--(void)setupLeftMenuButton{
+-(void)setupLeftMenuButton {
     MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
     leftDrawerButton.image = [UIImage imageNamed: @"740-gear-toolbar"];
     [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
 }
 
--(void)setupRightMenuButton {
-    MMDrawerBarButtonItem * rightDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(rightDrawerButtonPress:)];
-    rightDrawerButton.image = [UIImage imageNamed: @"973-user"];
-    [self.navigationItem setRightBarButtonItem:rightDrawerButton animated:YES];
-
-}
-- (IBAction)openAccount:(id)sender {
+- (void)openAccount {
     UIViewController* accountController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SIGAccountOverview"];
     if ([SIGPreferences loggedInUser]) {
         [self.navigationController pushViewController:accountController animated:NO];
@@ -180,12 +192,19 @@
     }
 }
 
--(void)leftDrawerButtonPress:(id)sender{
+-(NSString *)cartAmount {
+    return [NSString stringWithFormat:@"%lu", (unsigned long)[[self appDelegate].cart cartItems].count];
+}
+
+-(void)leftDrawerButtonPress:(id)sender {
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
--(void)rightDrawerButtonPress:(id)sender {
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideRight animated:YES completion:nil];
+-(void)shoppingCartClick {
+    SIGCartController* cartController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SIGCartController"];
+
+    [self.navigationController pushViewController:cartController animated:YES];
+
 }
 
 @end

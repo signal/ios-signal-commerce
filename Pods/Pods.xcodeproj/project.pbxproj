@@ -7,69 +7,81 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		006D64826B7506375FA2A3995FA0B91F /* MMDrawerController-Storyboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5178813B59A7D5E953CF5A2F839528 /* MMDrawerController-Storyboard-dummy.m */; };
-		00AB9667C6E85C84AA87F4055C95475D /* MMDrawerController+Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = F930789E5E1F335ADD735684FC9209F0 /* MMDrawerController+Subclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		006D64826B7506375FA2A3995FA0B91F /* MMDrawerController-Storyboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B8F4E3A2BC55EA463D630D449CD01C /* MMDrawerController-Storyboard-dummy.m */; };
+		00AB9667C6E85C84AA87F4055C95475D /* MMDrawerController+Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AB3D16F3109C15232662A662962F677 /* MMDrawerController+Subclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		148C064F085AFF0C919FBA804AE8E3D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3003BEC5E1242FB2E1F5FBC866DB231A /* Foundation.framework */; };
-		1A06C67FD9729D1FB0BF2CBBD0E105CA /* FICUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 317D0684AFE423E10118715E5959F05E /* FICUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BE6CF55F21915FE9194F67B7AFBFE4F /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEDDF344057974B723D7329F60C31CA /* MMDrawerBarButtonItem.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		2550DF6FF42DCDC754EA66884350A548 /* MMDrawerBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B52273AFCA05C3531B4A27A0659939C /* MMDrawerBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2C0E7B14F4D9D011CDD02BE012EA02A5 /* MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = A81B072572EF31F519E9DB9490132635 /* MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A06C67FD9729D1FB0BF2CBBD0E105CA /* FICUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 818545BCD2BBDEAF115743C52F7A8506 /* FICUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BE6CF55F21915FE9194F67B7AFBFE4F /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C57CA82FC74D9632CB4127E42D9D80E /* MMDrawerBarButtonItem.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2550DF6FF42DCDC754EA66884350A548 /* MMDrawerBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 62694048ABBED5E96B3A2342F883ABF4 /* MMDrawerBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B7D56B37970B003F257FD79493DA972 /* Pods-Signal Commerce-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 37344C1A5D9DCC3CA749452DAB563168 /* Pods-Signal Commerce-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C0E7B14F4D9D011CDD02BE012EA02A5 /* MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = F55EF97646D8E90300544B2E73A9276B /* MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37B9C49F8A148C592C4029729F7A04F2 /* MMDrawerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8F55FED44F61C2561025AED7441180 /* MMDrawerController.framework */; };
-		3B8CBBEB4F30D9CBAF21AA0E4A724C67 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 994F11370B44A4CD187842740A612DB5 /* MMDrawerController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		42582CBD9CAD5B564C2F507E4F375AA4 /* FICImageTableChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE41ACEFDC923BB2922B7EEA3C5039B /* FICImageTableChunk.m */; };
-		49F2958F4A3D26D8C9FB9964709DD1E5 /* MMDrawerController-Storyboard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B0B853D0B541D09868BE9B0038111545 /* MMDrawerController-Storyboard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4A6B67FBD446549DC0364E250EE3B781 /* MMDrawerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B96E64BB2C62E94F435BBF3670C038 /* MMDrawerController-dummy.m */; };
-		54C43124FB645F3A5B666DEC20E77825 /* FICImageTable.h in Headers */ = {isa = PBXBuildFile; fileRef = D50B17B7B807678A799FB83D6FA64B4E /* FICImageTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5F91F7E4D8BBCC82703ACEB4D02EF168 /* FastImageCache-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A15AD08693C60A4121D5193C9A4638 /* FastImageCache-dummy.m */; };
-		5FA4FCCDD752208198CB17A27DCDF43B /* FICImageTableEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 352CE725AED9ADC8B4131460C3382179 /* FICImageTableEntry.m */; };
-		6113E49EFC633AE8787EB7326D6B0D3B /* FICImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B23964D65B5974F79EB8B106E27D920 /* FICImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		63AFE0ED1CBD542FEF26CFE3053F100C /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11414EE80FB94F1505F7BA8ED7FC3A5A /* UIViewController+MMDrawerController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		395CE8172FAABF4FFC114A636A542DAC /* BBBadgeBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A05CB350C7098816DA12F0064D81099 /* BBBadgeBarButtonItem.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		3B8CBBEB4F30D9CBAF21AA0E4A724C67 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC0FDDC74891DF6769315F5290F97BF /* MMDrawerController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		42582CBD9CAD5B564C2F507E4F375AA4 /* FICImageTableChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EEA48B58348820E2502E59CEE8343A /* FICImageTableChunk.m */; };
+		49F2958F4A3D26D8C9FB9964709DD1E5 /* MMDrawerController-Storyboard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FDF32800E4B4DF2D0481644E5972501B /* MMDrawerController-Storyboard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4A6B67FBD446549DC0364E250EE3B781 /* MMDrawerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9C93E992B4B1B8950E9789BB3DCDA3 /* MMDrawerController-dummy.m */; };
+		4BE445A27E62407BDD151CE29C2C13D3 /* BBBadgeBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 49737A445ECAA9DD2C412E299A8EEF0A /* BBBadgeBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54C43124FB645F3A5B666DEC20E77825 /* FICImageTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B61FBB48FD993997A2041A98E252727 /* FICImageTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F91F7E4D8BBCC82703ACEB4D02EF168 /* FastImageCache-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA28768C59DCA3152D9D5CEDB8E65652 /* FastImageCache-dummy.m */; };
+		5FA4FCCDD752208198CB17A27DCDF43B /* FICImageTableEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B490A43B5E0478A01CB37027B5EB1B /* FICImageTableEntry.m */; };
+		6113E49EFC633AE8787EB7326D6B0D3B /* FICImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 21F68994F668DD7D76C6072C83F84F7D /* FICImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63AFE0ED1CBD542FEF26CFE3053F100C /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32776943FD4876CF87DCCC701F4BB973 /* UIViewController+MMDrawerController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		72E46ABE7108599EDECB53A461D6D681 /* BBBadgeBarButtonItem-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCD8EB6644D31631468BAE69B0ED83E /* BBBadgeBarButtonItem-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7566AD6AE89DC369434722C0676BC000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3003BEC5E1242FB2E1F5FBC866DB231A /* Foundation.framework */; };
+		75AC162A5D4430403FB8C3DDD433CA8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3003BEC5E1242FB2E1F5FBC866DB231A /* Foundation.framework */; };
 		7F5F911A1133F3E3EC21B0D60AAE3C8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3003BEC5E1242FB2E1F5FBC866DB231A /* Foundation.framework */; };
-		870B8CED84DE70CD25C41F5B6FFDDB42 /* FICImageTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E29C073375DF50A44CE1A2CD54EEA03 /* FICImageTable.m */; };
-		87E9DF92EC59F187381F74D34ECC797D /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7ED5DE061BDDFA47EB1A8D8BB232D4 /* MMDrawerVisualState.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		89F2AABC615CCEA126064B0050F03736 /* FICImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 16390D65D121D92517E664FE08FF4A85 /* FICImageCache.m */; };
-		8A1A27A10CBE1606F7D663BF4E95E809 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3003BEC5E1242FB2E1F5FBC866DB231A /* Foundation.framework */; };
-		929A2862089FB370B7E2A698386760A1 /* FICUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85675134F4E1B3974A24175EC7BD25 /* FICUtilities.m */; };
+		870B8CED84DE70CD25C41F5B6FFDDB42 /* FICImageTable.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF186ED3AA8FD48C3841B78E8DAD211 /* FICImageTable.m */; };
+		87E9DF92EC59F187381F74D34ECC797D /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF1B7285E0515DAABA820C00C016B01 /* MMDrawerVisualState.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		89F2AABC615CCEA126064B0050F03736 /* FICImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1D1C162CC6BA2AC019549FA0B90566 /* FICImageCache.m */; };
+		929A2862089FB370B7E2A698386760A1 /* FICUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EAE262FB468D138140E9AEA0C4CA76 /* FICUtilities.m */; };
+		92F549F793242F86DFCCB04D03899D57 /* BBBadgeBarButtonItem-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC5ABFABE400F4D665016E3CE8D4484 /* BBBadgeBarButtonItem-dummy.m */; };
 		9827FDDDF3D577A165EE85D38F915A3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3003BEC5E1242FB2E1F5FBC866DB231A /* Foundation.framework */; };
-		9B05D44CBF3A829F16ACC277D3E2A840 /* FICImports.h in Headers */ = {isa = PBXBuildFile; fileRef = 69ABAADF9F8D6E79CCB3B0F5C6CF59A7 /* FICImports.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A071D0EC0B86BECDB1F5D44511AB4E1A /* MMDrawerVisualState.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EA4284E07346B6BBF9B8AA0770A206 /* MMDrawerVisualState.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A839EBBBCA86D330FC9C0638452877F0 /* MMDrawerController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A82D61358E8F2D2BE847E03EE985E09 /* MMDrawerController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A88435A908946D66B2DB0891283299DB /* FICEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = F19592AAD7E1B75CEF1D938230F6A43C /* FICEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ADA8F7E3E5EFDC6B8007255ED5B2093A /* MMDrawerController+Storyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BA50FFD79111B4463C66D4799B9DB7 /* MMDrawerController+Storyboard.m */; };
+		9B05D44CBF3A829F16ACC277D3E2A840 /* FICImports.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F79555CD55A596483CF077E68954F6C /* FICImports.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A071D0EC0B86BECDB1F5D44511AB4E1A /* MMDrawerVisualState.h in Headers */ = {isa = PBXBuildFile; fileRef = F2D05D75C151E61C2F1C298AD726645E /* MMDrawerVisualState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A839EBBBCA86D330FC9C0638452877F0 /* MMDrawerController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 57429F0F272FA6B76E8DE415530FE3B6 /* MMDrawerController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A88435A908946D66B2DB0891283299DB /* FICEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = D7254617660D2B33DD2D000BD3458610 /* FICEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ADA8F7E3E5EFDC6B8007255ED5B2093A /* MMDrawerController+Storyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 939A06D14200511BCDAC207FB9447065 /* MMDrawerController+Storyboard.m */; };
 		BA8B58BD8C0D06680BA81693D7454F9D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F13E048474DA686B0234A3E43D4590A2 /* QuartzCore.framework */; };
-		CAE2EF6171328E8B33AE6E7A2E96597B /* UIViewController+MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 48D0209120C81C1DDC3B743CDB467DD6 /* UIViewController+MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CE48EB6292161192EF66EEC4460C89B2 /* FICImageCache+FICErrorLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = BDBA40544AB87749C175779E40122E01 /* FICImageCache+FICErrorLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D09AE0012C4555EB6950A46221B8600F /* MMDrawerController+Storyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E06585230BE5937791F5B872E2D36EB /* MMDrawerController+Storyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D87C721C8C007979376A1F92F51929C3 /* FICImageTableEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = ED872C3582D950DC5A8171568724C5FA /* FICImageTableEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DEF6474B4DBAE9935194F7EC3313C826 /* FICImageFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA951D7556DFBE6B698123676CA0CE1 /* FICImageFormat.m */; };
-		E998D7F4F75D0DD3B8432F3AF06CBB6A /* FICImageTableChunk.h in Headers */ = {isa = PBXBuildFile; fileRef = 6097DBB8DF72AE9CF37FD0DF61399B18 /* FICImageTableChunk.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EA71602A29E257B66508D01DFB842957 /* FastImageCache-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00FDA6FDDBC63E0353DB3E8C8858153F /* FastImageCache-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDE3D94610E15708C9BBD627D2C5EC32 /* FICImageFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AF52DFB4127FBC967CD5800E11B66C4 /* FICImageFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FC2E01D538A34EB017A3668C5B63750F /* Pods-Signal Commerce-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 472ED13516508237E42D01F454915E7A /* Pods-Signal Commerce-dummy.m */; };
-		FEC1F866313BBD9D4278C2EC8AD71EA9 /* Pods-Signal Commerce-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 37344C1A5D9DCC3CA749452DAB563168 /* Pods-Signal Commerce-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAE2EF6171328E8B33AE6E7A2E96597B /* UIViewController+MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = BABCFD5D95862AC6F5A1808147498CBA /* UIViewController+MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE48EB6292161192EF66EEC4460C89B2 /* FICImageCache+FICErrorLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C795373F75A6995E34A20FB0282EFBF /* FICImageCache+FICErrorLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D09AE0012C4555EB6950A46221B8600F /* MMDrawerController+Storyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 79B9EDD4C703934C6A5CC0ED121C56BC /* MMDrawerController+Storyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D87C721C8C007979376A1F92F51929C3 /* FICImageTableEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = B1F258F3034C0622F31BB2917F015CBD /* FICImageTableEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DEF6474B4DBAE9935194F7EC3313C826 /* FICImageFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A58DE1BEF906ADF0CEF9E749CAB04F /* FICImageFormat.m */; };
+		E998D7F4F75D0DD3B8432F3AF06CBB6A /* FICImageTableChunk.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E428C5C9EB2D271F811D3DCBC0D24E2 /* FICImageTableChunk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA71602A29E257B66508D01DFB842957 /* FastImageCache-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B2C10D42E4689531A661F3B3B0EAB58 /* FastImageCache-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDE3D94610E15708C9BBD627D2C5EC32 /* FICImageFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = AD580F466B9D669DE5B644F6E92F07A7 /* FICImageFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F62DEC49FA5C922F29486FF74B79E10B /* Pods-Signal Commerce-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 472ED13516508237E42D01F454915E7A /* Pods-Signal Commerce-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1A9893AB6A283EE373EF912E4E9BA947 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 96D3562E47E4792B0A6093A0323EB398;
-			remoteInfo = MMDrawerController;
-		};
-		3AA0F13C790406484D0AFDBEAF0B1A86 /* PBXContainerItemProxy */ = {
+		35B5E522EE8D06C7F6813B6EE89ED7E3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 9E09AC22F8233BAD49C758F5FF7FF243;
 			remoteInfo = "MMDrawerController-Storyboard";
 		};
-		8C7EBB6BF2A43ED97DB24CB8BB318DFA /* PBXContainerItemProxy */ = {
+		4ABC3D3BE3F5117F5ACB339CADAA419B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 643C8AC0C8427869989A7290C2B19B87;
 			remoteInfo = FastImageCache;
+		};
+		59922EA1DAD14545973FD4406192E161 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 996C4CEDBD819845E4AE075097DBD57D;
+			remoteInfo = BBBadgeBarButtonItem;
+		};
+		8A6F7486091C20C33C89D5CBBAED672D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96D3562E47E4792B0A6093A0323EB398;
+			remoteInfo = MMDrawerController;
 		};
 		F20283D1B6F2EC4B4FE7F392486BA906 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -81,79 +93,80 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00FDA6FDDBC63E0353DB3E8C8858153F /* FastImageCache-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FastImageCache-umbrella.h"; sourceTree = "<group>"; };
-		04B96E64BB2C62E94F435BBF3670C038 /* MMDrawerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController-dummy.m"; sourceTree = "<group>"; };
+		00B490A43B5E0478A01CB37027B5EB1B /* FICImageTableEntry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageTableEntry.m; path = FastImageCache/FICImageTableEntry.m; sourceTree = "<group>"; };
+		0201C153F615E6CC07216810557C300B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05EAE262FB468D138140E9AEA0C4CA76 /* FICUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICUtilities.m; path = FastImageCache/FICUtilities.m; sourceTree = "<group>"; };
+		0749F55F3C1FE278A165F2A3C9CD1077 /* MMDrawerController-Storyboard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "MMDrawerController-Storyboard.modulemap"; sourceTree = "<group>"; };
 		0A8F55FED44F61C2561025AED7441180 /* MMDrawerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MMDrawerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0ADE1E1A6362E6016C80643087B0B56F /* MMDrawerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MMDrawerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		11414EE80FB94F1505F7BA8ED7FC3A5A /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
-		16390D65D121D92517E664FE08FF4A85 /* FICImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageCache.m; path = FastImageCache/FICImageCache.m; sourceTree = "<group>"; };
-		167F975A1A01B351F3DAD727F8D46E04 /* MMDrawerController_Storyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MMDrawerController_Storyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		19A4DBF2F4CC3CEF98A3AEB055DA8B27 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19BA50FFD79111B4463C66D4799B9DB7 /* MMDrawerController+Storyboard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController+Storyboard.m"; sourceTree = "<group>"; };
-		1EA0CCD75AA0C36FC1CE4D401E58884F /* MMDrawerController-Storyboard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "MMDrawerController-Storyboard.modulemap"; sourceTree = "<group>"; };
+		0C57CA82FC74D9632CB4127E42D9D80E /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerBarButtonItem.m; path = MMDrawerController/MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		0E428C5C9EB2D271F811D3DCBC0D24E2 /* FICImageTableChunk.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageTableChunk.h; path = FastImageCache/FICImageTableChunk.h; sourceTree = "<group>"; };
+		0FC0FDDC74891DF6769315F5290F97BF /* MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
+		1FCD8EB6644D31631468BAE69B0ED83E /* BBBadgeBarButtonItem-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BBBadgeBarButtonItem-umbrella.h"; sourceTree = "<group>"; };
+		21F68994F668DD7D76C6072C83F84F7D /* FICImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageCache.h; path = FastImageCache/FICImageCache.h; sourceTree = "<group>"; };
 		242EBA22E3A3B5A0E9BC44E349F62AE3 /* Pods-Signal Commerce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Signal Commerce.debug.xcconfig"; sourceTree = "<group>"; };
-		2AF52DFB4127FBC967CD5800E11B66C4 /* FICImageFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageFormat.h; path = FastImageCache/FICImageFormat.h; sourceTree = "<group>"; };
+		24EEA48B58348820E2502E59CEE8343A /* FICImageTableChunk.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageTableChunk.m; path = FastImageCache/FICImageTableChunk.m; sourceTree = "<group>"; };
+		2B2C10D42E4689531A661F3B3B0EAB58 /* FastImageCache-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FastImageCache-umbrella.h"; sourceTree = "<group>"; };
+		2F79555CD55A596483CF077E68954F6C /* FICImports.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImports.h; path = FastImageCache/FICImports.h; sourceTree = "<group>"; };
 		3003BEC5E1242FB2E1F5FBC866DB231A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		317D0684AFE423E10118715E5959F05E /* FICUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICUtilities.h; path = FastImageCache/FICUtilities.h; sourceTree = "<group>"; };
-		332E1936A4A398A7B5236EF17E1ECB71 /* FastImageCache.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FastImageCache.xcconfig; sourceTree = "<group>"; };
-		352CE725AED9ADC8B4131460C3382179 /* FICImageTableEntry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageTableEntry.m; path = FastImageCache/FICImageTableEntry.m; sourceTree = "<group>"; };
-		353337FF0F56F4F6C18CD239EABED9CD /* FastImageCache-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FastImageCache-prefix.pch"; sourceTree = "<group>"; };
+		32776943FD4876CF87DCCC701F4BB973 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		33D43472BC24D1C025BB736E5BB2E831 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37344C1A5D9DCC3CA749452DAB563168 /* Pods-Signal Commerce-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Signal Commerce-umbrella.h"; sourceTree = "<group>"; };
+		39699F5FB877AC3A0C7AD9040C48F774 /* BBBadgeBarButtonItem.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = BBBadgeBarButtonItem.modulemap; sourceTree = "<group>"; };
+		3B61FBB48FD993997A2041A98E252727 /* FICImageTable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageTable.h; path = FastImageCache/FICImageTable.h; sourceTree = "<group>"; };
+		3D070AF4889DBA63DAE72B2786604756 /* FastImageCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FastImageCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		472ED13516508237E42D01F454915E7A /* Pods-Signal Commerce-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Signal Commerce-dummy.m"; sourceTree = "<group>"; };
-		485668478421A7AE4CCDDFB521B80433 /* FastImageCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FastImageCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		48D0209120C81C1DDC3B743CDB467DD6 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MMDrawerController.h"; path = "MMDrawerController/UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		49737A445ECAA9DD2C412E299A8EEF0A /* BBBadgeBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BBBadgeBarButtonItem.h; path = BBBadgeBarButtonItem/BBBadgeBarButtonItem.h; sourceTree = "<group>"; };
+		49C5E0B4C77079E6D47B5F2E6FED1AEE /* MMDrawerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MMDrawerController.xcconfig; sourceTree = "<group>"; };
 		4B1967508661CA6A69F607642B3F753C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B4061ED7076DAAE048AC19BC2A0CF18 /* MMDrawerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MMDrawerController.xcconfig; sourceTree = "<group>"; };
-		4B52273AFCA05C3531B4A27A0659939C /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerBarButtonItem.h; path = MMDrawerController/MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
-		4C5C14DBFC275936E793AA34695CF3C0 /* MMDrawerController-Storyboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController-Storyboard-prefix.pch"; sourceTree = "<group>"; };
-		50A15AD08693C60A4121D5193C9A4638 /* FastImageCache-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FastImageCache-dummy.m"; sourceTree = "<group>"; };
+		4BEF494CD5E82119717F47997D83DFE0 /* BBBadgeBarButtonItem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BBBadgeBarButtonItem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D57954C0BDDA772AA343BFE245911B4 /* FastImageCache.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FastImageCache.modulemap; sourceTree = "<group>"; };
 		5472F32323DA571734258B825224039F /* Pods-Signal Commerce-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Signal Commerce-resources.sh"; sourceTree = "<group>"; };
-		5C85675134F4E1B3974A24175EC7BD25 /* FICUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICUtilities.m; path = FastImageCache/FICUtilities.m; sourceTree = "<group>"; };
+		57429F0F272FA6B76E8DE415530FE3B6 /* MMDrawerController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController-umbrella.h"; sourceTree = "<group>"; };
+		5AB3D16F3109C15232662A662962F677 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MMDrawerController+Subclass.h"; path = "MMDrawerController/MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
 		6007486933405321304BE3CD19C123D6 /* Pods-Signal Commerce-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Signal Commerce-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6097DBB8DF72AE9CF37FD0DF61399B18 /* FICImageTableChunk.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageTableChunk.h; path = FastImageCache/FICImageTableChunk.h; sourceTree = "<group>"; };
-		69ABAADF9F8D6E79CCB3B0F5C6CF59A7 /* FICImports.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImports.h; path = FastImageCache/FICImports.h; sourceTree = "<group>"; };
-		6B93183F6043A9B99B8AAA9D5B0FDAC4 /* MMDrawerController-Storyboard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MMDrawerController-Storyboard.xcconfig"; sourceTree = "<group>"; };
-		76EA4284E07346B6BBF9B8AA0770A206 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerVisualState.h; path = MMDrawerController/MMDrawerVisualState.h; sourceTree = "<group>"; };
-		791B91144CE15FCA7B57A10304452A2B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8B23964D65B5974F79EB8B106E27D920 /* FICImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageCache.h; path = FastImageCache/FICImageCache.h; sourceTree = "<group>"; };
-		8B41F1E9B71E9B59B3C5B79CB3B2DA3A /* FastImageCache.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FastImageCache.modulemap; sourceTree = "<group>"; };
-		8E06585230BE5937791F5B872E2D36EB /* MMDrawerController+Storyboard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Storyboard.h"; sourceTree = "<group>"; };
-		994F11370B44A4CD187842740A612DB5 /* MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
-		9A82D61358E8F2D2BE847E03EE985E09 /* MMDrawerController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController-umbrella.h"; sourceTree = "<group>"; };
-		9E29C073375DF50A44CE1A2CD54EEA03 /* FICImageTable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageTable.m; path = FastImageCache/FICImageTable.m; sourceTree = "<group>"; };
-		A7857E829700FE4D5E535DB54412C34A /* Pods_Signal_Commerce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Signal_Commerce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A81B072572EF31F519E9DB9490132635 /* MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerController.h; path = MMDrawerController/MMDrawerController.h; sourceTree = "<group>"; };
-		B0B853D0B541D09868BE9B0038111545 /* MMDrawerController-Storyboard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController-Storyboard-umbrella.h"; sourceTree = "<group>"; };
-		B2A61F15E7317B905A475086C7641485 /* MMDrawerController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MMDrawerController.modulemap; sourceTree = "<group>"; };
+		60485D12C1BD032739A6267C7BF48061 /* MMDrawerController_Storyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MMDrawerController_Storyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62694048ABBED5E96B3A2342F883ABF4 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerBarButtonItem.h; path = MMDrawerController/MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		6790D17F64928299800F4CBD45898F7A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		694D6A988506AB242DCA9581203B332B /* FastImageCache.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FastImageCache.xcconfig; sourceTree = "<group>"; };
+		6AF1B7285E0515DAABA820C00C016B01 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
+		6C795373F75A6995E34A20FB0282EFBF /* FICImageCache+FICErrorLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FICImageCache+FICErrorLogging.h"; path = "FastImageCache/FICImageCache+FICErrorLogging.h"; sourceTree = "<group>"; };
+		75D0252BE92ADE015D52A7D85A14E4C5 /* Pods_Signal_Commerce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Signal_Commerce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79B9EDD4C703934C6A5CC0ED121C56BC /* MMDrawerController+Storyboard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Storyboard.h"; sourceTree = "<group>"; };
+		7A05CB350C7098816DA12F0064D81099 /* BBBadgeBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BBBadgeBarButtonItem.m; path = BBBadgeBarButtonItem/BBBadgeBarButtonItem.m; sourceTree = "<group>"; };
+		7B53793F79E41ED0B9B3CE92B0DD5247 /* MMDrawerController-Storyboard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MMDrawerController-Storyboard.xcconfig"; sourceTree = "<group>"; };
+		818545BCD2BBDEAF115743C52F7A8506 /* FICUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICUtilities.h; path = FastImageCache/FICUtilities.h; sourceTree = "<group>"; };
+		83B8F4E3A2BC55EA463D630D449CD01C /* MMDrawerController-Storyboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController-Storyboard-dummy.m"; sourceTree = "<group>"; };
+		939A06D14200511BCDAC207FB9447065 /* MMDrawerController+Storyboard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController+Storyboard.m"; sourceTree = "<group>"; };
+		9BFCD16C8CA9EB5B1E6ACCDCEC865E0C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA28768C59DCA3152D9D5CEDB8E65652 /* FastImageCache-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FastImageCache-dummy.m"; sourceTree = "<group>"; };
+		AD580F466B9D669DE5B644F6E92F07A7 /* FICImageFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageFormat.h; path = FastImageCache/FICImageFormat.h; sourceTree = "<group>"; };
+		B08020CC856972234B54B57419F918DA /* BBBadgeBarButtonItem-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BBBadgeBarButtonItem-prefix.pch"; sourceTree = "<group>"; };
+		B1F258F3034C0622F31BB2917F015CBD /* FICImageTableEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageTableEntry.h; path = FastImageCache/FICImageTableEntry.h; sourceTree = "<group>"; };
 		B636645837982E83C58C38D5F5916241 /* Pods-Signal Commerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Signal Commerce.release.xcconfig"; sourceTree = "<group>"; };
+		B844C0EBD45798C1C989D55AA1585411 /* BBBadgeBarButtonItem.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BBBadgeBarButtonItem.xcconfig; sourceTree = "<group>"; };
 		B9AFD7EC1A9C10FD20C9C536B4A3CA6F /* Pods-Signal Commerce.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Signal Commerce.modulemap"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BDBA40544AB87749C175779E40122E01 /* FICImageCache+FICErrorLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FICImageCache+FICErrorLogging.h"; path = "FastImageCache/FICImageCache+FICErrorLogging.h"; sourceTree = "<group>"; };
-		D50B17B7B807678A799FB83D6FA64B4E /* FICImageTable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageTable.h; path = FastImageCache/FICImageTable.h; sourceTree = "<group>"; };
-		D838C43EE773C5111B8C7FF2D2F1FE9F /* MMDrawerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController-prefix.pch"; sourceTree = "<group>"; };
-		ECE41ACEFDC923BB2922B7EEA3C5039B /* FICImageTableChunk.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageTableChunk.m; path = FastImageCache/FICImageTableChunk.m; sourceTree = "<group>"; };
-		ED872C3582D950DC5A8171568724C5FA /* FICImageTableEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageTableEntry.h; path = FastImageCache/FICImageTableEntry.h; sourceTree = "<group>"; };
-		EE5178813B59A7D5E953CF5A2F839528 /* MMDrawerController-Storyboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController-Storyboard-dummy.m"; sourceTree = "<group>"; };
+		BABCFD5D95862AC6F5A1808147498CBA /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MMDrawerController.h"; path = "MMDrawerController/UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		CDC5ABFABE400F4D665016E3CE8D4484 /* BBBadgeBarButtonItem-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BBBadgeBarButtonItem-dummy.m"; sourceTree = "<group>"; };
+		D2729496D4A9648B06B1CE70C5D8DC54 /* MMDrawerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController-prefix.pch"; sourceTree = "<group>"; };
+		D5848A0B0112807C1777DA4EEAF58BD2 /* MMDrawerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MMDrawerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D66EB0A6709AC127AB673D19A731C934 /* MMDrawerController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MMDrawerController.modulemap; sourceTree = "<group>"; };
+		D6FDC1CD1F336AE8BF2110EC02CDDE47 /* FastImageCache-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FastImageCache-prefix.pch"; sourceTree = "<group>"; };
+		D7254617660D2B33DD2D000BD3458610 /* FICEntity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICEntity.h; path = FastImageCache/FICEntity.h; sourceTree = "<group>"; };
+		E3A58DE1BEF906ADF0CEF9E749CAB04F /* FICImageFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageFormat.m; path = FastImageCache/FICImageFormat.m; sourceTree = "<group>"; };
 		F13E048474DA686B0234A3E43D4590A2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		F19592AAD7E1B75CEF1D938230F6A43C /* FICEntity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICEntity.h; path = FastImageCache/FICEntity.h; sourceTree = "<group>"; };
 		F1A3A523C0A767E11EE4D96EC15C6A8D /* Pods-Signal Commerce-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Signal Commerce-acknowledgements.plist"; sourceTree = "<group>"; };
+		F2D05D75C151E61C2F1C298AD726645E /* MMDrawerVisualState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerVisualState.h; path = MMDrawerController/MMDrawerVisualState.h; sourceTree = "<group>"; };
+		F55EF97646D8E90300544B2E73A9276B /* MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerController.h; path = MMDrawerController/MMDrawerController.h; sourceTree = "<group>"; };
 		F56FD639A698E1AEB4E5CD5253513513 /* Pods-Signal Commerce-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Signal Commerce-frameworks.sh"; sourceTree = "<group>"; };
-		F930789E5E1F335ADD735684FC9209F0 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MMDrawerController+Subclass.h"; path = "MMDrawerController/MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
-		FA7ED5DE061BDDFA47EB1A8D8BB232D4 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
-		FD5EAB037BC6889C05733E1F9868F741 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FDA951D7556DFBE6B698123676CA0CE1 /* FICImageFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageFormat.m; path = FastImageCache/FICImageFormat.m; sourceTree = "<group>"; };
-		FEEDDF344057974B723D7329F60C31CA /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerBarButtonItem.m; path = MMDrawerController/MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		F5A32AF7B0703D6018BE1B15CAEC24FF /* MMDrawerController-Storyboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController-Storyboard-prefix.pch"; sourceTree = "<group>"; };
+		FA9C93E992B4B1B8950E9789BB3DCDA3 /* MMDrawerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController-dummy.m"; sourceTree = "<group>"; };
+		FCF186ED3AA8FD48C3841B78E8DAD211 /* FICImageTable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageTable.m; path = FastImageCache/FICImageTable.m; sourceTree = "<group>"; };
+		FDF32800E4B4DF2D0481644E5972501B /* MMDrawerController-Storyboard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController-Storyboard-umbrella.h"; sourceTree = "<group>"; };
+		FF1D1C162CC6BA2AC019549FA0B90566 /* FICImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageCache.m; path = FastImageCache/FICImageCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		278376BCC9FFFC7D380A77BB95B430B4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8A1A27A10CBE1606F7D663BF4E95E809 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8B6153E8293DFBA0049386E4C1B3398C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -180,80 +193,57 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B5320F96C1DF67E8FF4201F382CC05A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75AC162A5D4430403FB8C3DDD433CA8B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6FF5220990DCFCA494CFEE42C42FC1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7566AD6AE89DC369434722C0676BC000 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		212DAB5EE1243795871E3BA5FDCB6A8E /* FastImageCache */ = {
+		17C536DC3139F483D3D49AE287D3AF53 /* FastImageCache */ = {
 			isa = PBXGroup;
 			children = (
-				F19592AAD7E1B75CEF1D938230F6A43C /* FICEntity.h */,
-				8B23964D65B5974F79EB8B106E27D920 /* FICImageCache.h */,
-				16390D65D121D92517E664FE08FF4A85 /* FICImageCache.m */,
-				BDBA40544AB87749C175779E40122E01 /* FICImageCache+FICErrorLogging.h */,
-				2AF52DFB4127FBC967CD5800E11B66C4 /* FICImageFormat.h */,
-				FDA951D7556DFBE6B698123676CA0CE1 /* FICImageFormat.m */,
-				D50B17B7B807678A799FB83D6FA64B4E /* FICImageTable.h */,
-				9E29C073375DF50A44CE1A2CD54EEA03 /* FICImageTable.m */,
-				6097DBB8DF72AE9CF37FD0DF61399B18 /* FICImageTableChunk.h */,
-				ECE41ACEFDC923BB2922B7EEA3C5039B /* FICImageTableChunk.m */,
-				ED872C3582D950DC5A8171568724C5FA /* FICImageTableEntry.h */,
-				352CE725AED9ADC8B4131460C3382179 /* FICImageTableEntry.m */,
-				69ABAADF9F8D6E79CCB3B0F5C6CF59A7 /* FICImports.h */,
-				317D0684AFE423E10118715E5959F05E /* FICUtilities.h */,
-				5C85675134F4E1B3974A24175EC7BD25 /* FICUtilities.m */,
-				E99CA75836AC0CA3C21641DE3DBFDD74 /* Support Files */,
+				D7254617660D2B33DD2D000BD3458610 /* FICEntity.h */,
+				21F68994F668DD7D76C6072C83F84F7D /* FICImageCache.h */,
+				FF1D1C162CC6BA2AC019549FA0B90566 /* FICImageCache.m */,
+				6C795373F75A6995E34A20FB0282EFBF /* FICImageCache+FICErrorLogging.h */,
+				AD580F466B9D669DE5B644F6E92F07A7 /* FICImageFormat.h */,
+				E3A58DE1BEF906ADF0CEF9E749CAB04F /* FICImageFormat.m */,
+				3B61FBB48FD993997A2041A98E252727 /* FICImageTable.h */,
+				FCF186ED3AA8FD48C3841B78E8DAD211 /* FICImageTable.m */,
+				0E428C5C9EB2D271F811D3DCBC0D24E2 /* FICImageTableChunk.h */,
+				24EEA48B58348820E2502E59CEE8343A /* FICImageTableChunk.m */,
+				B1F258F3034C0622F31BB2917F015CBD /* FICImageTableEntry.h */,
+				00B490A43B5E0478A01CB37027B5EB1B /* FICImageTableEntry.m */,
+				2F79555CD55A596483CF077E68954F6C /* FICImports.h */,
+				818545BCD2BBDEAF115743C52F7A8506 /* FICUtilities.h */,
+				05EAE262FB468D138140E9AEA0C4CA76 /* FICUtilities.m */,
+				9E341B0CE99E183E6725FF3AA468776E /* Support Files */,
 			);
 			path = FastImageCache;
 			sourceTree = "<group>";
 		};
-		5138A340AE0BCEC9A1DC904D63419B13 /* Support Files */ = {
+		289764B3CA5C42A3F129EAD26E5DD234 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				19A4DBF2F4CC3CEF98A3AEB055DA8B27 /* Info.plist */,
-				1EA0CCD75AA0C36FC1CE4D401E58884F /* MMDrawerController-Storyboard.modulemap */,
-				6B93183F6043A9B99B8AAA9D5B0FDAC4 /* MMDrawerController-Storyboard.xcconfig */,
-				EE5178813B59A7D5E953CF5A2F839528 /* MMDrawerController-Storyboard-dummy.m */,
-				4C5C14DBFC275936E793AA34695CF3C0 /* MMDrawerController-Storyboard-prefix.pch */,
-				B0B853D0B541D09868BE9B0038111545 /* MMDrawerController-Storyboard-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MMDrawerController-Storyboard";
-			sourceTree = "<group>";
-		};
-		5831F062D5F24639E86EC0E34F371D22 /* MMDrawerController-Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				8E06585230BE5937791F5B872E2D36EB /* MMDrawerController+Storyboard.h */,
-				19BA50FFD79111B4463C66D4799B9DB7 /* MMDrawerController+Storyboard.m */,
-				5138A340AE0BCEC9A1DC904D63419B13 /* Support Files */,
-			);
-			path = "MMDrawerController-Storyboard";
-			sourceTree = "<group>";
-		};
-		590C395532A4F9C6E4A8CE4271ADB8E0 /* Subclass */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Subclass;
-			sourceTree = "<group>";
-		};
-		5D95044D85BC7D76A059B7C1984C8116 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				212DAB5EE1243795871E3BA5FDCB6A8E /* FastImageCache */,
-				B33559384E3F21B2D550351A709DACF8 /* MMDrawerController */,
-				5831F062D5F24639E86EC0E34F371D22 /* MMDrawerController-Storyboard */,
+				A5A5E25C3FC30296DD8BF5FEAA8DF4DC /* BBBadgeBarButtonItem */,
+				17C536DC3139F483D3D49AE287D3AF53 /* FastImageCache */,
+				C245064704C25C5D99457163CF1BB72E /* MMDrawerController */,
+				A48B9CDD2ACCA635F9707F709486CA1A /* MMDrawerController-Storyboard */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		7384C8B14D1CDF474C0E700C6F9D034B /* MMDrawerBarButtonItem */ = {
-			isa = PBXGroup;
-			children = (
-				4B52273AFCA05C3531B4A27A0659939C /* MMDrawerBarButtonItem.h */,
-				FEEDDF344057974B723D7329F60C31CA /* MMDrawerBarButtonItem.m */,
-			);
-			name = MMDrawerBarButtonItem;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -261,22 +251,38 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				DF10D0DC68402877AF6FB5CD1BD4659B /* Frameworks */,
-				5D95044D85BC7D76A059B7C1984C8116 /* Pods */,
-				AE7F2900ADE5F437299D9C6DEE25E37C /* Products */,
+				289764B3CA5C42A3F129EAD26E5DD234 /* Pods */,
+				E31416E70C9C80431EEEB7F012B39867 /* Products */,
 				EA3F5613308333AB2CD79D034398BF4F /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		89F0E2F49B667CD4D1AAAB38F642BF25 /* Core */ = {
+		85C804EBAB0866BB487804E7FB336DE5 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A81B072572EF31F519E9DB9490132635 /* MMDrawerController.h */,
-				994F11370B44A4CD187842740A612DB5 /* MMDrawerController.m */,
-				F930789E5E1F335ADD735684FC9209F0 /* MMDrawerController+Subclass.h */,
-				48D0209120C81C1DDC3B743CDB467DD6 /* UIViewController+MMDrawerController.h */,
-				11414EE80FB94F1505F7BA8ED7FC3A5A /* UIViewController+MMDrawerController.m */,
+				0201C153F615E6CC07216810557C300B /* Info.plist */,
+				0749F55F3C1FE278A165F2A3C9CD1077 /* MMDrawerController-Storyboard.modulemap */,
+				7B53793F79E41ED0B9B3CE92B0DD5247 /* MMDrawerController-Storyboard.xcconfig */,
+				83B8F4E3A2BC55EA463D630D449CD01C /* MMDrawerController-Storyboard-dummy.m */,
+				F5A32AF7B0703D6018BE1B15CAEC24FF /* MMDrawerController-Storyboard-prefix.pch */,
+				FDF32800E4B4DF2D0481644E5972501B /* MMDrawerController-Storyboard-umbrella.h */,
 			);
-			name = Core;
+			name = "Support Files";
+			path = "../Target Support Files/MMDrawerController-Storyboard";
+			sourceTree = "<group>";
+		};
+		8838327688577A3EE633D30BD4E47DB4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9BFCD16C8CA9EB5B1E6ACCDCEC865E0C /* Info.plist */,
+				D66EB0A6709AC127AB673D19A731C934 /* MMDrawerController.modulemap */,
+				49C5E0B4C77079E6D47B5F2E6FED1AEE /* MMDrawerController.xcconfig */,
+				FA9C93E992B4B1B8950E9789BB3DCDA3 /* MMDrawerController-dummy.m */,
+				D2729496D4A9648B06B1CE70C5D8DC54 /* MMDrawerController-prefix.pch */,
+				57429F0F272FA6B76E8DE415530FE3B6 /* MMDrawerController-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MMDrawerController";
 			sourceTree = "<group>";
 		};
 		98A581149A12115EDBD4B7760D6D42C7 /* Pods-Signal Commerce */ = {
@@ -297,36 +303,101 @@
 			path = "Target Support Files/Pods-Signal Commerce";
 			sourceTree = "<group>";
 		};
-		99AB706B2C2CA78FC3813141AF419C36 /* MMDrawerVisualStates */ = {
+		9E341B0CE99E183E6725FF3AA468776E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				76EA4284E07346B6BBF9B8AA0770A206 /* MMDrawerVisualState.h */,
-				FA7ED5DE061BDDFA47EB1A8D8BB232D4 /* MMDrawerVisualState.m */,
+				4D57954C0BDDA772AA343BFE245911B4 /* FastImageCache.modulemap */,
+				694D6A988506AB242DCA9581203B332B /* FastImageCache.xcconfig */,
+				AA28768C59DCA3152D9D5CEDB8E65652 /* FastImageCache-dummy.m */,
+				D6FDC1CD1F336AE8BF2110EC02CDDE47 /* FastImageCache-prefix.pch */,
+				2B2C10D42E4689531A661F3B3B0EAB58 /* FastImageCache-umbrella.h */,
+				33D43472BC24D1C025BB736E5BB2E831 /* Info.plist */,
 			);
-			name = MMDrawerVisualStates;
+			name = "Support Files";
+			path = "../Target Support Files/FastImageCache";
 			sourceTree = "<group>";
 		};
-		AE7F2900ADE5F437299D9C6DEE25E37C /* Products */ = {
+		A48B9CDD2ACCA635F9707F709486CA1A /* MMDrawerController-Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				485668478421A7AE4CCDDFB521B80433 /* FastImageCache.framework */,
-				0ADE1E1A6362E6016C80643087B0B56F /* MMDrawerController.framework */,
-				167F975A1A01B351F3DAD727F8D46E04 /* MMDrawerController_Storyboard.framework */,
-				A7857E829700FE4D5E535DB54412C34A /* Pods_Signal_Commerce.framework */,
+				79B9EDD4C703934C6A5CC0ED121C56BC /* MMDrawerController+Storyboard.h */,
+				939A06D14200511BCDAC207FB9447065 /* MMDrawerController+Storyboard.m */,
+				85C804EBAB0866BB487804E7FB336DE5 /* Support Files */,
 			);
-			name = Products;
+			path = "MMDrawerController-Storyboard";
 			sourceTree = "<group>";
 		};
-		B33559384E3F21B2D550351A709DACF8 /* MMDrawerController */ = {
+		A5A5E25C3FC30296DD8BF5FEAA8DF4DC /* BBBadgeBarButtonItem */ = {
 			isa = PBXGroup;
 			children = (
-				89F0E2F49B667CD4D1AAAB38F642BF25 /* Core */,
-				7384C8B14D1CDF474C0E700C6F9D034B /* MMDrawerBarButtonItem */,
-				99AB706B2C2CA78FC3813141AF419C36 /* MMDrawerVisualStates */,
-				590C395532A4F9C6E4A8CE4271ADB8E0 /* Subclass */,
-				E8FAB9360CA134617C0E3B336094F9F4 /* Support Files */,
+				49737A445ECAA9DD2C412E299A8EEF0A /* BBBadgeBarButtonItem.h */,
+				7A05CB350C7098816DA12F0064D81099 /* BBBadgeBarButtonItem.m */,
+				CB9FD6EBB5B3D9BA8B70FC48D3B0863F /* Support Files */,
+			);
+			path = BBBadgeBarButtonItem;
+			sourceTree = "<group>";
+		};
+		A5CA824BE4D3AD1364F24FB503A87638 /* MMDrawerBarButtonItem */ = {
+			isa = PBXGroup;
+			children = (
+				62694048ABBED5E96B3A2342F883ABF4 /* MMDrawerBarButtonItem.h */,
+				0C57CA82FC74D9632CB4127E42D9D80E /* MMDrawerBarButtonItem.m */,
+			);
+			name = MMDrawerBarButtonItem;
+			sourceTree = "<group>";
+		};
+		C245064704C25C5D99457163CF1BB72E /* MMDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				C2DE5ABA26B8C13DB13FD748C01FA4A6 /* Core */,
+				A5CA824BE4D3AD1364F24FB503A87638 /* MMDrawerBarButtonItem */,
+				D4ABADCCB94316EB7D6EC4A42CCDBC59 /* MMDrawerVisualStates */,
+				C828E15908408B560E7BED91FB3F9F57 /* Subclass */,
+				8838327688577A3EE633D30BD4E47DB4 /* Support Files */,
 			);
 			path = MMDrawerController;
+			sourceTree = "<group>";
+		};
+		C2DE5ABA26B8C13DB13FD748C01FA4A6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F55EF97646D8E90300544B2E73A9276B /* MMDrawerController.h */,
+				0FC0FDDC74891DF6769315F5290F97BF /* MMDrawerController.m */,
+				5AB3D16F3109C15232662A662962F677 /* MMDrawerController+Subclass.h */,
+				BABCFD5D95862AC6F5A1808147498CBA /* UIViewController+MMDrawerController.h */,
+				32776943FD4876CF87DCCC701F4BB973 /* UIViewController+MMDrawerController.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		C828E15908408B560E7BED91FB3F9F57 /* Subclass */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Subclass;
+			sourceTree = "<group>";
+		};
+		CB9FD6EBB5B3D9BA8B70FC48D3B0863F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				39699F5FB877AC3A0C7AD9040C48F774 /* BBBadgeBarButtonItem.modulemap */,
+				B844C0EBD45798C1C989D55AA1585411 /* BBBadgeBarButtonItem.xcconfig */,
+				CDC5ABFABE400F4D665016E3CE8D4484 /* BBBadgeBarButtonItem-dummy.m */,
+				B08020CC856972234B54B57419F918DA /* BBBadgeBarButtonItem-prefix.pch */,
+				1FCD8EB6644D31631468BAE69B0ED83E /* BBBadgeBarButtonItem-umbrella.h */,
+				6790D17F64928299800F4CBD45898F7A /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/BBBadgeBarButtonItem";
+			sourceTree = "<group>";
+		};
+		D4ABADCCB94316EB7D6EC4A42CCDBC59 /* MMDrawerVisualStates */ = {
+			isa = PBXGroup;
+			children = (
+				F2D05D75C151E61C2F1C298AD726645E /* MMDrawerVisualState.h */,
+				6AF1B7285E0515DAABA820C00C016B01 /* MMDrawerVisualState.m */,
+			);
+			name = MMDrawerVisualStates;
 			sourceTree = "<group>";
 		};
 		DF10D0DC68402877AF6FB5CD1BD4659B /* Frameworks */ = {
@@ -347,32 +418,16 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		E8FAB9360CA134617C0E3B336094F9F4 /* Support Files */ = {
+		E31416E70C9C80431EEEB7F012B39867 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FD5EAB037BC6889C05733E1F9868F741 /* Info.plist */,
-				B2A61F15E7317B905A475086C7641485 /* MMDrawerController.modulemap */,
-				4B4061ED7076DAAE048AC19BC2A0CF18 /* MMDrawerController.xcconfig */,
-				04B96E64BB2C62E94F435BBF3670C038 /* MMDrawerController-dummy.m */,
-				D838C43EE773C5111B8C7FF2D2F1FE9F /* MMDrawerController-prefix.pch */,
-				9A82D61358E8F2D2BE847E03EE985E09 /* MMDrawerController-umbrella.h */,
+				4BEF494CD5E82119717F47997D83DFE0 /* BBBadgeBarButtonItem.framework */,
+				3D070AF4889DBA63DAE72B2786604756 /* FastImageCache.framework */,
+				D5848A0B0112807C1777DA4EEAF58BD2 /* MMDrawerController.framework */,
+				60485D12C1BD032739A6267C7BF48061 /* MMDrawerController_Storyboard.framework */,
+				75D0252BE92ADE015D52A7D85A14E4C5 /* Pods_Signal_Commerce.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/MMDrawerController";
-			sourceTree = "<group>";
-		};
-		E99CA75836AC0CA3C21641DE3DBFDD74 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8B41F1E9B71E9B59B3C5B79CB3B2DA3A /* FastImageCache.modulemap */,
-				332E1936A4A398A7B5236EF17E1ECB71 /* FastImageCache.xcconfig */,
-				50A15AD08693C60A4121D5193C9A4638 /* FastImageCache-dummy.m */,
-				353337FF0F56F4F6C18CD239EABED9CD /* FastImageCache-prefix.pch */,
-				00FDA6FDDBC63E0353DB3E8C8858153F /* FastImageCache-umbrella.h */,
-				791B91144CE15FCA7B57A10304452A2B /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/FastImageCache";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		EA3F5613308333AB2CD79D034398BF4F /* Targets Support Files */ = {
@@ -408,11 +463,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D4A497E05B5AE1EDC2A36FD7FE4B7CAF /* Headers */ = {
+		720AC58E029975D77D8E4C510BB7C7CD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEC1F866313BBD9D4278C2EC8AD71EA9 /* Pods-Signal Commerce-umbrella.h in Headers */,
+				2B7D56B37970B003F257FD79493DA972 /* Pods-Signal Commerce-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B74BD7FD85B495928BD92FF891D02CBC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72E46ABE7108599EDECB53A461D6D681 /* BBBadgeBarButtonItem-umbrella.h in Headers */,
+				4BE445A27E62407BDD151CE29C2C13D3 /* BBBadgeBarButtonItem.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,27 +514,7 @@
 			);
 			name = FastImageCache;
 			productName = FastImageCache;
-			productReference = 485668478421A7AE4CCDDFB521B80433 /* FastImageCache.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		7EB0D8DC2277F2DDAB7278747677ADAA /* Pods-Signal Commerce */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A5592BC66AC2F4414940C175FAA4F8CE /* Build configuration list for PBXNativeTarget "Pods-Signal Commerce" */;
-			buildPhases = (
-				4FA4E74045951E449415B1E18D9A950A /* Sources */,
-				278376BCC9FFFC7D380A77BB95B430B4 /* Frameworks */,
-				D4A497E05B5AE1EDC2A36FD7FE4B7CAF /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6196B420A7FB28F942FE43E2442974FD /* PBXTargetDependency */,
-				9719D4ABFC326C382370903DAC94CA34 /* PBXTargetDependency */,
-				55AD4A5D0FF67A3EB8B3128271BEF84A /* PBXTargetDependency */,
-			);
-			name = "Pods-Signal Commerce";
-			productName = "Pods-Signal Commerce";
-			productReference = A7857E829700FE4D5E535DB54412C34A /* Pods_Signal_Commerce.framework */;
+			productReference = 3D070AF4889DBA63DAE72B2786604756 /* FastImageCache.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		96D3562E47E4792B0A6093A0323EB398 /* MMDrawerController */ = {
@@ -487,7 +531,24 @@
 			);
 			name = MMDrawerController;
 			productName = MMDrawerController;
-			productReference = 0ADE1E1A6362E6016C80643087B0B56F /* MMDrawerController.framework */;
+			productReference = D5848A0B0112807C1777DA4EEAF58BD2 /* MMDrawerController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		996C4CEDBD819845E4AE075097DBD57D /* BBBadgeBarButtonItem */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04CAFFC08E91024686C6CC9761726F44 /* Build configuration list for PBXNativeTarget "BBBadgeBarButtonItem" */;
+			buildPhases = (
+				ADC65DFEF8EC45D0E91016941444893A /* Sources */,
+				B5320F96C1DF67E8FF4201F382CC05A4 /* Frameworks */,
+				B74BD7FD85B495928BD92FF891D02CBC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BBBadgeBarButtonItem;
+			productName = BBBadgeBarButtonItem;
+			productReference = 4BEF494CD5E82119717F47997D83DFE0 /* BBBadgeBarButtonItem.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9E09AC22F8233BAD49C758F5FF7FF243 /* MMDrawerController-Storyboard */ = {
@@ -505,7 +566,28 @@
 			);
 			name = "MMDrawerController-Storyboard";
 			productName = "MMDrawerController-Storyboard";
-			productReference = 167F975A1A01B351F3DAD727F8D46E04 /* MMDrawerController_Storyboard.framework */;
+			productReference = 60485D12C1BD032739A6267C7BF48061 /* MMDrawerController_Storyboard.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F667C96AEFBADF0BD9099FAC704F9205 /* Pods-Signal Commerce */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 293E82D7C50F46C4EF6CC4FF4B438FA2 /* Build configuration list for PBXNativeTarget "Pods-Signal Commerce" */;
+			buildPhases = (
+				DFA7D52715F6152D6930194B6EDB25B4 /* Sources */,
+				B6FF5220990DCFCA494CFEE42C42FC1B /* Frameworks */,
+				720AC58E029975D77D8E4C510BB7C7CD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50BA5ED9DFD1772B215DDBD92CA9778F /* PBXTargetDependency */,
+				CA2C1797A52233EE424DFF32E99EB724 /* PBXTargetDependency */,
+				127D1C7E9BE4A205817C090F308CB55E /* PBXTargetDependency */,
+				F108D4A8BF449A0D3401DC4B0235148B /* PBXTargetDependency */,
+			);
+			name = "Pods-Signal Commerce";
+			productName = "Pods-Signal Commerce";
+			productReference = 75D0252BE92ADE015D52A7D85A14E4C5 /* Pods_Signal_Commerce.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -525,14 +607,15 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = AE7F2900ADE5F437299D9C6DEE25E37C /* Products */;
+			productRefGroup = E31416E70C9C80431EEEB7F012B39867 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				996C4CEDBD819845E4AE075097DBD57D /* BBBadgeBarButtonItem */,
 				643C8AC0C8427869989A7290C2B19B87 /* FastImageCache */,
 				96D3562E47E4792B0A6093A0323EB398 /* MMDrawerController */,
 				9E09AC22F8233BAD49C758F5FF7FF243 /* MMDrawerController-Storyboard */,
-				7EB0D8DC2277F2DDAB7278747677ADAA /* Pods-Signal Commerce */,
+				F667C96AEFBADF0BD9099FAC704F9205 /* Pods-Signal Commerce */,
 			);
 		};
 /* End PBXProject section */
@@ -550,20 +633,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4FA4E74045951E449415B1E18D9A950A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC2E01D538A34EB017A3668C5B63750F /* Pods-Signal Commerce-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		54970CFB4272CB1C0AF2E489978D960D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ADA8F7E3E5EFDC6B8007255ED5B2093A /* MMDrawerController+Storyboard.m in Sources */,
 				006D64826B7506375FA2A3995FA0B91F /* MMDrawerController-Storyboard-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADC65DFEF8EC45D0E91016941444893A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92F549F793242F86DFCCB04D03899D57 /* BBBadgeBarButtonItem-dummy.m in Sources */,
+				395CE8172FAABF4FFC114A636A542DAC /* BBBadgeBarButtonItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,26 +665,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DFA7D52715F6152D6930194B6EDB25B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F62DEC49FA5C922F29486FF74B79E10B /* Pods-Signal Commerce-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		55AD4A5D0FF67A3EB8B3128271BEF84A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "MMDrawerController-Storyboard";
-			target = 9E09AC22F8233BAD49C758F5FF7FF243 /* MMDrawerController-Storyboard */;
-			targetProxy = 3AA0F13C790406484D0AFDBEAF0B1A86 /* PBXContainerItemProxy */;
-		};
-		6196B420A7FB28F942FE43E2442974FD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FastImageCache;
-			target = 643C8AC0C8427869989A7290C2B19B87 /* FastImageCache */;
-			targetProxy = 8C7EBB6BF2A43ED97DB24CB8BB318DFA /* PBXContainerItemProxy */;
-		};
-		9719D4ABFC326C382370903DAC94CA34 /* PBXTargetDependency */ = {
+		127D1C7E9BE4A205817C090F308CB55E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MMDrawerController;
 			target = 96D3562E47E4792B0A6093A0323EB398 /* MMDrawerController */;
-			targetProxy = 1A9893AB6A283EE373EF912E4E9BA947 /* PBXContainerItemProxy */;
+			targetProxy = 8A6F7486091C20C33C89D5CBBAED672D /* PBXContainerItemProxy */;
+		};
+		50BA5ED9DFD1772B215DDBD92CA9778F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BBBadgeBarButtonItem;
+			target = 996C4CEDBD819845E4AE075097DBD57D /* BBBadgeBarButtonItem */;
+			targetProxy = 59922EA1DAD14545973FD4406192E161 /* PBXContainerItemProxy */;
 		};
 		BC4BD1E1E620F40DFB21D6A87FFA7EAA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -608,12 +694,24 @@
 			target = 96D3562E47E4792B0A6093A0323EB398 /* MMDrawerController */;
 			targetProxy = F20283D1B6F2EC4B4FE7F392486BA906 /* PBXContainerItemProxy */;
 		};
+		CA2C1797A52233EE424DFF32E99EB724 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FastImageCache;
+			target = 643C8AC0C8427869989A7290C2B19B87 /* FastImageCache */;
+			targetProxy = 4ABC3D3BE3F5117F5ACB339CADAA419B /* PBXContainerItemProxy */;
+		};
+		F108D4A8BF449A0D3401DC4B0235148B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MMDrawerController-Storyboard";
+			target = 9E09AC22F8233BAD49C758F5FF7FF243 /* MMDrawerController-Storyboard */;
+			targetProxy = 35B5E522EE8D06C7F6813B6EE89ED7E3 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		07208248CCA79F954E6226B33774DABE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B4061ED7076DAAE048AC19BC2A0CF18 /* MMDrawerController.xcconfig */;
+			baseConfigurationReference = 49C5E0B4C77079E6D47B5F2E6FED1AEE /* MMDrawerController.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -640,7 +738,7 @@
 		};
 		3AD393A2C77E24D1FED96DD6010087DA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B4061ED7076DAAE048AC19BC2A0CF18 /* MMDrawerController.xcconfig */;
+			baseConfigurationReference = 49C5E0B4C77079E6D47B5F2E6FED1AEE /* MMDrawerController.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -665,7 +763,7 @@
 			};
 			name = Debug;
 		};
-		3DDBE7FD74B27F3606A79B89A954FD34 /* Debug */ = {
+		5C5B7CAF8515097A6846CA578879659E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 242EBA22E3A3B5A0E9BC44E349F62AE3 /* Pods-Signal Commerce.debug.xcconfig */;
 			buildSettings = {
@@ -768,9 +866,36 @@
 			};
 			name = Release;
 		};
+		8417D229E8B7FDB4FED67375FB3D6873 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B844C0EBD45798C1C989D55AA1585411 /* BBBadgeBarButtonItem.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BBBadgeBarButtonItem/BBBadgeBarButtonItem-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BBBadgeBarButtonItem/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BBBadgeBarButtonItem/BBBadgeBarButtonItem.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = BBBadgeBarButtonItem;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		854926546350D5B78D9100C01888FB80 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 332E1936A4A398A7B5236EF17E1ECB71 /* FastImageCache.xcconfig */;
+			baseConfigurationReference = 694D6A988506AB242DCA9581203B332B /* FastImageCache.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -794,10 +919,37 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		86A4E3FDD49FAC1ACD07B0B4D7F3C640 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B844C0EBD45798C1C989D55AA1585411 /* BBBadgeBarButtonItem.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BBBadgeBarButtonItem/BBBadgeBarButtonItem-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BBBadgeBarButtonItem/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BBBadgeBarButtonItem/BBBadgeBarButtonItem.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = BBBadgeBarButtonItem;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		C64090094DBE419469BA785C49BE941B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B93183F6043A9B99B8AAA9D5B0FDAC4 /* MMDrawerController-Storyboard.xcconfig */;
+			baseConfigurationReference = 7B53793F79E41ED0B9B3CE92B0DD5247 /* MMDrawerController-Storyboard.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -822,61 +974,7 @@
 			};
 			name = Release;
 		};
-		E68247D5D2450A7B496F116A2942E4A2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 332E1936A4A398A7B5236EF17E1ECB71 /* FastImageCache.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FastImageCache/FastImageCache-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FastImageCache/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FastImageCache/FastImageCache.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = FastImageCache;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F60F2A7B5119F40BAE3A7A2985E87A5C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B93183F6043A9B99B8AAA9D5B0FDAC4 /* MMDrawerController-Storyboard.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MMDrawerController-Storyboard/MMDrawerController-Storyboard-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MMDrawerController-Storyboard/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MMDrawerController-Storyboard/MMDrawerController-Storyboard.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = MMDrawerController_Storyboard;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FC903E9D982CACA73D4CCD502ED11891 /* Release */ = {
+		D91565374D408612DC117B96F554E9E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B636645837982E83C58C38D5F5916241 /* Pods-Signal Commerce.release.xcconfig */;
 			buildSettings = {
@@ -906,6 +1004,60 @@
 			};
 			name = Release;
 		};
+		E68247D5D2450A7B496F116A2942E4A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 694D6A988506AB242DCA9581203B332B /* FastImageCache.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FastImageCache/FastImageCache-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FastImageCache/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FastImageCache/FastImageCache.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FastImageCache;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F60F2A7B5119F40BAE3A7A2985E87A5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B53793F79E41ED0B9B3CE92B0DD5247 /* MMDrawerController-Storyboard.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MMDrawerController-Storyboard/MMDrawerController-Storyboard-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MMDrawerController-Storyboard/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MMDrawerController-Storyboard/MMDrawerController-Storyboard.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = MMDrawerController_Storyboard;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -914,6 +1066,24 @@
 			buildConfigurations = (
 				E68247D5D2450A7B496F116A2942E4A2 /* Debug */,
 				854926546350D5B78D9100C01888FB80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04CAFFC08E91024686C6CC9761726F44 /* Build configuration list for PBXNativeTarget "BBBadgeBarButtonItem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86A4E3FDD49FAC1ACD07B0B4D7F3C640 /* Debug */,
+				8417D229E8B7FDB4FED67375FB3D6873 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		293E82D7C50F46C4EF6CC4FF4B438FA2 /* Build configuration list for PBXNativeTarget "Pods-Signal Commerce" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C5B7CAF8515097A6846CA578879659E /* Debug */,
+				D91565374D408612DC117B96F554E9E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -941,15 +1111,6 @@
 			buildConfigurations = (
 				F60F2A7B5119F40BAE3A7A2985E87A5C /* Debug */,
 				C64090094DBE419469BA785C49BE941B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A5592BC66AC2F4414940C175FAA4F8CE /* Build configuration list for PBXNativeTarget "Pods-Signal Commerce" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3DDBE7FD74B27F3606A79B89A954FD34 /* Debug */,
-				FC903E9D982CACA73D4CCD502ED11891 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

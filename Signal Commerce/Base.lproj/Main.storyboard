@@ -4,15 +4,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Cart-->
         <scene sceneID="Z65-zv-wlQ">
             <objects>
-                <tableViewController title="Cart" id="SWJ-7r-5DO" customClass="SIGCartController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SIGCartController" title="Cart" id="SWJ-7r-5DO" customClass="SIGCartController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="doe-rl-HUf">
-                        <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -146,20 +145,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Signal Commerce" id="7dk-cN-ALC">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="952-shopping-cart-toolbar" id="ME9-jS-CR5" userLabel="Shopping Cart Button Item">
-                                <connections>
-                                    <segue destination="SWJ-7r-5DO" kind="show" identifier="ShowShoppingCart" id="6pd-IH-Xp1"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="973-user-toolbar" id="IHF-SL-GaD" userLabel="Profile Button">
-                                <connections>
-                                    <action selector="openAccount:" destination="gK8-O0-2JX" id="bro-6P-qJp"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Signal Commerce" id="7dk-cN-ALC"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBc-Pt-foR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1104,7 +1090,5 @@
     </scenes>
     <resources>
         <image name="881-globe" width="28" height="28"/>
-        <image name="952-shopping-cart-toolbar" width="22" height="18"/>
-        <image name="973-user-toolbar" width="22" height="18"/>
     </resources>
 </document>

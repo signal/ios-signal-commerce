@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8DFF0553C9E46216F938EE97'
-               BlueprintName = 'FastImageCache'
+               BlueprintIdentifier = '7037DDF2C8D2047D5CEFA6E8'
+               BlueprintName = 'BBBadgeBarButtonItem'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'FastImageCache.framework'>
+               BuildableName = 'BBBadgeBarButtonItem.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

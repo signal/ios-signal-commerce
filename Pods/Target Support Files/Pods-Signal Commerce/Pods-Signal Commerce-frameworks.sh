@@ -84,11 +84,13 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Signal Commerce/BBBadgeBarButtonItem.framework"
   install_framework "Pods-Signal Commerce/FastImageCache.framework"
   install_framework "Pods-Signal Commerce/MMDrawerController.framework"
   install_framework "Pods-Signal Commerce/MMDrawerController_Storyboard.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Signal Commerce/BBBadgeBarButtonItem.framework"
   install_framework "Pods-Signal Commerce/FastImageCache.framework"
   install_framework "Pods-Signal Commerce/MMDrawerController.framework"
   install_framework "Pods-Signal Commerce/MMDrawerController_Storyboard.framework"
