@@ -116,19 +116,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		49174F501C50153A00330C56 /* Signal Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				49174F511C50158D00330C56 /* SIGSettingsController.h */,
-				49174F521C50158D00330C56 /* SIGSettingsController.m */,
-				49DE1E951C57F09D00294D79 /* SIGLoginViewController.h */,
-				49DE1E961C57F09D00294D79 /* SIGLoginViewController.m */,
-				49E1F90E1C69439F0084408A /* SIGAccountController.h */,
-				49E1F90F1C69439F0084408A /* SIGAccountController.m */,
-			);
-			name = "Signal Controllers";
-			sourceTree = "<group>";
-		};
 		49534F811C440938008C6300 = {
 			isa = PBXGroup;
 			children = (
@@ -155,18 +142,17 @@
 				49534F901C440938008C6300 /* AppDelegate.h */,
 				49534F911C440938008C6300 /* AppDelegate.m */,
 				49534F991C440938008C6300 /* Assets.xcassets */,
+				498D9C301C443FAF002D72D6 /* Controllers */,
 				49534F9E1C440938008C6300 /* Info.plist */,
-				49534F9B1C440938008C6300 /* LaunchScreen.storyboard */,
 				49174F821C5183C300330C56 /* iPadMain.storyboard */,
+				49534F9B1C440938008C6300 /* LaunchScreen.storyboard */,
 				49534F961C440938008C6300 /* Main.storyboard */,
-				498D9C271C443C1A002D72D6 /* Shopping */,
-				498D9C301C443FAF002D72D6 /* ShoppingPath */,
+				498D9C271C443C1A002D72D6 /* Model */,
 				492F04F21C46F09400F5AF98 /* SIGImageCache.h */,
 				492F04F31C46F09400F5AF98 /* SIGImageCache.m */,
-				49174F501C50153A00330C56 /* Signal Controllers */,
-				49534F8D1C440938008C6300 /* Supporting Files */,
 				49174F8C1C52D44000330C56 /* SIGPreferences.h */,
 				49174F8D1C52D44000330C56 /* SIGPreferences.m */,
+				49534F8D1C440938008C6300 /* Supporting Files */,
 			);
 			path = "Signal Commerce";
 			sourceTree = "<group>";
@@ -188,37 +174,43 @@
 			path = "Signal CommerceTests";
 			sourceTree = "<group>";
 		};
-		498D9C271C443C1A002D72D6 /* Shopping */ = {
+		498D9C271C443C1A002D72D6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				498D9C2C1C443D93002D72D6 /* SIGCategory.h */,
-				498D9C2D1C443D93002D72D6 /* SIGCategory.m */,
-				498D9C2F1C443F26002D72D6 /* SIGShoppingService.h */,
 				498D9C341C444350002D72D6 /* MagentoShoppingService.h */,
 				498D9C351C444350002D72D6 /* MagentoShoppingService.m */,
-				497B495E1C445828006A21EF /* SIGProduct.h */,
-				497B495F1C445828006A21EF /* SIGProduct.m */,
-				497B49611C446165006A21EF /* SIGMoney.h */,
-				497B49621C446165006A21EF /* SIGMoney.m */,
 				49E1F9051C69017B0084408A /* SIGCart.h */,
 				49E1F9061C69017B0084408A /* SIGCart.m */,
 				49E1F9081C6901AA0084408A /* SIGCartItem.h */,
 				49E1F9091C6901AA0084408A /* SIGCartItem.m */,
+				498D9C2C1C443D93002D72D6 /* SIGCategory.h */,
+				498D9C2D1C443D93002D72D6 /* SIGCategory.m */,
+				497B49611C446165006A21EF /* SIGMoney.h */,
+				497B49621C446165006A21EF /* SIGMoney.m */,
+				497B495E1C445828006A21EF /* SIGProduct.h */,
+				497B495F1C445828006A21EF /* SIGProduct.m */,
+				498D9C2F1C443F26002D72D6 /* SIGShoppingService.h */,
 			);
-			name = Shopping;
+			name = Model;
 			sourceTree = "<group>";
 		};
-		498D9C301C443FAF002D72D6 /* ShoppingPath */ = {
+		498D9C301C443FAF002D72D6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				498D9C311C4440AA002D72D6 /* SIGCategoryListController.h */,
-				498D9C321C4440AA002D72D6 /* SIGCategoryListController.m */,
-				497B496E1C45B96B006A21EF /* SIGProductDetailController.h */,
-				497B496F1C45B96B006A21EF /* SIGProductDetailController.m */,
+				49E1F90E1C69439F0084408A /* SIGAccountController.h */,
+				49E1F90F1C69439F0084408A /* SIGAccountController.m */,
 				49E1F90B1C69198A0084408A /* SIGCartController.h */,
 				49E1F90C1C69198A0084408A /* SIGCartController.m */,
+				498D9C311C4440AA002D72D6 /* SIGCategoryListController.h */,
+				498D9C321C4440AA002D72D6 /* SIGCategoryListController.m */,
+				49DE1E951C57F09D00294D79 /* SIGLoginViewController.h */,
+				49DE1E961C57F09D00294D79 /* SIGLoginViewController.m */,
+				497B496E1C45B96B006A21EF /* SIGProductDetailController.h */,
+				497B496F1C45B96B006A21EF /* SIGProductDetailController.m */,
+				49174F511C50158D00330C56 /* SIGSettingsController.h */,
+				49174F521C50158D00330C56 /* SIGSettingsController.m */,
 			);
-			name = ShoppingPath;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		785251F57B90A00AA89CFAB9 /* Pods */ = {
@@ -290,6 +282,11 @@
 			attributes = {
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Signal;
+				TargetAttributes = {
+					49534F891C440938008C6300 = {
+						DevelopmentTeam = SR7E8U472S;
+					};
+				};
 			};
 			buildConfigurationList = 49534F851C440938008C6300 /* Build configuration list for PBXProject "Signal Commerce" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -528,6 +525,8 @@
 			baseConfigurationReference = 7D327178267E21127EEC07F3 /* Pods-Signal Commerce.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -547,6 +546,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "co.signal.Signal-Commerce";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -556,6 +556,8 @@
 			baseConfigurationReference = ADF1CA390D4DBD2F15F3894A /* Pods-Signal Commerce.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -575,6 +577,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "co.signal.Signal-Commerce";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
