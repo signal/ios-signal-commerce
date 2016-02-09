@@ -53,4 +53,32 @@
     return cell;
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+    }
+
+    static UILabel* headline;
+    static UILabel* subheadline1;
+
+    if (!headline) {
+        headline = [[ UILabel alloc]
+                    initWithFrame:CGRectMake(0,0, FLT_MAX, FLT_MAX)];
+        subheadline1 = [[ UILabel alloc]
+                        initWithFrame:CGRectMake(0,0, FLT_MAX, FLT_MAX)];
+    }
+
+    headline.text = @"Hoos Foos";
+    headline.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
+    [headline sizeToFit];
+    subheadline1.text = @"Snim Nim";
+    subheadline1.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
+    [subheadline1 sizeToFit];
+
+    return subheadline1.frame.size.height + headline.frame.size.height + 30.0;
+}
+
+
+
 @end
