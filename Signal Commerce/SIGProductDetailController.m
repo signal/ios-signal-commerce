@@ -10,6 +10,8 @@
 #import "SIGMoney.h"
 #import "SIGCart.h"
 #import "AppDelegate.h"
+#import "UIViewController+CartAssist.h"
+
 #import <SignalSDK/SignalInc.h>
 
 @interface SIGProductDetailController()
@@ -29,11 +31,8 @@
     _pageControl.numberOfPages = 1;
     [_pageControl setPageIndicatorTintColor: [UIColor lightGrayColor]];
     [_pageControl setCurrentPageIndicatorTintColor: [UIColor grayColor]];
-
     [self setTitle:_product.name];
-
     [_price setText: [_product.cost description]];
-
     if (_product.instock) {
         [_instock setText: @"In Stock"];
         [_instock setTextColor: [UIColor greenColor]];
@@ -52,18 +51,11 @@
         _productImages = @[_product.imageUrl];
         [self refreshImages];
         [self updateImageAt:0];
-
-        UISwipeGestureRecognizer *swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipe)];
-        [swipeRightRecognizer setDirection:UISwipeGestureRecognizerDirectionRight];
-        [[self view] addGestureRecognizer:swipeRightRecognizer];
-
-        UISwipeGestureRecognizer *leftRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipe)];
-        [leftRightRecognizer setDirection:UISwipeGestureRecognizerDirectionLeft];
-        [[self view] addGestureRecognizer:leftRightRecognizer];
-        [[[SignalInc sharedInstance] defaultTracker] publish:@"view_product" withDictionary:@{@"productId" : _product.sku}];
+        [self setupGestures];
     }
-
+    self.navigationItem.rightBarButtonItem = [self setupCart];
 }
+
 
 -(void)updateImageAt:(int)index {
     if (index < 0 || index >= _productImages.count) {
@@ -106,6 +98,18 @@
 
 - (IBAction)addToCartClicked:(id)sender {
     [[self appDelegate].cart add: _product withQuantity: 1];
+    [self refreshCart: self.navigationItem.rightBarButtonItem];
+}
+
+-(void)setupGestures {
+    UISwipeGestureRecognizer *swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipe)];
+    [swipeRightRecognizer setDirection:UISwipeGestureRecognizerDirectionRight];
+    [[self view] addGestureRecognizer:swipeRightRecognizer];
+
+    UISwipeGestureRecognizer *leftRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipe)];
+    [leftRightRecognizer setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [[self view] addGestureRecognizer:leftRightRecognizer];
+    [[[SignalInc sharedInstance] defaultTracker] publish:@"view_product" withDictionary:@{@"productId" : _product.sku}];
 }
 
 @end
