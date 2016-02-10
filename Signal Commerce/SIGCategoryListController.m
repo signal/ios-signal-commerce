@@ -23,6 +23,7 @@
 #import "SIGLoginViewController.h"
 #import "SIGCart.h"
 #import "SIGCartController.h"
+#import "UIViewController+CartAssist.h"
 
 #import <SignalSDK/SignalInc.h>
 
@@ -62,17 +63,7 @@
     }
 
     UIBarButtonItem *userButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed: @"973-user-toolbar" ] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(openAccount)];
-    UIButton *cartView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    [cartView addTarget:self action:@selector(shoppingCartClick) forControlEvents:UIControlEventTouchUpInside];
-    [cartView setImage: [[UIImage imageNamed: @"952-shopping-cart-toolbar"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-    [cartView setUserInteractionEnabled:YES];
-
-    BBBadgeBarButtonItem *cartButton = [[BBBadgeBarButtonItem alloc] initWithCustomUIButton:cartView];
-    cartButton.badgeValue = [self cartAmount];
-    cartButton.badgeMinSize = 2;
-    cartButton.badgePadding = 3;
-    cartButton.shouldHideBadgeAtZero = YES;
-    [self.navigationItem setRightBarButtonItems:@[userButton, cartButton]];
+    [self.navigationItem setRightBarButtonItems:@[userButton, [self setupCart]]];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -85,12 +76,12 @@
         [[[SignalInc sharedInstance] defaultTracker] publish: @"view:category_list" withDictionary: @{@"categoryId" : _parentCategory.categoryId}];
     }
     BBBadgeBarButtonItem *cartButton = (BBBadgeBarButtonItem *)self.navigationItem.rightBarButtonItems[1];
-    cartButton.badgeValue = [self cartAmount];
+    [self refreshCart:cartButton];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(nullable id)sender {
-    return [identifier isEqualToString:@"ShowProductDetail"] || [identifier isEqualToString:@"ShowShoppingCart"] || [identifier isEqualToString:@"ShowLogin"];
+    return [identifier isEqualToString:@"ShowProductDetail"] || [identifier isEqualToString:@"ShowLogin"];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -217,19 +208,8 @@
     }
 }
 
--(NSString *)cartAmount {
-    return [NSString stringWithFormat:@"%lu", (unsigned long)[[self appDelegate].cart cartItems].count];
-}
-
 -(void)leftDrawerButtonPress:(id)sender {
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-}
-
--(void)shoppingCartClick {
-    SIGCartController* cartController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SIGCartController"];
-
-    [self.navigationController pushViewController:cartController animated:YES];
-
 }
 
 @end
