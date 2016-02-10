@@ -44,4 +44,8 @@
     return money;
 }
 
+-(void)removeItemAtIndex:(unsigned long)index {
+    [_items removeObjectAtIndex:index];
+}
+
 @end

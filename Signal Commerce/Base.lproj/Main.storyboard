@@ -4,6 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Cart-->
@@ -71,12 +72,43 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Cart" id="2ZK-fO-6uH">
-                        <barButtonItem key="rightBarButtonItem" title="Checkout" id="QEB-1W-oNy"/>
+                        <rightBarButtonItems>
+                            <barButtonItem image="871-handtruck-toolbar" id="QEB-1W-oNy" userLabel="Checkout"/>
+                            <barButtonItem image="830-pencil-toolbar" id="y07-N0-Xc8" userLabel="Edit">
+                                <connections>
+                                    <action selector="editClick:" destination="SWJ-7r-5DO" id="1A2-Jj-r82"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9L-Bo-KIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1062" y="-480"/>
+        </scene>
+        <!--Checkout-->
+        <scene sceneID="t8y-rO-fqm">
+            <objects>
+                <viewController storyboardIdentifier="Checkout" title="Checkout" id="qF5-sV-sS3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X6x-ym-5MH"/>
+                        <viewControllerLayoutGuide type="bottom" id="wbP-ED-ANX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jLB-tx-QUX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvv-1Q-hbW">
+                                <rect key="frame" x="274" y="285" width="51" height="30"/>
+                                <state key="normal" title="Do It!!!!"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vON-ko-zzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2014" y="-471"/>
         </scene>
         <!--Category List-->
         <scene sceneID="qnR-HX-QM1">
@@ -1089,6 +1121,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="830-pencil-toolbar" width="22" height="22"/>
+        <image name="871-handtruck-toolbar" width="22" height="22"/>
         <image name="881-globe" width="28" height="28"/>
     </resources>
 </document>

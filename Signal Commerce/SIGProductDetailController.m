@@ -56,6 +56,10 @@
     self.navigationItem.rightBarButtonItem = [self setupCart];
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self refreshCart:self.navigationItem.rightBarButtonItem];
+}
 
 -(void)updateImageAt:(int)index {
     if (index < 0 || index >= _productImages.count) {

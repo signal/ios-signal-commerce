@@ -20,12 +20,32 @@
     [super viewDidAppear:animated];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
+- (IBAction)editClick:(id)sender {
+    [self setEditing:![self isEditing] animated:YES];
+}
 
 - (AppDelegate *)appDelegate {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
 #pragma mark - UITableViewDataSource methods
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return indexPath.section == 1;
+}
+
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [[self appDelegate].cart removeItemAtIndex: indexPath.row];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath: [NSIndexPath indexPathForRow:0 inSection:0] ];
+        [self updateSubtotal: cell];
+    }
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
@@ -40,7 +60,7 @@
     if (indexPath.section == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier: @"Subtotal"];
         cell.textLabel.text = @"Subtotal";
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [[self appDelegate].cart subtotal]];
+        [self updateSubtotal:cell];
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier: @"ProductDescription"];
         SIGCartItem *item = [[self appDelegate].cart cartItems][indexPath.row];
@@ -84,6 +104,8 @@
     return subheadline1.frame.size.height + headline.frame.size.height + 30.0;
 }
 
-
+-(void)updateSubtotal:(UITableViewCell *)cell {
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [[self appDelegate].cart subtotal]];
+}
 
 @end

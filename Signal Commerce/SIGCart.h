@@ -20,4 +20,6 @@
 
 -(SIGMoney *)subtotal;
 
+-(void)removeItemAtIndex:(unsigned long)index;
+
 @end

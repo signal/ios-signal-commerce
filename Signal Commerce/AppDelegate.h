@@ -19,7 +19,6 @@
 @property (strong, nonatomic) SIGImageCache *imageCache;
 @property (strong, nonatomic) SIGCart *cart;
 
-
 -(BOOL)usingSplitView;
 
 @end
