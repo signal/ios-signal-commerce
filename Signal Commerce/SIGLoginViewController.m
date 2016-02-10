@@ -22,19 +22,7 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear: animated];
-}
-
-- (IBAction)loginPressed:(id)sender {
-    NSString *loggedinUser = [SIGPreferences loggedInUser];
-
-    // TODO: this is a crappy way to do this.
-    if ([loggedinUser length] != 0) {
-        [SIGPreferences setLoggedInUser:nil];
-        [[SignalInc sharedInstance].signalConfig removeCustomField:@"uid-hashed-email-sha256"];
-
-    } else {
-
-    }
+    [_userText becomeFirstResponder];
 }
 
 - (IBAction)cancel:(id)sender {
