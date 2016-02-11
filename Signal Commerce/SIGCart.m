@@ -43,6 +43,27 @@
     return [_items copy];
 }
 
+
+-(SIGMoney *)taxes {
+    SIGMoney *money = [[SIGMoney alloc] init];
+    for (SIGCartItem *item in _items) {
+        for (int i=0; i < item.quantity; i++) {
+            money = [item.product.tax add: money];
+        }
+    }
+    return money;
+}
+
+-(SIGMoney *)total {
+    SIGMoney *money = [[SIGMoney alloc] init];
+    for (SIGCartItem *item in _items) {
+        for (int i=0; i < item.quantity; i++) {
+            money = [item.product.costWithTax add: money];
+        }
+    }
+    return money;
+}
+
 -(SIGMoney *)subtotal {
     SIGMoney *money = [[SIGMoney alloc] init];
     for (SIGCartItem *item in _items) {

@@ -23,6 +23,8 @@
     _shortDescription = dict[@"short_description"];
     _imageUrl = dict[@"image_url"];
     _cost = [[SIGMoney alloc] initWithNumber: dict[@"final_price_without_tax"]];
+    _costWithTax = [[SIGMoney alloc] initWithNumber: dict[@"final_price_with_tax"]];
+    _tax = [_costWithTax minus: _cost];
     _sku = dict[@"sku"];
     return self;
 }

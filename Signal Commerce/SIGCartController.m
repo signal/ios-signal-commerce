@@ -59,7 +59,6 @@
     UITableViewCell *cell;
     if (indexPath.section == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier: @"Subtotal"];
-        cell.textLabel.text = @"Subtotal";
         [self updateSubtotal:cell];
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier: @"ProductDescription"];
@@ -85,9 +84,6 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        return [super tableView:tableView heightForRowAtIndexPath:indexPath];
-    }
 
     static UILabel* headline;
     static UILabel* subheadline1;
@@ -106,11 +102,20 @@
     subheadline1.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
     [subheadline1 sizeToFit];
 
-    return subheadline1.frame.size.height + headline.frame.size.height + 30.0;
+    if (indexPath.section == 0) {
+        return (headline.frame.size.height * 3) + 45.0;
+    } else {
+        return subheadline1.frame.size.height + headline.frame.size.height + 30.0;
+    }
 }
 
 -(void)updateSubtotal:(UITableViewCell *)cell {
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [[self appDelegate].cart subtotal]];
+    UILabel *label = (UILabel *)[cell.contentView viewWithTag:5];
+    label.text = [NSString stringWithFormat:@"%@", [[self appDelegate].cart subtotal]];
+    label = (UILabel *)[cell.contentView viewWithTag:6];
+    label.text = [NSString stringWithFormat:@"%@", [[self appDelegate].cart taxes]];
+    label = (UILabel *)[cell.contentView viewWithTag:7];
+    label.text = [NSString stringWithFormat:@"%@", [[self appDelegate].cart total]];
 }
 
 @end

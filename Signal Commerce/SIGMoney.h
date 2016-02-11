@@ -16,4 +16,6 @@
 
 -(SIGMoney *)add:(SIGMoney *)money;
 
+-(SIGMoney *)minus:(SIGMoney *)money;
+
 @end

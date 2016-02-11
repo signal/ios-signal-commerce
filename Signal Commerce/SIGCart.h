@@ -22,6 +22,10 @@
 
 -(SIGMoney *)subtotal;
 
+-(SIGMoney *)taxes;
+
+-(SIGMoney *)total;
+
 -(void)removeItemAtIndex:(unsigned long)index;
 
 -(void)empty;

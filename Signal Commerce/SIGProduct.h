@@ -19,6 +19,8 @@
 @property (readonly, nonatomic, strong) NSString *sku;
 @property (readonly, nonatomic, strong) NSString *shortDescription;
 @property (readonly, nonatomic, strong) SIGMoney *cost;
+@property (readonly, nonatomic, strong) SIGMoney *costWithTax;
+@property (readonly, nonatomic, strong) SIGMoney *tax;
 @property (readonly, nonatomic) BOOL instock;
 
 -(instancetype)initWithDictionary:(NSDictionary *)dict;

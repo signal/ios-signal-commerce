@@ -37,6 +37,10 @@
     return [[SIGMoney alloc] initWithInternalNumber: money.value + _value];
 }
 
+-(SIGMoney *)minus:(SIGMoney *)money {
+    return [[SIGMoney alloc] initWithInternalNumber: _value - money.value];
+}
+
 -(NSString *)description {
     int val = _value / 100;
     float floatVal = ((float)_value) / 100;
