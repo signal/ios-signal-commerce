@@ -19,4 +19,8 @@
     return self;
 }
 
+-(void)increaseQuantityBy:(int)quantity {
+    _quantity += quantity;
+}
+
 @end

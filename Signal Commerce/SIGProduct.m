@@ -27,6 +27,18 @@
     return self;
 }
 
+-(BOOL)isEqual:(id)object {
+    if (self == object) {
+        return YES;
+    }
+    if (![object isKindOfClass: [SIGProduct class]]) {
+        return NO;
+    }
+    SIGProduct *prod = object;
+    return [prod.name isEqualToString:_name];
+
+}
+
 #pragma mark - FICEntity methods
 
 - (NSString *)UUID {

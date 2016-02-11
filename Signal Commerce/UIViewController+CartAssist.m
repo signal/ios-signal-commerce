@@ -35,7 +35,7 @@
 
 -(NSString *)cartAmount {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    return [NSString stringWithFormat:@"%lu", (unsigned long)[appDelegate.cart cartItems].count];
+    return [NSString stringWithFormat:@"%lu", (unsigned long)appDelegate.cart.itemCount];
 }
 
 -(void)loadCart {

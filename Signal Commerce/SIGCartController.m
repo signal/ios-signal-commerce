@@ -52,7 +52,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return section == 0 ? 1 : [[self appDelegate].cart cartItems].count;
+    return section == 0 ? 1 : [[[self appDelegate].cart cartItems] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -64,12 +64,17 @@
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier: @"ProductDescription"];
         SIGCartItem *item = [[self appDelegate].cart cartItems][indexPath.row];
-        cell.textLabel.text = item.product.name;
-        cell.detailTextLabel.text = [item.product.cost description];
+        UILabel *label = (UILabel *)[cell.contentView viewWithTag:2];
+        label.text = item.product.name;
+        label = (UILabel *)[cell.contentView viewWithTag:4];
+        label.text = [NSString stringWithFormat:@"Quantity: %d", item.quantity];
+        label = (UILabel *)[cell.contentView viewWithTag:3];
+        label.text = [item.product.cost description];
         [[self appDelegate].imageCache findPreviewImageForProduct: item.product onComplete: ^(id <FICEntity> entity, NSString *formatName, UIImage *image) {
-            cell.imageView.image = image;
-            cell.imageView.layer.cornerRadius = 5;
-            cell.imageView.layer.masksToBounds = YES;
+            UIImageView *imageView = (UIImageView *)[cell.contentView viewWithTag:1];
+            imageView.image = image;
+            imageView.layer.cornerRadius = 5;
+            imageView.layer.masksToBounds = YES;
             // without this call, the images won't draw properly
             [cell setNeedsLayout];
         }];

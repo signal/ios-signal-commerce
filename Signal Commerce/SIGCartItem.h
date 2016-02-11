@@ -17,4 +17,6 @@
 
 -(instancetype)initWithProduct:(SIGProduct *) product andQuantity:(int) quantity;
 
+-(void)increaseQuantityBy:(int)quantity;
+
 @end

@@ -13,7 +13,7 @@
 
 @interface SIGCart()
 
-@property (strong, readonly) NSMutableArray<SIGCartItem *> *items;
+@property (strong, nonatomic, readonly) NSMutableArray<SIGCartItem *> *items;
 
 @end
 
@@ -28,6 +28,14 @@
 }
 
 -(void)add:(SIGProduct *)product withQuantity:(int)quantity {
+    _itemCount = _itemCount + quantity;
+    // TODO: not efficient
+    for (SIGCartItem *cartItem in _items) {
+        if ([cartItem.product isEqual: product]) {
+            [cartItem increaseQuantityBy: quantity];
+            return;
+        }
+    }
     [_items addObject: [[SIGCartItem alloc] initWithProduct: product andQuantity: quantity]];
 }
 
@@ -38,18 +46,28 @@
 -(SIGMoney *)subtotal {
     SIGMoney *money = [[SIGMoney alloc] init];
     for (SIGCartItem *item in _items) {
-        // TODO: handle quantity
-        money = [item.product.cost add: money];
+        for (int i=0; i < item.quantity; i++) {
+            money = [item.product.cost add: money];
+        }
     }
     return money;
 }
 
 -(void)removeItemAtIndex:(unsigned long)index {
     [_items removeObjectAtIndex:index];
+    [self recalcItemCount];
 }
 
 -(void)empty {
     [_items removeAllObjects];
+    _itemCount = 0;
+}
+
+-(void)recalcItemCount {
+    _itemCount = 0;
+    for (SIGCartItem *item in _items) {
+        _itemCount += item.quantity;
+    }
 }
 
 @end

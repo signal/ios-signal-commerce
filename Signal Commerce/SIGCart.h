@@ -14,6 +14,8 @@
 
 @interface SIGCart : NSObject
 
+@property (nonatomic, readonly) int itemCount;
+
 -(void)add:(SIGProduct *)product withQuantity:(int)quantity;
 
 -(NSArray<SIGCartItem *> *)cartItems;
