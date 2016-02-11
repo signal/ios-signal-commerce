@@ -22,7 +22,7 @@
 
 - (IBAction)ContinueShopping:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^{
-        [_handoff popToRootViewControllerAnimated:YES];
+        [_handoff popToRootViewControllerAnimated:NO];
     }];
 }
 

@@ -102,15 +102,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvv-1Q-hbW">
-                                <rect key="frame" x="157" y="277" width="51" height="30"/>
-                                <state key="normal" title="Do It!!!!"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvv-1Q-hbW">
+                                <rect key="frame" x="204" y="20" width="193" height="30"/>
+                                <color key="backgroundColor" red="0.90810448229999996" green="0.0084189190120000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7KZ-Ys-5KH"/>
+                                    <constraint firstAttribute="width" constant="193" id="FWp-OL-eBA"/>
+                                </constraints>
+                                <state key="normal" title="Purchase Now">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.90810448229999996" green="0.0084189190120000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="zHe-r1-EKK" kind="presentation" id="Tak-1O-MMX"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wvv-1Q-hbW" firstAttribute="centerX" secondItem="jLB-tx-QUX" secondAttribute="centerX" id="9VN-0Q-8GW"/>
+                            <constraint firstItem="wvv-1Q-hbW" firstAttribute="centerY" secondItem="jLB-tx-QUX" secondAttribute="centerY" id="kZM-H4-bbe"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vON-ko-zzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -129,15 +141,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdL-fm-kZ0">
-                                <rect key="frame" x="277" y="285" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your purchase is complete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lrz-br-kSe">
+                                <rect key="frame" x="199" y="242" width="203" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdL-fm-kZ0">
+                                <rect key="frame" x="229" y="285" width="143" height="30"/>
+                                <color key="backgroundColor" red="0.90810448229999996" green="0.0084189190120000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3GF-nk-H0k"/>
+                                    <constraint firstAttribute="width" constant="143" id="uug-U5-zTQ"/>
+                                </constraints>
+                                <state key="normal" title="Continue Shopping">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.90810448229999996" green="0.0084189190120000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="ContinueShopping:" destination="zHe-r1-EKK" eventType="touchUpInside" id="YPC-b1-aB6"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bdL-fm-kZ0" firstAttribute="centerX" secondItem="M8j-hb-mrd" secondAttribute="centerX" id="3gV-D7-mJ7"/>
+                            <constraint firstItem="Lrz-br-kSe" firstAttribute="centerX" secondItem="M8j-hb-mrd" secondAttribute="centerX" id="JhE-tl-ev6"/>
+                            <constraint firstItem="bdL-fm-kZ0" firstAttribute="centerY" secondItem="M8j-hb-mrd" secondAttribute="centerY" id="Scm-EQ-I1f"/>
+                            <constraint firstItem="bdL-fm-kZ0" firstAttribute="top" secondItem="Lrz-br-kSe" secondAttribute="bottom" constant="22" id="pt9-hI-QKH"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8f-nu-rMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
