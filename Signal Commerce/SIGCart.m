@@ -48,4 +48,8 @@
     [_items removeObjectAtIndex:index];
 }
 
+-(void)empty {
+    [_items removeAllObjects];
+}
+
 @end

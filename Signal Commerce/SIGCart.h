@@ -22,4 +22,6 @@
 
 -(void)removeItemAtIndex:(unsigned long)index;
 
+-(void)empty;
+
 @end

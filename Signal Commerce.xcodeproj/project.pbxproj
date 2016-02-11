@@ -32,6 +32,8 @@
 		49E1F90D1C69198A0084408A /* SIGCartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E1F90C1C69198A0084408A /* SIGCartController.m */; };
 		49E1F9101C69439F0084408A /* SIGAccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E1F90F1C69439F0084408A /* SIGAccountController.m */; };
 		49E1F9161C6A80000084408A /* UIViewController+CartAssist.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E1F9151C6A80000084408A /* UIViewController+CartAssist.m */; };
+		49E1F9191C6BE51F0084408A /* SIGPurchaseCompleteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E1F9181C6BE51F0084408A /* SIGPurchaseCompleteController.m */; };
+		49E1F91C1C6BE63D0084408A /* SIGBillingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E1F91B1C6BE63D0084408A /* SIGBillingController.m */; };
 		9B1F242C78FEFD537C2B6556 /* Pods_Signal_Commerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA6C37B6A12B30E0F575072 /* Pods_Signal_Commerce.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +94,10 @@
 		49E1F90F1C69439F0084408A /* SIGAccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGAccountController.m; sourceTree = "<group>"; };
 		49E1F9141C6A80000084408A /* UIViewController+CartAssist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CartAssist.h"; sourceTree = "<group>"; };
 		49E1F9151C6A80000084408A /* UIViewController+CartAssist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CartAssist.m"; sourceTree = "<group>"; };
+		49E1F9171C6BE51F0084408A /* SIGPurchaseCompleteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGPurchaseCompleteController.h; sourceTree = "<group>"; };
+		49E1F9181C6BE51F0084408A /* SIGPurchaseCompleteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGPurchaseCompleteController.m; sourceTree = "<group>"; };
+		49E1F91A1C6BE63D0084408A /* SIGBillingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGBillingController.h; sourceTree = "<group>"; };
+		49E1F91B1C6BE63D0084408A /* SIGBillingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGBillingController.m; sourceTree = "<group>"; };
 		7D327178267E21127EEC07F3 /* Pods-Signal Commerce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Signal Commerce.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Signal Commerce/Pods-Signal Commerce.debug.xcconfig"; sourceTree = "<group>"; };
 		8CA6C37B6A12B30E0F575072 /* Pods_Signal_Commerce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Signal_Commerce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF1CA390D4DBD2F15F3894A /* Pods-Signal Commerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Signal Commerce.release.xcconfig"; path = "Pods/Target Support Files/Pods-Signal Commerce/Pods-Signal Commerce.release.xcconfig"; sourceTree = "<group>"; };
@@ -202,6 +208,8 @@
 			children = (
 				49E1F90E1C69439F0084408A /* SIGAccountController.h */,
 				49E1F90F1C69439F0084408A /* SIGAccountController.m */,
+				49E1F91A1C6BE63D0084408A /* SIGBillingController.h */,
+				49E1F91B1C6BE63D0084408A /* SIGBillingController.m */,
 				49E1F90B1C69198A0084408A /* SIGCartController.h */,
 				49E1F90C1C69198A0084408A /* SIGCartController.m */,
 				498D9C311C4440AA002D72D6 /* SIGCategoryListController.h */,
@@ -210,6 +218,8 @@
 				49DE1E961C57F09D00294D79 /* SIGLoginViewController.m */,
 				497B496E1C45B96B006A21EF /* SIGProductDetailController.h */,
 				497B496F1C45B96B006A21EF /* SIGProductDetailController.m */,
+				49E1F9171C6BE51F0084408A /* SIGPurchaseCompleteController.h */,
+				49E1F9181C6BE51F0084408A /* SIGPurchaseCompleteController.m */,
 				49174F511C50158D00330C56 /* SIGSettingsController.h */,
 				49174F521C50158D00330C56 /* SIGSettingsController.m */,
 				49E1F9141C6A80000084408A /* UIViewController+CartAssist.h */,
@@ -390,6 +400,7 @@
 				498D9C2E1C443D93002D72D6 /* SIGCategory.m in Sources */,
 				497B49601C445828006A21EF /* SIGProduct.m in Sources */,
 				49E1F90D1C69198A0084408A /* SIGCartController.m in Sources */,
+				49E1F91C1C6BE63D0084408A /* SIGBillingController.m in Sources */,
 				49E1F9161C6A80000084408A /* UIViewController+CartAssist.m in Sources */,
 				49E1F9071C69017B0084408A /* SIGCart.m in Sources */,
 				49E1F9101C69439F0084408A /* SIGAccountController.m in Sources */,
@@ -399,6 +410,7 @@
 				49534F921C440938008C6300 /* AppDelegate.m in Sources */,
 				49174F8E1C52D44000330C56 /* SIGPreferences.m in Sources */,
 				497B49701C45B96B006A21EF /* SIGProductDetailController.m in Sources */,
+				49E1F9191C6BE51F0084408A /* SIGPurchaseCompleteController.m in Sources */,
 				49DE1E971C57F09D00294D79 /* SIGLoginViewController.m in Sources */,
 				497B49631C446165006A21EF /* SIGMoney.m in Sources */,
 				49534F8F1C440938008C6300 /* main.m in Sources */,

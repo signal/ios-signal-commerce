@@ -73,7 +73,11 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Cart" id="2ZK-fO-6uH">
                         <rightBarButtonItems>
-                            <barButtonItem image="871-handtruck-toolbar" id="QEB-1W-oNy" userLabel="Checkout"/>
+                            <barButtonItem image="871-handtruck-toolbar" id="QEB-1W-oNy" userLabel="Checkout">
+                                <connections>
+                                    <segue destination="qF5-sV-sS3" kind="show" identifier="ShowCheckoutPage" id="rJF-M4-Ac4"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="830-pencil-toolbar" id="y07-N0-Xc8" userLabel="Edit">
                                 <connections>
                                     <action selector="editClick:" destination="SWJ-7r-5DO" id="1A2-Jj-r82"/>
@@ -84,12 +88,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9L-Bo-KIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1062" y="-480"/>
+            <point key="canvasLocation" x="-530" y="-544"/>
         </scene>
         <!--Checkout-->
         <scene sceneID="t8y-rO-fqm">
             <objects>
-                <viewController storyboardIdentifier="Checkout" title="Checkout" id="qF5-sV-sS3" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Checkout" title="Checkout" id="qF5-sV-sS3" customClass="SIGBillingController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="X6x-ym-5MH"/>
                         <viewControllerLayoutGuide type="bottom" id="wbP-ED-ANX"/>
@@ -99,8 +103,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvv-1Q-hbW">
-                                <rect key="frame" x="274" y="285" width="51" height="30"/>
+                                <rect key="frame" x="157" y="277" width="51" height="30"/>
                                 <state key="normal" title="Do It!!!!"/>
+                                <connections>
+                                    <segue destination="zHe-r1-EKK" kind="presentation" id="Tak-1O-MMX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -108,7 +115,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vON-ko-zzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2014" y="-471"/>
+            <point key="canvasLocation" x="374" y="-531"/>
+        </scene>
+        <!--Purchase Complete Controller-->
+        <scene sceneID="XLR-3d-y3c">
+            <objects>
+                <viewController id="zHe-r1-EKK" customClass="SIGPurchaseCompleteController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OVe-UF-xds"/>
+                        <viewControllerLayoutGuide type="bottom" id="557-Sh-8LF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M8j-hb-mrd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdL-fm-kZ0">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="ContinueShopping:" destination="zHe-r1-EKK" eventType="touchUpInside" id="YPC-b1-aB6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f8f-nu-rMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1182" y="-525"/>
         </scene>
         <!--Category List-->
         <scene sceneID="qnR-HX-QM1">
@@ -177,7 +211,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Signal Commerce" id="7dk-cN-ALC"/>
+                    <navigationItem key="navigationItem" title="Boutique 111" id="7dk-cN-ALC"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBc-Pt-foR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -985,7 +1019,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmM-o3-Anx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1062" y="314"/>
+            <point key="canvasLocation" x="1278" y="306"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="OdS-gc-e0q">
