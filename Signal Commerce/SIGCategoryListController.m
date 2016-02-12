@@ -71,13 +71,17 @@
     [self refreshCategories];
     if (_parentCategory == nil) {
         [self setupLeftMenuButton];
-        [[[SignalInc sharedInstance] defaultTracker] publish: @"view:category_list", nil];
-    } else {
-        [[[SignalInc sharedInstance] defaultTracker] publish: @"view:category_list" withDictionary: @{@"categoryId" : _parentCategory.categoryId}];
     }
     BBBadgeBarButtonItem *cartButton = (BBBadgeBarButtonItem *)self.navigationItem.rightBarButtonItems[1];
     [self refreshCart:cartButton];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+}
+
+-(void)publishLoadCategories {
+    NSString *type = _parentCategory == nil ? @"main" : @"sub";
+    NSString *categoryId = _parentCategory == nil ? @"" : _parentCategory.categoryId;
+    [[[SignalInc sharedInstance] defaultTracker] publish: @"loadCategories" withDictionary: @{@"type": type, @"qty": [NSString stringWithFormat: @"%lu", _categories.count], @"categoryId": categoryId}];
+
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(nullable id)sender {
@@ -106,6 +110,7 @@
         SIGCategoryListController *dest = [storyboard instantiateViewControllerWithIdentifier: @"CategoryList"];
         dest.parentCategory = _categories[indexPath.row];
         [self.navigationController pushViewController:dest animated:YES];
+        [[[SignalInc sharedInstance] defaultTracker] publish:@"click:category" withDictionary:@{@"type":@"sub", @"categoryId" : dest.parentCategory.categoryId}];
     }
 }
 
@@ -176,6 +181,7 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // TODO: hook in error handling
         _categories = [[self appDelegate].shoppingService findAllCategories:_parentCategory.categoryId];
+        [self publishLoadCategories];
         [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
         if (_parentCategory) {
             _products = [[self appDelegate].shoppingService findProductsForCategory:_parentCategory];
