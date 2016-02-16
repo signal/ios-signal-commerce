@@ -13,6 +13,7 @@
 
 @interface SIGProduct : NSObject<FICEntity>
 
+@property (readonly, nonatomic, strong) NSString *productId;
 @property (readonly, nonatomic, strong) NSString *name;
 @property (readonly, nonatomic, strong) NSString *imageUrl;
 @property (readonly, nonatomic, strong) NSString *fullDescription;

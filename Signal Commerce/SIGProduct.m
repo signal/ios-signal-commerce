@@ -19,6 +19,7 @@
     }
     _instock = [dict[@"is_saleable"] boolValue];
     _name = dict[@"name"];
+    _productId = dict[@"entity_id"];
     _fullDescription = dict[@"description"];
     _shortDescription = dict[@"short_description"];
     _imageUrl = dict[@"image_url"];
@@ -41,7 +42,7 @@
 
 }
 
-#pragma mark - FICEntity methods
+#pragma mark - FICEntity methods (methods for loading images from Fast Image Cache)
 
 - (NSString *)UUID {
     CFUUIDBytes UUIDBytes = FICUUIDBytesFromMD5HashOfString(_sku);

@@ -81,7 +81,10 @@
         UISwitch *uiSwitch = [self mappedControl: standardField];
         [uiSwitch setOn:[fieldArr containsObject:@(standardField)]];
     }
+}
 
+-(void)viewDidAppear:(BOOL)animated {
+    [[[SignalInc sharedInstance] defaultTracker] publish: @"view:settings", nil];
 }
 
 -(void)viewDidDisappear:(BOOL)animated {
@@ -283,7 +286,6 @@
     NSString *stringURL = [@"http://commerce.signal.ninja/?siteid=" stringByAppendingString: [_siteCode text]];
     NSURL *url = [NSURL URLWithString:stringURL];
     [[UIApplication sharedApplication] openURL:url];
-
 }
 
 @end

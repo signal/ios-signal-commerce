@@ -20,7 +20,6 @@
 
 -(void)viewDidLoad {
     _loggedinAs.text = [@"You are logged in as " stringByAppendingString:[SIGPreferences loggedInUser ]];
-
     UIBarButtonItem *rightDrawerButton = [[UIBarButtonItem alloc] initWithTitle: @"Logout" style:UIBarButtonItemStylePlain target:self action: @selector(logout)];
     [self.navigationItem setRightBarButtonItem:rightDrawerButton animated:YES];
 

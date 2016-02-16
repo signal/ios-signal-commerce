@@ -78,6 +78,7 @@
 -(void)refreshImages {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         _productImages = [[self appDelegate].shoppingService findAllImagesForProduct:_product.sku];
+        [[[SignalInc sharedInstance] defaultTracker] publish:@"load:productImages" withDictionary:@{@"productId" : _product.productId, @"qty" : [@(_productImages.count) stringValue]}];
         [self performSelectorOnMainThread:@selector(updateImageIndices) withObject:nil waitUntilDone:NO];
     });
 }
@@ -101,6 +102,7 @@
 }
 
 - (IBAction)addToCartClicked:(id)sender {
+    [[[SignalInc sharedInstance] defaultTracker] publish:@"cart:add" withDictionary:@{@"productId" : _product.productId, @"sku" : _product.sku, @"price" : [_product.costWithTax description]}];
     [[self appDelegate].cart add: _product withQuantity: 1];
     [self refreshCart: self.navigationItem.rightBarButtonItem];
 }
@@ -113,7 +115,7 @@
     UISwipeGestureRecognizer *leftRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipe)];
     [leftRightRecognizer setDirection:UISwipeGestureRecognizerDirectionLeft];
     [[self view] addGestureRecognizer:leftRightRecognizer];
-    [[[SignalInc sharedInstance] defaultTracker] publish:@"view_product" withDictionary:@{@"productId" : _product.sku}];
+    [[[SignalInc sharedInstance] defaultTracker] publish:@"load:productDetails" withDictionary:@{@"productId" : _product.productId}];
 }
 
 @end

@@ -38,8 +38,8 @@
     return [[NSArray alloc] init];
 }
 
--(NSArray<NSString *> *)findAllImagesForProduct:(NSString *)productId {
-    NSString *urlString = [[self commerceUrl] stringByAppendingFormat: @"/products/%@/images", productId];
+-(NSArray<NSString *> *)findAllImagesForProduct:(NSString *)sku {
+    NSString *urlString = [[self commerceUrl] stringByAppendingFormat: @"/products/%@/images", sku];
     id json = [self request:urlString];
     NSMutableArray *arr = [[NSMutableArray alloc] init];
     for (NSDictionary *dict in json) {

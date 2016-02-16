@@ -17,6 +17,6 @@
 
 -(NSArray<SIGProduct *> *)findProductsForCategory:(SIGCategory *)category;
 
--(NSArray<NSString *> *)findAllImagesForProduct:(NSString *)productId;
+-(NSArray<NSString *> *)findAllImagesForProduct:(NSString *)sku;
 
 @end

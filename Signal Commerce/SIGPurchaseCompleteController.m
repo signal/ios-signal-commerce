@@ -6,13 +6,25 @@
 //  Copyright © 2016 Signal. All rights reserved.
 //
 
+#import <SignalSDK/SignalInc.h>
+
 #import "SIGPurchaseCompleteController.h"
 #import "AppDelegate.h"
 #import "SIGCart.h"
+#import "SIGMoney.h"
 
 @implementation SIGPurchaseCompleteController
 
 -(void)viewDidAppear:(BOOL)animated {
+    SIGCart *cart = [self appDelegate].cart;
+    NSString *orderNumber = [[NSString stringWithFormat:@"%lu", (unsigned long)[[NSDate date] timeIntervalSince1970]] substringToIndex:5];
+    NSDictionary *args = @{@"total" : [[cart total] description],
+                           @"tax" : [[cart taxes] description],
+                           @"shipping": @"0.00",
+                           @"numItems": [NSString stringWithFormat:@"%d", [cart itemCount]],
+                           @"orderNum" : orderNumber
+                           };
+    [[[SignalInc sharedInstance] defaultTracker] publish: @"click:purchase" withDictionary: args];
     [[self appDelegate].cart empty];
 }
 

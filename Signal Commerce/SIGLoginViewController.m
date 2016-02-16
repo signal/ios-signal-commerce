@@ -23,20 +23,22 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear: animated];
     [_userText becomeFirstResponder];
+    [[SignalInc sharedInstance].defaultTracker publish:@"view:LoginActivity" withDictionary:@{}];
 }
 
 - (IBAction)cancel:(id)sender {
+    [[SignalInc sharedInstance].defaultTracker publish:@"click:cancel" withDictionary:@{}];
     [self dismissViewControllerAnimated:YES completion:^{
     }];
 }
 
 - (IBAction)login:(id)sender {
+    [[SignalInc sharedInstance].defaultTracker publish:@"click:login" withDictionary:@{}];
     [SIGPreferences setLoggedInUser: [_userText text]];
     [[SignalInc sharedInstance].signalConfig addCustomFields:@{@"uid-hashed-email-sha256" : [SignalHashes sha256:[_userText text]] }];
     [self dismissViewControllerAnimated:YES completion:^{
         [_parent.navigationController pushViewController:_handoff animated:NO];
     }];
 }
-
 
 @end
