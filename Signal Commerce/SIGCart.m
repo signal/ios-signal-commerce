@@ -91,4 +91,8 @@
     }
 }
 
+-(BOOL)isEmpty {
+    return _itemCount == 0;
+}
+
 @end

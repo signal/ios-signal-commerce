@@ -30,4 +30,6 @@
 
 -(void)empty;
 
+-(BOOL)isEmpty;
+
 @end

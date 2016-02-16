@@ -31,6 +31,19 @@
 }
 
 - (IBAction)checkoutClick:(id)sender {
+    if ([[self appDelegate].cart isEmpty]) {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Cart is Empty"
+                                                                       message:@"You can't check out when there are no items in the cart."
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+
     UIViewController* checkoutController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"Checkout"];
     if ([SIGPreferences loggedInUser]) {
         [self.navigationController pushViewController:checkoutController animated:NO];
