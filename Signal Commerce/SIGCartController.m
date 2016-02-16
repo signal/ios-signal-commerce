@@ -73,6 +73,9 @@
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         UITableViewCell *cell = [tableView cellForRowAtIndexPath: [NSIndexPath indexPathForRow:0 inSection:0] ];
         [self updateSubtotal: cell];
+        if ([[self appDelegate].cart isEmpty]) {
+            [tableView reloadData];
+        }
     }
 }
 
@@ -87,8 +90,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell;
     if (indexPath.section == 0) {
-        cell = [tableView dequeueReusableCellWithIdentifier: @"Subtotal"];
-        [self updateSubtotal:cell];
+        if ([[self appDelegate].cart isEmpty]) {
+            cell = [tableView dequeueReusableCellWithIdentifier: @"CartEmpty"];
+        } else {
+            cell = [tableView dequeueReusableCellWithIdentifier: @"Subtotal"];
+            [self updateSubtotal:cell];
+        }
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier: @"ProductDescription"];
         SIGCartItem *item = [[self appDelegate].cart cartItems][indexPath.row];

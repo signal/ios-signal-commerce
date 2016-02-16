@@ -137,6 +137,29 @@
                                     <constraint firstItem="gt4-V8-t6S" firstAttribute="leading" secondItem="yA1-f7-T53" secondAttribute="leading" constant="8" id="Qb5-F6-7yv"/>
                                 </constraints>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartEmpty" rowHeight="106" id="E56-Dr-qwZ" userLabel="Warning">
+                                <rect key="frame" x="0.0" y="205" width="600" height="106"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E56-Dr-qwZ" id="taz-bw-tcd">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="106"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are currently no items in your cart" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQC-jh-ObB">
+                                            <rect key="frame" x="15" y="15" width="570" height="76"/>
+                                            <color key="backgroundColor" red="1" green="0.46074065910000001" blue="0.38706505569999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="aQC-jh-ObB" firstAttribute="centerY" secondItem="taz-bw-tcd" secondAttribute="centerY" id="O6v-j6-ixs"/>
+                                        <constraint firstItem="aQC-jh-ObB" firstAttribute="width" secondItem="taz-bw-tcd" secondAttribute="width" constant="-30" id="hfb-RY-2h4"/>
+                                        <constraint firstItem="aQC-jh-ObB" firstAttribute="centerX" secondItem="taz-bw-tcd" secondAttribute="centerX" id="hhd-nW-3WU"/>
+                                        <constraint firstItem="aQC-jh-ObB" firstAttribute="height" secondItem="taz-bw-tcd" secondAttribute="height" constant="-30" id="sbD-wg-TL6"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="SWJ-7r-5DO" id="mLG-YT-4cW"/>
