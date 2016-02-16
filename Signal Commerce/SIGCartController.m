@@ -13,6 +13,8 @@
 #import "SIGCartItem.h"
 #import "SIGMoney.h"
 #import "SIGImageCache.h"
+#import "SIGPreferences.h"
+#import "SIGLoginViewController.h"
 
 @implementation SIGCartController
 
@@ -26,6 +28,20 @@
 
 - (AppDelegate *)appDelegate {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
+}
+
+- (IBAction)checkoutClick:(id)sender {
+    UIViewController* checkoutController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"Checkout"];
+    if ([SIGPreferences loggedInUser]) {
+        [self.navigationController pushViewController:checkoutController animated:NO];
+    } else {
+        SIGLoginViewController* rootController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SIGLoginViewController"];
+
+        rootController.handoff = checkoutController;
+        rootController.parent = self;
+        [self presentViewController:rootController animated:YES completion:^{
+        }];
+    }
 }
 
 #pragma mark - UITableViewDataSource methods

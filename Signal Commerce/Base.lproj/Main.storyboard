@@ -149,7 +149,7 @@
                         <rightBarButtonItems>
                             <barButtonItem image="871-handtruck-toolbar" id="QEB-1W-oNy" userLabel="Checkout">
                                 <connections>
-                                    <segue destination="qF5-sV-sS3" kind="show" identifier="ShowCheckoutPage" id="rJF-M4-Ac4"/>
+                                    <action selector="checkoutClick:" destination="SWJ-7r-5DO" id="GSh-Sb-RD7"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="830-pencil-toolbar" id="y07-N0-Xc8" userLabel="Edit">
@@ -162,7 +162,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9L-Bo-KIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-530" y="-544"/>
+            <point key="canvasLocation" x="-604" y="-525"/>
         </scene>
         <!--Checkout-->
         <scene sceneID="t8y-rO-fqm">
@@ -210,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vON-ko-zzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="374" y="-531"/>
+            <point key="canvasLocation" x="206" y="-525"/>
         </scene>
         <!--Purchase Complete Controller-->
         <scene sceneID="XLR-3d-y3c">
@@ -257,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8f-nu-rMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1182" y="-525"/>
+            <point key="canvasLocation" x="1152" y="-525"/>
         </scene>
         <!--Category List-->
         <scene sceneID="qnR-HX-QM1">
@@ -1134,7 +1134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmM-o3-Anx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1278" y="306"/>
+            <point key="canvasLocation" x="1152" y="314"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="OdS-gc-e0q">
