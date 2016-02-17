@@ -109,7 +109,7 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyBoardName bundle: nil];
         SIGCategoryListController *dest = [storyboard instantiateViewControllerWithIdentifier: @"CategoryList"];
         dest.parentCategory = _categories[indexPath.row];
-        [self.navigationController pushViewController:dest animated:YES];
+        [self.navigationController pushViewController:dest animated:NO];
         [[[SignalInc sharedInstance] defaultTracker] publish:@"click:category" withDictionary:@{@"type":@"sub", @"categoryId" : dest.parentCategory.categoryId}];
     }
 }
