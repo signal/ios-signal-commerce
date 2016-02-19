@@ -1,5 +1,5 @@
 // Copyright (c) 2015 Signal, Inc. All rights reserved.
-// Signal SDK 2.0.4
+// Signal SDK 2.0.5
 
 #import <Foundation/Foundation.h>
 #import "SignalTracker.h"

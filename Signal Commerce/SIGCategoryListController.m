@@ -49,6 +49,7 @@
         [SignalInc initInstance:nil config:^(SignalConfig *config) {
             config.messageRetryCount = 3;
             config.debug = YES;
+            config.datastoreDebug = YES;
             config.dispatchInterval = 1;
             config.messageExpiration = 3600;
             config.maxQueuedMessages = 500;
