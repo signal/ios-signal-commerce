@@ -33,6 +33,10 @@
     return self;
 }
 
+-(int)internalNumber {
+    return _value;
+}
+
 -(SIGMoney *)add:(SIGMoney *)money {
     return [[SIGMoney alloc] initWithInternalNumber: money.value + _value];
 }

@@ -4,7 +4,7 @@
 
 /*!
  Signal tracking interface. Obtain instances of this interface from
- [Signal trackerWithSiteId:] to track events. The implementation of this
+ [SignalInc trackerWithSiteId:] to track events. The implementation of this
  interface is thread-safe, and no calls are expected to block or take a long
  time. All network and disk activity will take place in the background.
  */

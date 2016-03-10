@@ -8,7 +8,7 @@
 @protocol SignalServerDirectResponse <NSObject>
 
 /*!
- The number of tags fired for the request.
+ The number of tags fired for the request
  
  This property is read-only.
  */
@@ -26,6 +26,11 @@
  
  This property is read-only.
  */
-@property(nonatomic, copy, readonly) NSString *details;
+@property(nonatomic, copy, readonly, nullable) NSString *details;
+
+/*!
+ Any profile data that may have been returned in the response.
+ */
+@property(nonatomic, readonly, nonnull) NSDictionary *profileData;
 
 @end

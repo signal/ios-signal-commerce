@@ -26,6 +26,7 @@
 		498D9C2E1C443D93002D72D6 /* SIGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 498D9C2D1C443D93002D72D6 /* SIGCategory.m */; };
 		498D9C331C4440AA002D72D6 /* SIGCategoryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498D9C321C4440AA002D72D6 /* SIGCategoryListController.m */; };
 		498D9C361C444350002D72D6 /* MagentoShoppingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 498D9C351C444350002D72D6 /* MagentoShoppingService.m */; };
+		49D464411C86407B00344E73 /* SIGCartDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D464401C86407B00344E73 /* SIGCartDAO.m */; };
 		49DE1E971C57F09D00294D79 /* SIGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DE1E961C57F09D00294D79 /* SIGLoginViewController.m */; };
 		49E1F9071C69017B0084408A /* SIGCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E1F9061C69017B0084408A /* SIGCart.m */; };
 		49E1F90A1C6901AA0084408A /* SIGCartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E1F9091C6901AA0084408A /* SIGCartItem.m */; };
@@ -82,6 +83,8 @@
 		498D9C321C4440AA002D72D6 /* SIGCategoryListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGCategoryListController.m; sourceTree = "<group>"; };
 		498D9C341C444350002D72D6 /* MagentoShoppingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagentoShoppingService.h; sourceTree = "<group>"; };
 		498D9C351C444350002D72D6 /* MagentoShoppingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagentoShoppingService.m; sourceTree = "<group>"; };
+		49D4643F1C86407B00344E73 /* SIGCartDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGCartDAO.h; sourceTree = "<group>"; };
+		49D464401C86407B00344E73 /* SIGCartDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGCartDAO.m; sourceTree = "<group>"; };
 		49DE1E951C57F09D00294D79 /* SIGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGLoginViewController.h; sourceTree = "<group>"; };
 		49DE1E961C57F09D00294D79 /* SIGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGLoginViewController.m; sourceTree = "<group>"; };
 		49E1F9051C69017B0084408A /* SIGCart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGCart.h; sourceTree = "<group>"; };
@@ -157,10 +160,7 @@
 				49534F9B1C440938008C6300 /* LaunchScreen.storyboard */,
 				49534F961C440938008C6300 /* Main.storyboard */,
 				498D9C271C443C1A002D72D6 /* Model */,
-				492F04F21C46F09400F5AF98 /* SIGImageCache.h */,
-				492F04F31C46F09400F5AF98 /* SIGImageCache.m */,
-				49174F8C1C52D44000330C56 /* SIGPreferences.h */,
-				49174F8D1C52D44000330C56 /* SIGPreferences.m */,
+				49D4643B1C863ABB00344E73 /* Service */,
 				49534F8D1C440938008C6300 /* Supporting Files */,
 			);
 			path = "Signal Commerce";
@@ -226,6 +226,19 @@
 				49E1F9151C6A80000084408A /* UIViewController+CartAssist.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		49D4643B1C863ABB00344E73 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				492F04F21C46F09400F5AF98 /* SIGImageCache.h */,
+				492F04F31C46F09400F5AF98 /* SIGImageCache.m */,
+				49174F8C1C52D44000330C56 /* SIGPreferences.h */,
+				49174F8D1C52D44000330C56 /* SIGPreferences.m */,
+				49D4643F1C86407B00344E73 /* SIGCartDAO.h */,
+				49D464401C86407B00344E73 /* SIGCartDAO.m */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 		785251F57B90A00AA89CFAB9 /* Pods */ = {
@@ -407,6 +420,7 @@
 				49E1F90A1C6901AA0084408A /* SIGCartItem.m in Sources */,
 				492F04F41C46F09400F5AF98 /* SIGImageCache.m in Sources */,
 				498D9C361C444350002D72D6 /* MagentoShoppingService.m in Sources */,
+				49D464411C86407B00344E73 /* SIGCartDAO.m in Sources */,
 				49534F921C440938008C6300 /* AppDelegate.m in Sources */,
 				49174F8E1C52D44000330C56 /* SIGPreferences.m in Sources */,
 				497B49701C45B96B006A21EF /* SIGProductDetailController.m in Sources */,

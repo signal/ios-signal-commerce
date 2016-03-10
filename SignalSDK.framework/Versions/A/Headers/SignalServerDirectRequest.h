@@ -18,33 +18,41 @@
 
  This property is read-only.
  */
-@property(nonatomic, copy, readonly) NSString *siteId;
+@property(nonatomic, copy, readonly, nonnull) NSString *siteId;
 
 /*!
  The event name sent to Signal.
  
  This property is read-only.
  */
-@property(nonatomic, copy, readonly) NSString *event;
+@property(nonatomic, copy, readonly, nonnull) NSString *event;
 
 /*!
  The data associated with this event.
  
  This property is read-only.
  */
-@property(nonatomic, copy, readonly) NSDictionary *data;
+@property(nonatomic, copy, readonly, nonnull) NSDictionary *data;
 
-@property (nonatomic, copy, readonly) NSDate *dateRequested;
+/*! The time/date that the request was made */
+@property (nonatomic, copy, readonly, nonnull) NSDate *dateRequested;
 
 /*!
  If true, this request will be logged with `NSLog()`.
  */
 @property(nonatomic, assign, readonly) BOOL debug;
 
-@property(nonatomic, readonly) SignalConfig *signalConfig;
+/*! The signal config */
+@property(nonatomic, readonly, nonnull) SignalConfig *signalConfig;
 
+/*!
+ The ID of this request in the database (-1 means that it has not been persisted)
+ */
 @property(nonatomic) long dbId;
 
+/*!
+ Number of attempts that have been made to send this request to the server.
+ */
 @property(nonatomic) int attempt;
 
 /*!
@@ -57,6 +65,6 @@
  @return `YES` if the contents of *otherRequest* are equal to the contents
  of the receiving request; otherwise `NO`.
  */
-- (BOOL)isEqualToRequest:(id<SignalServerDirectRequest>)otherRequest;
+- (BOOL)isEqualToRequest:(id<SignalServerDirectRequest> _Nullable)otherRequest;
 
 @end

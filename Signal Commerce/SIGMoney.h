@@ -14,8 +14,12 @@
 
 -(instancetype)initWithNumber:(NSNumber *)numberValue;
 
+-(instancetype)initWithInternalNumber:(int)value;
+
 -(SIGMoney *)add:(SIGMoney *)money;
 
 -(SIGMoney *)minus:(SIGMoney *)money;
+
+-(int)internalNumber;
 
 @end
