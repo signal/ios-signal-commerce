@@ -61,6 +61,8 @@ typedef NS_ENUM(NSUInteger, StandardField) {
 @property (nonatomic, readonly, nonnull) NSDictionary *customFields;
 /*! YES to enable network activity only when on a Wifi network */
 @property (nonatomic) BOOL networkOnWifiOnly;
+/*! YES to enable the profile data store.  If NO profile data store will always be empty */
+@property (nonatomic) BOOL profileDataEnabled;
 /*!
  Number of seconds of idle time in between data loads
  */

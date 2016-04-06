@@ -1,5 +1,5 @@
 // Copyright (c) 2015 Signal, Inc. All rights reserved.
-// Signal SDK 2.0.6
+// Signal SDK 2.1.0
 
 #import <Foundation/Foundation.h>
 #import "SignalTracker.h"
@@ -8,10 +8,10 @@
 #import "SignalServerDirectRequest.h"
 #import "SignalServerDirectResponse.h"
 #import "SignalProfileStore.h"
-
-@class UIApplication;
+#import "SignalProfile.h"
 
 typedef void (^config_block_t)(SignalConfig * _Nonnull);
+
 
 /*!
  Signal iOS top-level class. Provides facilities to create trackers.
@@ -68,12 +68,5 @@ typedef void (^config_block_t)(SignalConfig * _Nonnull);
  If an error occurs or the site ID is not valid, this method will return `nil`.
  */
 - (id<SignalTracker> _Nullable)trackerWithSiteId:(NSString * _Nonnull)siteId;
-
-/*!
- Forces the queue to drain. 
- 
- @param application the current application
- */
-- (void)drainInBackground:(UIApplication * _Nonnull)application;
 
 @end

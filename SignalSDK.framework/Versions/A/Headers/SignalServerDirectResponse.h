@@ -2,6 +2,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class SignalProfile;
+
 /*!
  Immutable Signal server-direct response value object.
  */
@@ -31,6 +33,6 @@
 /*!
  Any profile data that may have been returned in the response.
  */
-@property(nonatomic, readonly, nonnull) NSDictionary *profileData;
+@property(nonatomic, readonly, nullable) SignalProfile *profileData;
 
 @end
