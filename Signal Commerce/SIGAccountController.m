@@ -9,6 +9,8 @@
 #import "SIGAccountController.h"
 #import "SIGPreferences.h"
 #import <SignalSDK/SignalInc.h>
+#import "AppDelegate.h"
+#import "SIGUserService.h"
 
 @interface SIGAccountController()
 
@@ -22,13 +24,23 @@
     _loggedinAs.text = [@"You are logged in as " stringByAppendingString:[SIGPreferences loggedInUser ]];
     UIBarButtonItem *rightDrawerButton = [[UIBarButtonItem alloc] initWithTitle: @"Logout" style:UIBarButtonItemStylePlain target:self action: @selector(logout)];
     [self.navigationItem setRightBarButtonItem:rightDrawerButton animated:YES];
-
 }
 
 -(void)logout {
-    [[SignalInc sharedInstance].signalConfig removeCustomField:@"uid-hashed-email-sha256"];
-    [SIGPreferences setLoggedInUser:nil];
+    [[self appDelegate].userService logout];
     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (IBAction)loadProfileData:(id)sender {
+    [[SignalInc sharedInstance].defaultTracker publish:@"load:profile", nil];
+}
+
+- (IBAction)clearProfileData:(id)sender {
+    [[SignalInc sharedInstance].profileStore clear];
+}
+
+- (AppDelegate *)appDelegate {
+    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
 @end

@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "SIGCart.h"
 #import "SIGMoney.h"
+#import "SIGUserService.h"
 
 @interface SIGBillingController()
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -26,9 +27,10 @@
 -(void)viewDidLoad {
     [_activityIndicator setHidden: YES];
     SIGCart *cart = [self appDelegate].cart;
-    [_subtotal setText: [[cart subtotal] description]];
-    [_taxes setText: [[cart taxes] description]];
-    [_total setText: [[cart total] description]];
+    BOOL preferred = [[self appDelegate].userService preferred];
+    [_subtotal setText: [[cart subtotal: preferred] description]];
+    [_taxes setText: [[cart taxes: preferred] description]];
+    [_total setText: [[cart total: preferred] description]];
 }
 
 - (IBAction)purchaseClick:(id)sender {

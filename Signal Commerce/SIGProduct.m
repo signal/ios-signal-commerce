@@ -26,8 +26,24 @@
     _cost = [[SIGMoney alloc] initWithNumber: dict[@"final_price_without_tax"]];
     _costWithTax = [[SIGMoney alloc] initWithNumber: dict[@"final_price_with_tax"]];
     _tax = [_costWithTax minus: _cost];
+    _regularCost = [[SIGMoney alloc] initWithNumber: dict[@"regular_price_without_tax"]];
+    _regularCostWithTax = [[SIGMoney alloc] initWithNumber: dict[@"regular_price_with_tax"]];
+    _regularTax = [_regularCostWithTax minus: _regularCost];
     _sku = dict[@"sku"];
     return self;
+}
+
+-(SIGMoney *)actualCost:(BOOL)preferred {
+    return preferred ? _cost : _regularCost;
+}
+
+
+-(SIGMoney *)actualTax:(BOOL)preferred {
+    return preferred ? _tax : _regularTax;
+}
+
+-(SIGMoney *)actualCostWithTax:(BOOL)preferred {
+    return preferred ? _costWithTax : _regularCostWithTax;
 }
 
 -(BOOL)isEqual:(id)object {

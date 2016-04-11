@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "SIGCart.h"
 #import "SIGMoney.h"
+#import "SIGUserService.h"
 
 @interface SIGPurchaseCompleteController()
 @property (weak, nonatomic) IBOutlet UILabel *purchaseComplete;
@@ -26,8 +27,9 @@
     SIGCart *cart = [self appDelegate].cart;
     NSString *orderNumber = [[NSString stringWithFormat:@"%lu", (unsigned long)[[NSDate date] timeIntervalSince1970]] substringFromIndex:5];
     [_purchaseComplete setText: [NSString stringWithFormat:@"Purchase is complete. Your order number is %@", orderNumber]];
-    NSDictionary *args = @{@"total" : [[cart total] description],
-                           @"tax" : [[cart taxes] description],
+    BOOL preferred = [[self appDelegate].userService preferred];
+    NSDictionary *args = @{@"total" : [[cart total: preferred] description],
+                           @"tax" : [[cart taxes: preferred] description],
                            @"shipping": @"0.00",
                            @"numItems": [NSString stringWithFormat:@"%d", [cart itemCount]],
                            @"orderNum" : orderNumber

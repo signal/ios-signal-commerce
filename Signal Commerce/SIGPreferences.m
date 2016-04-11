@@ -23,6 +23,7 @@ static NSString * const kNetworkOnWifiOnly = @"SignalnetworkOnWifiOnly";
 static NSString * const kInitialized = @"SignalInitialized";
 static NSString * const kMagentoServer = @"SignalMagentoServer";
 static NSString * const kLoggedInUser = @"SignalLoggedInUser";
+static NSString * const kProfileDataStoreEnabled = @"SignalProfileDataStoreEnabled";
 
 
 @implementation SIGPreferences
@@ -37,6 +38,7 @@ static NSString * const kLoggedInUser = @"SignalLoggedInUser";
     [userDefaults setBool: config.debug forKey: kDebug ];
     [userDefaults setBool: config.datastoreDebug forKey: kDatastoreDebug];
     [userDefaults setBool:YES forKey:kInitialized];
+    [userDefaults setBool:config.profileDataEnabled forKey: kProfileDataStoreEnabled];
     [userDefaults synchronize];
 }
 
@@ -51,6 +53,7 @@ static NSString * const kLoggedInUser = @"SignalLoggedInUser";
     config.endpoint = [userDefaults stringForKey: kEndpoint];
     config.debug = [userDefaults boolForKey: kDebug];
     config.datastoreDebug = [userDefaults boolForKey: kDatastoreDebug];
+    config.profileDataEnabled = [userDefaults boolForKey:kProfileDataStoreEnabled];
 }
 
 +(void)setMagentoServer:(NSString *)magentoServer {

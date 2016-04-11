@@ -44,31 +44,31 @@
 }
 
 
--(SIGMoney *)taxes {
+-(SIGMoney *)taxes:(BOOL)preferred {
     SIGMoney *money = [[SIGMoney alloc] init];
     for (SIGCartItem *item in _items) {
         for (int i=0; i < item.quantity; i++) {
-            money = [item.product.tax add: money];
+            money = [[item.product actualTax:preferred] add: money];
         }
     }
     return money;
 }
 
--(SIGMoney *)total {
+-(SIGMoney *)total:(BOOL)preferred {
     SIGMoney *money = [[SIGMoney alloc] init];
     for (SIGCartItem *item in _items) {
         for (int i=0; i < item.quantity; i++) {
-            money = [item.product.costWithTax add: money];
+            money = [[item.product actualCostWithTax:preferred] add: money];
         }
     }
     return money;
 }
 
--(SIGMoney *)subtotal {
+-(SIGMoney *)subtotal:(BOOL)preferred {
     SIGMoney *money = [[SIGMoney alloc] init];
     for (SIGCartItem *item in _items) {
         for (int i=0; i < item.quantity; i++) {
-            money = [item.product.cost add: money];
+            money = [[item.product actualCost:preferred] add: money];
         }
     }
     return money;

@@ -10,7 +10,8 @@
 #import "MMDrawerController.h"
 #import "SIGPreferences.h"
 #import <SignalSDK/SignalInc.h>
-#import <SignalSDK/SignalHashes.h>
+#import "AppDelegate.h"
+#import "SIGUserService.h"
 
 @interface SIGLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userText;
@@ -34,11 +35,14 @@
 
 - (IBAction)login:(id)sender {
     [[SignalInc sharedInstance].defaultTracker publish:@"click:login" withDictionary:@{}];
-    [SIGPreferences setLoggedInUser: [_userText text]];
-    [[SignalInc sharedInstance].signalConfig addCustomFields:@{@"uid-hashed-email-sha256" : [SignalHashes sha256:[_userText text]] }];
+    [[self appDelegate].userService login:[_userText text] password: @""];
     [self dismissViewControllerAnimated:YES completion:^{
         [_parent.navigationController pushViewController:_handoff animated:NO];
     }];
+}
+
+- (AppDelegate *)appDelegate {
+    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
 @end

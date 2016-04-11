@@ -15,6 +15,7 @@
 #import "SIGImageCache.h"
 #import "SIGPreferences.h"
 #import "SIGLoginViewController.h"
+#import "SIGUserService.h"
 
 @implementation SIGCartController
 
@@ -45,7 +46,7 @@
     }
 
     UIViewController* checkoutController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"Checkout"];
-    if ([SIGPreferences loggedInUser]) {
+    if ([[self appDelegate].userService isLoggedIn]) {
         [self.navigationController pushViewController:checkoutController animated:NO];
     } else {
         SIGLoginViewController* rootController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SIGLoginViewController"];
@@ -104,7 +105,8 @@
         label = (UILabel *)[cell.contentView viewWithTag:4];
         label.text = [NSString stringWithFormat:@"Quantity: %d", item.quantity];
         label = (UILabel *)[cell.contentView viewWithTag:3];
-        label.text = [item.product.cost description];
+        BOOL preferred = [[self appDelegate].userService preferred];
+        label.text = [[item.product actualCost:preferred] description];
         [[self appDelegate].imageCache findPreviewImageForProduct: item.product onComplete: ^(id <FICEntity> entity, NSString *formatName, UIImage *image) {
             UIImageView *imageView = (UIImageView *)[cell.contentView viewWithTag:1];
             imageView.image = image;
@@ -147,11 +149,12 @@
 
 -(void)updateSubtotal:(UITableViewCell *)cell {
     UILabel *label = (UILabel *)[cell.contentView viewWithTag:5];
-    label.text = [NSString stringWithFormat:@"%@", [[self appDelegate].cart subtotal]];
+    BOOL preferred = [[self appDelegate].userService preferred];
+    label.text = [NSString stringWithFormat:@"%@", [[self appDelegate].cart subtotal: preferred]];
     label = (UILabel *)[cell.contentView viewWithTag:6];
-    label.text = [NSString stringWithFormat:@"%@", [[self appDelegate].cart taxes]];
+    label.text = [NSString stringWithFormat:@"%@", [[self appDelegate].cart taxes: preferred]];
     label = (UILabel *)[cell.contentView viewWithTag:7];
-    label.text = [NSString stringWithFormat:@"%@", [[self appDelegate].cart total]];
+    label.text = [NSString stringWithFormat:@"%@", [[self appDelegate].cart total: preferred]];
 }
 
 @end

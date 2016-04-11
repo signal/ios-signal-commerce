@@ -22,9 +22,17 @@
 @property (readonly, nonatomic, strong) SIGMoney *cost;
 @property (readonly, nonatomic, strong) SIGMoney *costWithTax;
 @property (readonly, nonatomic, strong) SIGMoney *tax;
+@property (readonly, nonatomic, strong) SIGMoney *regularCost;
+@property (readonly, nonatomic, strong) SIGMoney *regularCostWithTax;
+@property (readonly, nonatomic, strong) SIGMoney *regularTax;
 @property (readonly, nonatomic) BOOL instock;
 
 -(instancetype)initWithDictionary:(NSDictionary *)dict;
 
+-(SIGMoney *)actualCost:(BOOL)preferred;
+
+-(SIGMoney *)actualTax:(BOOL)preferred;
+
+-(SIGMoney *)actualCostWithTax:(BOOL)preferred;
 
 @end

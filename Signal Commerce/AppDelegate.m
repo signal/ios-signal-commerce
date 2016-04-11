@@ -14,11 +14,10 @@
 #import "SIGProductDetailController.h"
 #import "SIGCart.h"
 #import "SIGCartDAO.h"
+#import "SIGUserService.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
-
 @property (strong, nonatomic, readonly) SIGCartDAO *cartDAO;
-
 @end
 
 @implementation AppDelegate
@@ -30,6 +29,7 @@
     _imageCache = [[SIGImageCache alloc] init];
     _cart = [[SIGCart alloc] init];
     _cartDAO = [[SIGCartDAO alloc] init];
+    _userService = [[SIGUserService alloc] init];
     SIGCart *cart = [_cartDAO load];
     if (cart) {
         _cart = cart;
@@ -54,7 +54,6 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     [_cartDAO save: _cart];
 }
-
 
 - (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
 

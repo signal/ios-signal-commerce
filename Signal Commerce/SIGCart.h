@@ -20,11 +20,11 @@
 
 -(NSArray<SIGCartItem *> *)cartItems;
 
--(SIGMoney *)subtotal;
+-(SIGMoney *)subtotal:(BOOL)preferred;
 
--(SIGMoney *)taxes;
+-(SIGMoney *)taxes:(BOOL)preferred;
 
--(SIGMoney *)total;
+-(SIGMoney *)total:(BOOL)preferred;
 
 -(void)removeItemAtIndex:(unsigned long)index;
 

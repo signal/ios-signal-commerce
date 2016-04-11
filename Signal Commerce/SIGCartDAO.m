@@ -26,7 +26,7 @@
     [db executeUpdate: @"delete from cart_item"];
     for (SIGCartItem *item in [cart cartItems]) {
         SIGProduct *product = item.product;
-        [db executeUpdate:@"insert into cart_item (product_id, name, imageUrl, fullDescription, sku, shortDescription, cost, costWithTax, tax, instock, quantity) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" withArgumentsInArray:@[product.productId, product.name, product.imageUrl, product.fullDescription, product.sku, product.shortDescription, @(product.cost.internalNumber), @(product.costWithTax.internalNumber), @(product.tax.internalNumber), @(product.instock), @(item.quantity)]];
+        [db executeUpdate:@"insert into cart_item (product_id, name, imageUrl, fullDescription, sku, shortDescription, cost, costWithTax, tax, instock, quantity, regularCost, regularCostWithTax) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" withArgumentsInArray:@[product.productId, product.name, product.imageUrl, product.fullDescription, product.sku, product.shortDescription, @(product.cost.internalNumber), @(product.costWithTax.internalNumber), @(product.tax.internalNumber), @(product.instock), @(item.quantity), @(product.regularCost.internalNumber), @(product.regularCostWithTax.internalNumber)]];
     }
     [db close];
 }
@@ -44,6 +44,8 @@
                                  @"image_url" : [rs stringForColumn:@"imageUrl"],
                                  @"final_price_without_tax" : @((float)[rs intForColumn:@"cost"] / 100),
                                  @"final_price_with_tax" : @((float)[rs intForColumn:@"costWithTax"] / 100),
+                                 @"regular_price_without_tax" : @((float)[rs intForColumn:@"regularCost"] / 100),
+                                 @"regular_price_with_tax" : @((float)[rs intForColumn: @"regularCostWithTax"] / 100),
                                  @"sku": [rs stringForColumn: @"sku"]
                                  };
         SIGProduct *product = [[SIGProduct alloc] initWithDictionary: params];
@@ -64,7 +66,7 @@
     }
     if (!dbExists) {
         [db executeUpdate: @"create table version (version integer);" ];
-        [db executeUpdate: @"create table cart_item (product_id text, name text, imageUrl text, fullDescription text, sku text, shortDescription text, cost integer, costWithTax integer, tax integer, instock integer, quantity integer);"];
+        [db executeUpdate: @"create table cart_item (product_id text, name text, imageUrl text, fullDescription text, sku text, shortDescription text, cost integer, costWithTax integer, tax integer, instock integer, quantity integer, regularCost integer, regularCostWithTax integer);"];
     }
     return db;
 }

@@ -13,6 +13,7 @@
 #import "UIViewController+CartAssist.h"
 
 #import <SignalSDK/SignalInc.h>
+#import "SIGUserService.h"
 
 @interface SIGProductDetailController()
 
@@ -32,7 +33,8 @@
     [_pageControl setPageIndicatorTintColor: [UIColor lightGrayColor]];
     [_pageControl setCurrentPageIndicatorTintColor: [UIColor grayColor]];
     [self setTitle:_product.name];
-    [_price setText: [_product.cost description]];
+    BOOL preferred = [[self appDelegate].userService preferred];
+    [_price setText: [[_product actualCost: preferred] description]];
     if (_product.instock) {
         [_instock setText: @"In Stock"];
         [_instock setTextColor: [UIColor greenColor]];

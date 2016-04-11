@@ -5,13 +5,14 @@
 //  Created by Andrew on 1/11/16.
 //  Copyright © 2016 Signal. All rights reserved.
 //
+#import <BBBadgeBarButtonItem/BBBadgeBarButtonItem.h>
+#import <SignalSDK/SignalInc.h>
+#import <UIKit/UIKit.h>
 
 #import "MMDrawerController.h"
 #import "MMDrawerBarButtonItem.h"
 #import "UIViewController+MMDrawerController.h"
-#import <BBBadgeBarButtonItem/BBBadgeBarButtonItem.h>
 
-#import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "SIGCategory.h"
 #import "SIGCategoryListController.h"
@@ -24,8 +25,8 @@
 #import "SIGCart.h"
 #import "SIGCartController.h"
 #import "UIViewController+CartAssist.h"
+#import "SIGUserService.h"
 
-#import <SignalSDK/SignalInc.h>
 
 @interface SIGCategoryListController()
 
@@ -140,7 +141,8 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"ProductDescription"];
         SIGProduct *product = _products[indexPath.row];
         cell.textLabel.text = product.name;
-        cell.detailTextLabel.text = [product.cost description];
+        BOOL preferred = [[self appDelegate].userService preferred];
+        cell.detailTextLabel.text = [[product actualCost:preferred] description];
         [[self appDelegate].imageCache findPreviewImageForProduct: product onComplete: ^(id <FICEntity> entity, NSString *formatName, UIImage *image) {
             cell.imageView.image = image;
             cell.imageView.layer.cornerRadius = 5;
@@ -203,7 +205,7 @@
 
 - (void)openAccount {
     UIViewController* accountController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SIGAccountOverview"];
-    if ([SIGPreferences loggedInUser]) {
+    if ([[self appDelegate].userService isLoggedIn]) {
         [self.navigationController pushViewController:accountController animated:NO];
     } else {
         SIGLoginViewController* rootController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SIGLoginViewController"];

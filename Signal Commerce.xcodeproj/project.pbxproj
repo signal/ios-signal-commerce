@@ -20,6 +20,7 @@
 		49534F9A1C440938008C6300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49534F991C440938008C6300 /* Assets.xcassets */; };
 		49534F9D1C440938008C6300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49534F9B1C440938008C6300 /* LaunchScreen.storyboard */; };
 		49534FA81C440938008C6300 /* Signal_CommerceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49534FA71C440938008C6300 /* Signal_CommerceTests.m */; };
+		497557531CB5A203001A7AED /* SIGUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 497557521CB5A203001A7AED /* SIGUserService.m */; };
 		497B49601C445828006A21EF /* SIGProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B495F1C445828006A21EF /* SIGProduct.m */; };
 		497B49631C446165006A21EF /* SIGMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B49621C446165006A21EF /* SIGMoney.m */; };
 		497B49701C45B96B006A21EF /* SIGProductDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B496F1C45B96B006A21EF /* SIGProductDetailController.m */; };
@@ -70,6 +71,8 @@
 		49534FA31C440938008C6300 /* Signal CommerceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Signal CommerceTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49534FA71C440938008C6300 /* Signal_CommerceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Signal_CommerceTests.m; sourceTree = "<group>"; };
 		49534FA91C440938008C6300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		497557511CB5A203001A7AED /* SIGUserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGUserService.h; sourceTree = "<group>"; };
+		497557521CB5A203001A7AED /* SIGUserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGUserService.m; sourceTree = "<group>"; };
 		497B495E1C445828006A21EF /* SIGProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGProduct.h; sourceTree = "<group>"; };
 		497B495F1C445828006A21EF /* SIGProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGProduct.m; sourceTree = "<group>"; };
 		497B49611C446165006A21EF /* SIGMoney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGMoney.h; sourceTree = "<group>"; };
@@ -237,6 +240,8 @@
 				49174F8D1C52D44000330C56 /* SIGPreferences.m */,
 				49D4643F1C86407B00344E73 /* SIGCartDAO.h */,
 				49D464401C86407B00344E73 /* SIGCartDAO.m */,
+				497557511CB5A203001A7AED /* SIGUserService.h */,
+				497557521CB5A203001A7AED /* SIGUserService.m */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49174F531C50158D00330C56 /* SIGSettingsController.m in Sources */,
+				497557531CB5A203001A7AED /* SIGUserService.m in Sources */,
 				498D9C2E1C443D93002D72D6 /* SIGCategory.m in Sources */,
 				497B49601C445828006A21EF /* SIGProduct.m in Sources */,
 				49E1F90D1C69198A0084408A /* SIGCartController.m in Sources */,

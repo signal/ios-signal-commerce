@@ -44,6 +44,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *deviceInfoSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *deviceIdTypeSwitch;
 @property (weak, nonatomic) IBOutlet UITextField *magentoField;
+@property (weak, nonatomic) IBOutlet UISwitch *profileDataEnabledField;
 
 @end
 
@@ -74,6 +75,8 @@
     [_siteCode setText: config.defaultSiteId];
     [_serverEndpoint setText: config.endpoint];
     [_magentoField setText: [SIGPreferences magentoServer]];
+
+    [_profileDataEnabledField setOn: config.profileDataEnabled];
 
     StandardField standardField;
     NSArray *fieldArr = config.standardFields;
@@ -243,6 +246,10 @@
     } else {
         [self removeStandardField:field];
     }
+}
+
+- (IBAction)toggleProfileDataEnabled:(id)sender {
+    [SignalInc sharedInstance].signalConfig.profileDataEnabled = [self.profileDataEnabledField isOn];
 }
 
 -(UISwitch *)mappedControl:(StandardField)field {
