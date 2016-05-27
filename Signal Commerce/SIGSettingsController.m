@@ -81,7 +81,7 @@
 
     StandardField standardField;
     NSArray *fieldArr = config.standardFields;
-    for (standardField=ApplicationName; standardField < DeviceIdType; standardField++) {
+    for (standardField=ApplicationName; standardField <= DeviceIdType; standardField++) {
         UISwitch *uiSwitch = [self mappedControl: standardField];
         [uiSwitch setOn:[fieldArr containsObject:@(standardField)]];
     }
@@ -94,7 +94,6 @@
 -(void)viewDidDisappear:(BOOL)animated {
     [SIGPreferences save];
 }
-
 
 - (IBAction)debugChanged:(id)sender {
     [SignalInc sharedInstance].signalConfig.debug = [_debugSwitch isOn];
@@ -219,33 +218,12 @@
     [SignalInc sharedInstance].signalConfig.networkOnWifiOnly = [_networkOnWifiOnlySwitch isOn];
 }
 
--(void)addStandardField:(StandardField)field {
-    SignalConfig *config = [SignalInc sharedInstance].signalConfig;
-    NSArray *fields = config.standardFields;
-    if ([fields containsObject:@(field)]) {
-        return;
-    }
-    NSMutableArray *arr = [[NSMutableArray alloc] initWithArray:fields];
-    [arr addObject:@(field)];
-    [config addArrayOfStandardFields:arr];
-}
-
--(void)removeStandardField:(StandardField)field {
-    SignalConfig *config = [SignalInc sharedInstance].signalConfig;
-    NSArray *fields = config.standardFields;
-    if (![fields containsObject:@(field)]) {
-        return;
-    }
-    NSMutableArray *arr = [[NSMutableArray alloc] initWithArray:fields];
-    [arr removeObject:@(field)];
-    [config addArrayOfStandardFields:arr];
-}
-
 -(void)toggleStandardField:(StandardField)field on:(BOOL)on {
+    SignalConfig *config = [SignalInc sharedInstance].signalConfig;
     if (on) {
-        [self addStandardField:field];
+        [config addStandardField:field];
     } else {
-        [self removeStandardField:field];
+        [config removeStandardField:field];
     }
 }
 
@@ -255,6 +233,8 @@
 
 -(UISwitch *)mappedControl:(StandardField)field {
     switch (field) {
+        case ActiveNetwork:
+            return _activeNetwork;
         case ApplicationName:
             return _applicationNameSwitch;
         case ApplicationVersion:
@@ -273,8 +253,6 @@
             return _carrierSwitch;
         case DeviceInfo:
             return _deviceInfoSwitch;
-        case ODIN:
-            return _odinSwitch;
         case DeviceIdType:
             return _deviceIdTypeSwitch;
         case DeviceId:

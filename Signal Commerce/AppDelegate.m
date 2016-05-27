@@ -59,9 +59,9 @@
         config.messageExpiration = 3600;
         config.maxQueuedMessages = 500;
         config.defaultSiteId = @"abcd123";
-        [config addStandardFields: ApplicationName, OsVersion, DeviceIdSHA256, DeviceIdType, nil];
-        [config addCustomFields: @{@"uid":@"d56ead9fffff"}];
+        [config addCustomFields: @{@"demo":@"true", @"sdkVersion": [SignalInc sdkVersion]}];
     }];
+    
     [SIGPreferences load];
     [[SignalInc sharedInstance] trackerWithSiteId: [SignalInc sharedInstance].signalConfig.defaultSiteId];
     return YES;

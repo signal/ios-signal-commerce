@@ -20,25 +20,34 @@ static NSString * const kEndpoint = @"SignalEndpoint";
 static NSString * const kDefaultSiteId = @"SignalDefaultSiteId";
 static NSString * const kSocketReadTimeout = @"SignalSocketReadTimeout";
 static NSString * const kNetworkOnWifiOnly = @"SignalnetworkOnWifiOnly";
-static NSString * const kInitialized = @"SignalInitialized";
 static NSString * const kMagentoServer = @"SignalMagentoServer";
 static NSString * const kLoggedInUser = @"SignalLoggedInUser";
+static NSString * const kStandardFields = @"SignalStandardFields";
+static NSString * const kLifecycleEventsEnabled = @"SignalLifecycleEventsEnabled";
 static NSString * const kProfileDataStoreEnabled = @"SignalProfileDataStoreEnabled";
-
+static NSString * const kBackgroundDrainEnabled = @"SignalBackgroundDrainEnabled";
+static NSString * const kInitialized = @"SignalInitialized";
 
 @implementation SIGPreferences
 
 +(void)save {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     SignalConfig *config = [[SignalInc sharedInstance] signalConfig];
-    [userDefaults setFloat:config.batteryPercentage forKey:kBatteryPercentage];
-    [userDefaults setDouble:config.dispatchInterval forKey:kDispatchInterval];
+    [userDefaults setFloat: config.batteryPercentage forKey:kBatteryPercentage];
+    [userDefaults setDouble: config.dispatchInterval forKey:kDispatchInterval];
+    [userDefaults setDouble: config.messageExpiration forKey:kMessageExpiration];
+    [userDefaults setDouble: config.messageRetryCount forKey:kMessageRetryCount];
+    [userDefaults setDouble: config.maxQueuedMessages forKey:kMaxQueuedMessages];
     [userDefaults setObject: config.endpoint forKey: kEndpoint];
     [userDefaults setObject: config.defaultSiteId forKey: kDefaultSiteId];
+    [userDefaults setObject: config.standardFields forKey: kStandardFields];
+    [userDefaults setBool: config.networkOnWifiOnly forKey: kNetworkOnWifiOnly ];
     [userDefaults setBool: config.debug forKey: kDebug ];
     [userDefaults setBool: config.datastoreDebug forKey: kDatastoreDebug];
+    [userDefaults setBool: config.lifecycleEventsEnabled forKey: kLifecycleEventsEnabled];
+    [userDefaults setBool: config.profileDataEnabled forKey: kProfileDataStoreEnabled];
+
     [userDefaults setBool:YES forKey:kInitialized];
-    [userDefaults setBool:config.profileDataEnabled forKey: kProfileDataStoreEnabled];
     [userDefaults synchronize];
 }
 
@@ -48,12 +57,22 @@ static NSString * const kProfileDataStoreEnabled = @"SignalProfileDataStoreEnabl
         return;
     }
     SignalConfig *config = [[SignalInc sharedInstance] signalConfig];
-    config.batteryPercentage = [userDefaults boolForKey:kBatteryPercentage];
-    config.defaultSiteId = [userDefaults stringForKey:kDefaultSiteId];
+    config.batteryPercentage = [userDefaults floatForKey:kBatteryPercentage];
+    config.dispatchInterval = [userDefaults doubleForKey:kDispatchInterval];
+    config.maxQueuedMessages =[userDefaults doubleForKey:kMaxQueuedMessages];
+    config.messageRetryCount =[userDefaults doubleForKey:kMessageRetryCount];
+    config.messageExpiration =[userDefaults doubleForKey:kMessageExpiration];
     config.endpoint = [userDefaults stringForKey: kEndpoint];
+    config.defaultSiteId = [userDefaults stringForKey:kDefaultSiteId];
+    config.networkOnWifiOnly = [userDefaults boolForKey: kNetworkOnWifiOnly];
     config.debug = [userDefaults boolForKey: kDebug];
     config.datastoreDebug = [userDefaults boolForKey: kDatastoreDebug];
     config.profileDataEnabled = [userDefaults boolForKey:kProfileDataStoreEnabled];
+    
+    NSArray *standardFields = [userDefaults arrayForKey: kStandardFields];
+    if (standardFields != nil) {
+        [config addArrayOfStandardFields: standardFields];
+    }
 }
 
 +(void)setMagentoServer:(NSString *)magentoServer {
@@ -71,16 +90,16 @@ static NSString * const kProfileDataStoreEnabled = @"SignalProfileDataStoreEnabl
     return @"https://commerce.signal.ninja/api/rest";
 }
 
-
 +(void)setLoggedInUser:(NSString *)loggedInUser {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-
     [userDefaults setObject:loggedInUser forKey:kLoggedInUser];
+    [userDefaults synchronize];
 }
 
 +(NSString *)loggedInUser {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     return [userDefaults stringForKey: kLoggedInUser];
 }
+
 
 @end
