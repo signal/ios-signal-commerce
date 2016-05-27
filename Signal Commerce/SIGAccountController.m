@@ -11,6 +11,7 @@
 #import <SignalSDK/SignalInc.h>
 #import "AppDelegate.h"
 #import "SIGUserService.h"
+#import "SIGTracking.h"
 
 @interface SIGAccountController()
 
@@ -27,15 +28,30 @@
 }
 
 -(void)logout {
+    [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_EVENT
+                                        withDictionary:@{SIG_CATEGORY: SIG_CLICK,
+                                                         SIG_ACTION: SIG_MENU,
+                                                         SIG_LABEL: @"logout"}];
+
     [[self appDelegate].userService logout];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (IBAction)loadProfileData:(id)sender {
-    [[SignalInc sharedInstance].defaultTracker publish:@"load:profile", nil];
+    // First event to retrieve the profile data, second event for analytics
+    // Too tricky on the server side to configure both with single event
+    [[SignalInc sharedInstance].defaultTracker publish:@"profile:load", nil];
+    [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_EVENT
+                                        withDictionary:@{SIG_CATEGORY: SIG_CLICK,
+                                                         SIG_ACTION: SIG_MENU,
+                                                         SIG_LABEL: @"profileLoad"}];
 }
 
 - (IBAction)clearProfileData:(id)sender {
+    [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_EVENT
+                                        withDictionary:@{SIG_CATEGORY: SIG_CLICK,
+                                                         SIG_ACTION: SIG_MENU,
+                                                         SIG_LABEL: @"profileClear"}];
     [[SignalInc sharedInstance].profileStore clear];
 }
 

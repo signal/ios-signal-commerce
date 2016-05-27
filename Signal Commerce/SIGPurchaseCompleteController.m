@@ -13,6 +13,7 @@
 #import "SIGCart.h"
 #import "SIGMoney.h"
 #import "SIGUserService.h"
+#import "SIGTracking.h"
 
 @interface SIGPurchaseCompleteController()
 @property (weak, nonatomic) IBOutlet UILabel *purchaseComplete;
@@ -28,13 +29,17 @@
     NSString *orderNumber = [[NSString stringWithFormat:@"%lu", (unsigned long)[[NSDate date] timeIntervalSince1970]] substringFromIndex:5];
     [_purchaseComplete setText: [NSString stringWithFormat:@"Purchase is complete. Your order number is %@", orderNumber]];
     BOOL preferred = [[self appDelegate].userService preferred];
-    NSDictionary *args = @{@"total" : [[cart total: preferred] description],
-                           @"tax" : [[cart taxes: preferred] description],
-                           @"shipping": @"0.00",
-                           @"numItems": [NSString stringWithFormat:@"%d", [cart itemCount]],
-                           @"orderNum" : orderNumber
-                           };
-    [[[SignalInc sharedInstance] defaultTracker] publish: @"click:purchase" withDictionary: args];
+
+    // Event for analytics
+    [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_VIEW withDictionary:@{SIG_VIEW_NAME: @"PurchaseCompleteView"}];
+
+    // Event for data feed
+    [[[SignalInc sharedInstance] defaultTracker] publish: @"action:purchase"
+                                          withDictionary: @{@"total": [[cart total: preferred] description],
+                                                              @"tax": [[cart taxes: preferred] description],
+                                                         @"shipping": @"0.00",
+                                                         @"numItems": [NSString stringWithFormat:@"%d", [cart itemCount]],
+                                                         @"orderNum": orderNumber}];
     [[self appDelegate].cart empty];
 }
 

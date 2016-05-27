@@ -9,6 +9,7 @@
 
 #import "SIGSettingsController.h"
 #import "SIGPreferences.h"
+#import "SIGTracking.h"
 
 @interface SIGSettingsController()
 
@@ -87,7 +88,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated {
-    [[[SignalInc sharedInstance] defaultTracker] publish: @"view:settings", nil];
+    [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_VIEW withDictionary:@{SIG_VIEW_NAME: @"SettingsView"}];
 }
 
 -(void)viewDidDisappear:(BOOL)animated {

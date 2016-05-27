@@ -49,6 +49,11 @@ typedef void (^config_block_t)(SignalConfig * _Nonnull);
  */
 + (instancetype _Nonnull)initInstance:(id<SignalProcessingDelegate> _Nullable) delegate config:(config_block_t _Nonnull)configBlock;
 
+/*! Provides custom initialization.  Should be called before the sharedInstance method is invoked.
+ @param configBlock a configuration block
+ */
++ (instancetype _Nonnull)initInstanceWithConfig:(config_block_t _Nonnull)configBlock;
+
 /*! Return the SDK version */
 + (NSString * _Nonnull)sdkVersion;
 

@@ -16,13 +16,17 @@
 #import "SIGPreferences.h"
 #import "SIGLoginViewController.h"
 #import "SIGUserService.h"
+#import "SIGTracking.h"
+#import <SignalSDK/SignalInc.h>
 
 @implementation SIGCartController
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_VIEW withDictionary:@{SIG_VIEW_NAME: @"CartView"}];
 }
+
 - (IBAction)editClick:(id)sender {
     [self setEditing:![self isEditing] animated:YES];
 }
@@ -44,6 +48,10 @@
         [self presentViewController:alert animated:YES completion:nil];
         return;
     }
+
+    [[[SignalInc sharedInstance] defaultTracker] publish: SIG_TRACK_EVENT
+                                          withDictionary: @{SIG_CATEGORY: SIG_CLICK,
+                                                              SIG_ACTION: SIG_PURCHASE}];
 
     UIViewController* checkoutController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"Checkout"];
     if ([[self appDelegate].userService isLoggedIn]) {

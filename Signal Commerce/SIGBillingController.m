@@ -12,6 +12,8 @@
 #import "SIGCart.h"
 #import "SIGMoney.h"
 #import "SIGUserService.h"
+#import "SIGTracking.h"
+#import <SignalSDK/SignalInc.h>
 
 @interface SIGBillingController()
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -33,6 +35,10 @@
     [_total setText: [[cart total: preferred] description]];
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_VIEW withDictionary:@{SIG_VIEW_NAME: @"BillingView"}];
+}
+
 - (IBAction)purchaseClick:(id)sender {
     [_purchaseButton setEnabled:NO];
     [_activityIndicator setHidden: NO];
@@ -41,6 +47,13 @@
         [NSThread sleepForTimeInterval:2];
         [self performSelectorOnMainThread:@selector(launchPurchaseComplete) withObject:nil waitUntilDone:NO];
     });
+    
+    SIGCart *cart = [self appDelegate].cart;
+    [[[SignalInc sharedInstance] defaultTracker] publish: SIG_TRACK_EVENT
+                                          withDictionary: @{SIG_CATEGORY: SIG_CLICK,
+                                                            SIG_ACTION: SIG_PURCHASE,
+                                                            SIG_LABEL: @"items",
+                                                            SIG_VALUE: [NSString stringWithFormat:@"%d", [cart itemCount]]}];
 }
 
 -(void)launchPurchaseComplete {

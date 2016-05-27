@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SignalProfileStoreCallback.h"
 
 @class SignalProfile;
 
@@ -37,6 +38,15 @@
 /*! Clears out the profile store
  */
 -(void)clear;
+
+/*! Registers a callback that gets notified when the store has been updated.  Calling this method overrides any previous callbacks.
+ @param callback the callback
+ */
+-(void)registerCallback:(id<SignalProfileStoreCallback> _Nonnull) callback;
+
+/*! Removes any callback that has been registered
+ */
+-(void)deregisterCallback;
 
 
 @end

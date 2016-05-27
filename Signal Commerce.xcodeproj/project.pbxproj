@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20AF993F1CF639E900D21D78 /* SIGTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF993E1CF639E900D21D78 /* SIGTracking.m */; };
 		49174F531C50158D00330C56 /* SIGSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49174F521C50158D00330C56 /* SIGSettingsController.m */; };
 		49174F551C5022A100330C56 /* SignalSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49174F541C5022A100330C56 /* SignalSDK.framework */; };
 		49174F571C5023B900330C56 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49174F561C5023B900330C56 /* CoreTelephony.framework */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20AF993D1CF6396E00D21D78 /* SIGTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIGTracking.h; sourceTree = "<group>"; };
+		20AF993E1CF639E900D21D78 /* SIGTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGTracking.m; sourceTree = "<group>"; };
 		49174F511C50158D00330C56 /* SIGSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGSettingsController.h; sourceTree = "<group>"; };
 		49174F521C50158D00330C56 /* SIGSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGSettingsController.m; sourceTree = "<group>"; };
 		49174F541C5022A100330C56 /* SignalSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SignalSDK.framework; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				497B495E1C445828006A21EF /* SIGProduct.h */,
 				497B495F1C445828006A21EF /* SIGProduct.m */,
 				498D9C2F1C443F26002D72D6 /* SIGShoppingService.h */,
+				20AF993D1CF6396E00D21D78 /* SIGTracking.h */,
+				20AF993E1CF639E900D21D78 /* SIGTracking.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -273,12 +278,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49534FAC1C440938008C6300 /* Build configuration list for PBXNativeTarget "Signal Commerce" */;
 			buildPhases = (
-				CCB753B00CDDB83A84C0C24C /* Check Pods Manifest.lock */,
+				CCB753B00CDDB83A84C0C24C /* 📦 Check Pods Manifest.lock */,
 				49534F861C440938008C6300 /* Sources */,
 				49534F871C440938008C6300 /* Frameworks */,
 				49534F881C440938008C6300 /* Resources */,
-				5C612A9A751F729D49913ABB /* Embed Pods Frameworks */,
-				9AB23CF7E6F6C7C00E596B28 /* Copy Pods Resources */,
+				5C612A9A751F729D49913ABB /* 📦 Embed Pods Frameworks */,
+				9AB23CF7E6F6C7C00E596B28 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -362,14 +367,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5C612A9A751F729D49913ABB /* Embed Pods Frameworks */ = {
+		5C612A9A751F729D49913ABB /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,14 +382,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Signal Commerce/Pods-Signal Commerce-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9AB23CF7E6F6C7C00E596B28 /* Copy Pods Resources */ = {
+		9AB23CF7E6F6C7C00E596B28 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,14 +397,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Signal Commerce/Pods-Signal Commerce-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CCB753B00CDDB83A84C0C24C /* Check Pods Manifest.lock */ = {
+		CCB753B00CDDB83A84C0C24C /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +439,7 @@
 				49DE1E971C57F09D00294D79 /* SIGLoginViewController.m in Sources */,
 				497B49631C446165006A21EF /* SIGMoney.m in Sources */,
 				49534F8F1C440938008C6300 /* main.m in Sources */,
+				20AF993F1CF639E900D21D78 /* SIGTracking.m in Sources */,
 				498D9C331C4440AA002D72D6 /* SIGCategoryListController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

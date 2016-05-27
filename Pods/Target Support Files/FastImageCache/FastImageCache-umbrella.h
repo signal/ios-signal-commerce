@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 
+#import "FastImageCache.h"
 #import "FICEntity.h"
 #import "FICImageCache+FICErrorLogging.h"
 #import "FICImageCache.h"
