@@ -10,9 +10,9 @@
 
 @interface SIGPreferences : NSObject
 
-+(void)save;
++(void)savePrefs;
 
-+(void)load;
++(void)loadPrefs;
 
 +(void)setMagentoServer:(NSString *)magentoServer;
 

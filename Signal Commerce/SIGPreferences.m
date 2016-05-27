@@ -30,7 +30,7 @@ static NSString * const kInitialized = @"SignalInitialized";
 
 @implementation SIGPreferences
 
-+(void)save {
++(void)savePrefs {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     SignalConfig *config = [[SignalInc sharedInstance] signalConfig];
     [userDefaults setFloat: config.batteryPercentage forKey:kBatteryPercentage];
@@ -51,7 +51,7 @@ static NSString * const kInitialized = @"SignalInitialized";
     [userDefaults synchronize];
 }
 
-+(void)load {
++(void)loadPrefs {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     if (![userDefaults boolForKey:kInitialized]) {
         return;

@@ -92,7 +92,7 @@
 }
 
 -(void)viewDidDisappear:(BOOL)animated {
-    [SIGPreferences save];
+    [SIGPreferences savePrefs];
 }
 
 - (IBAction)debugChanged:(id)sender {

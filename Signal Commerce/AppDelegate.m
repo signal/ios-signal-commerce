@@ -62,7 +62,7 @@
         [config addCustomFields: @{@"demo":@"true", @"sdkVersion": [SignalInc sdkVersion]}];
     }];
     
-    [SIGPreferences load];
+    [SIGPreferences loadPrefs];
     [[SignalInc sharedInstance] trackerWithSiteId: [SignalInc sharedInstance].signalConfig.defaultSiteId];
     return YES;
 }
