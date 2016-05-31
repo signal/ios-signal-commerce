@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>BBBadgeBarButtonItem.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FastImageCache.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MMDrawerController-Storyboard.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MMDrawerController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Signal Commerce.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>23CF27B2BA6AC7125EFFEDA8C5AA819F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96D3562E47E4792B0A6093A0323EB398</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>996C4CEDBD819845E4AE075097DBD57D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ACD045B1B142288CEE711D44ACF4D327</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D99E1B3C040C73929B79C907204AF0F3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DDD9391B5687B152C130BD91E1304B14</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

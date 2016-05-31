@@ -7,4 +7,5 @@ target 'Signal Commerce' do
   pod 'FastImageCache', '~> 1.3'
   pod 'BBBadgeBarButtonItem'
   pod 'FMDB'
+  pod 'Google/Analytics'
 end
