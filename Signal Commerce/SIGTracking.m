@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#import <SignalSDK/SignalInc.h>
+#import <Google/Analytics.h>
+
+#import "SIGTracking.h"
+#import "SIGPreferences.h"
+
 // Main Types
 NSString* SIG_TRACK_VIEW = @"trackView";
 NSString* SIG_TRACK_EVENT = @"trackEvent";
@@ -42,3 +48,102 @@ NSString* SIG_FRAGMENT = @"fragment";
 NSString* SIG_CHECKOUT_NEXT = @"checkout_next";
 NSString* SIG_CHECKOUT_BACK = @"checkout_back";
 
+bool gaienabled = true;
+
+@implementation SIGTracking
+
++(void) initTrackers {
+
+    // **********************
+    // Signal SDK
+    [SignalInc initInstance:nil config:^(SignalConfig *config) {
+        config.endpoint = @"https://mobile-stage.signal.ninja";
+        config.messageRetryCount = 3;
+        config.debug = YES;
+        config.datastoreDebug = YES;
+        config.dispatchInterval = 5;
+        config.messageExpiration = 3600;
+        config.maxQueuedMessages = 500;
+        config.defaultSiteId = @"C7cIETB";
+    }];
+
+    [SIGPreferences loadPrefs];
+
+    SignalConfig *config = [[SignalInc sharedInstance] signalConfig];
+    [config addCustomFields: @{@"demo": @"true", @"sdkVersion": [SignalInc sdkVersion]}];
+    if ([[config standardFields] count] == 0) {
+        [config addStandardFields: ApplicationVersion, OsVersion, ScreenResolution, DeviceId, UserLanguage, Timezone, nil];
+    }
+
+    [[SignalInc sharedInstance] trackerWithSiteId: [SignalInc sharedInstance].signalConfig.defaultSiteId];
+
+    if (!gaienabled) {
+        return;
+    }
+
+    // **********************
+    // Google Analytics SDK
+    // Configure tracker from GoogleService-Info.plist.
+    NSError *configureError;
+    [[GGLContext sharedInstance] configureWithError:&configureError];
+    NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
+    
+    // Optional: configure GAI options.
+    GAI *gai = [GAI sharedInstance];
+    //gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
+    gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app release
+}
+
++(void) trackEvent:(NSString *)category action:(NSString *)action {
+    [SIGTracking trackEvent:category action:action label:nil value:nil extras:nil];
+}
+
++(void) trackEvent:(NSString *)category action:(NSString *)action label:(NSString *)label value:(NSNumber *)value {
+    [SIGTracking trackEvent:category action:action label:label value:value extras:nil];
+}
+
++(void) trackEvent:(NSString *)category action:(NSString *)action label:(NSString *)label value:(NSNumber *)value extras:(NSDictionary *)extras {
+    // Signal
+    NSMutableDictionary *eventValues = [[NSMutableDictionary alloc] init];
+    [eventValues setObject:category forKey:SIG_CATEGORY];
+    [eventValues setObject:action forKey:SIG_ACTION];
+    if (label != nil) {
+        [eventValues setObject:label forKey:SIG_LABEL];
+    }
+    if (value != nil) {
+        [eventValues setObject:[value stringValue] forKey:SIG_VALUE];
+    }
+    if (extras != nil) {
+        [extras enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL* stop) {
+            [eventValues setObject:value forKey:key];
+        }];
+    }
+
+    [[[SignalInc sharedInstance] defaultTracker] publish:SIG_TRACK_EVENT withDictionary:eventValues];
+    
+    if (!gaienabled) {
+        return;
+    }
+    
+    // GAI
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:category
+                                                          action:action
+                                                           label:label
+                                                           value:value] build]];
+}
+
++(void) trackView:(NSString *)viewName {
+    // Signal
+    [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_VIEW withDictionary:@{SIG_VIEW_NAME: viewName}];
+
+    if (!gaienabled) {
+        return;
+    }
+
+    //GAI
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:viewName];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+}
+@end

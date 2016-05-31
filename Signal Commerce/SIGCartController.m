@@ -24,7 +24,7 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_VIEW withDictionary:@{SIG_VIEW_NAME: @"CartView"}];
+    [SIGTracking trackView:@"CartView"];
 }
 
 - (IBAction)editClick:(id)sender {
@@ -48,10 +48,10 @@
         [self presentViewController:alert animated:YES completion:nil];
         return;
     }
-
-    [[[SignalInc sharedInstance] defaultTracker] publish: SIG_TRACK_EVENT
-                                          withDictionary: @{SIG_CATEGORY: SIG_CLICK,
-                                                              SIG_ACTION: SIG_PURCHASE}];
+    [SIGTracking trackEvent:SIG_CLICK
+                     action:SIG_PURCHASE
+                      label:nil
+                      value:nil];
 
     UIViewController* checkoutController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"Checkout"];
     if ([[self appDelegate].userService isLoggedIn]) {

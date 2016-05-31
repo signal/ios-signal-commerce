@@ -25,22 +25,18 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear: animated];
     [_userText becomeFirstResponder];
-    [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_VIEW withDictionary:@{SIG_VIEW_NAME: @"LoginView"}];
+    [SIGTracking trackView:@"LoginView"];
 }
 
 - (IBAction)cancel:(id)sender {
-    [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_EVENT
-                                        withDictionary:@{SIG_CATEGORY: SIG_CLICK,
-                                                         SIG_ACTION: @"cancel_login"}];
+    [SIGTracking trackEvent:SIG_CLICK action:@"cancel_login"];
     [self dismissViewControllerAnimated:YES completion:^{
     }];
 }
 
 - (IBAction)login:(id)sender {
     [[self appDelegate].userService login:[_userText text] password: @""];
-    [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_EVENT
-                                        withDictionary:@{SIG_CATEGORY: SIG_USER,
-                                                         SIG_ACTION: SIG_LOGIN}];
+    [SIGTracking trackEvent:SIG_USER action:SIG_LOGIN];
     [self dismissViewControllerAnimated:YES completion:^{
         [_parent.navigationController pushViewController:_handoff animated:NO];
     }];

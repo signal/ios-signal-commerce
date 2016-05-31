@@ -16,7 +16,8 @@
 #import "SIGCartDAO.h"
 #import "SIGUserService.h"
 #import "SIGPreferences.h"
-#import <SignalSDK/SignalInc.h>
+#import "SIGTracking.h"
+//#import <SignalSDK/SignalInc.h>
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 @property (strong, nonatomic, readonly) SIGCartDAO *cartDAO;
@@ -51,19 +52,7 @@
         }];
     }
     
-    [SignalInc initInstance:nil config:^(SignalConfig *config) {
-        config.messageRetryCount = 3;
-        config.debug = YES;
-        config.datastoreDebug = YES;
-        config.dispatchInterval = 5;
-        config.messageExpiration = 3600;
-        config.maxQueuedMessages = 500;
-        config.defaultSiteId = @"abcd123";
-        [config addCustomFields: @{@"demo":@"true", @"sdkVersion": [SignalInc sdkVersion]}];
-    }];
-    
-    [SIGPreferences loadPrefs];
-    [[SignalInc sharedInstance] trackerWithSiteId: [SignalInc sharedInstance].signalConfig.defaultSiteId];
+    [SIGTracking initTrackers];
     return YES;
 }
 

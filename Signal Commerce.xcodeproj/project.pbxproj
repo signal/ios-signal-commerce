@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2029D14E1CF8BAEF006B3DCE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2029D14D1CF8BAEF006B3DCE /* GoogleService-Info.plist */; };
 		20AF993F1CF639E900D21D78 /* SIGTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF993E1CF639E900D21D78 /* SIGTracking.m */; };
 		49174F531C50158D00330C56 /* SIGSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49174F521C50158D00330C56 /* SIGSettingsController.m */; };
 		49174F551C5022A100330C56 /* SignalSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49174F541C5022A100330C56 /* SignalSDK.framework */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2029D14D1CF8BAEF006B3DCE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		20AF993D1CF6396E00D21D78 /* SIGTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIGTracking.h; sourceTree = "<group>"; };
 		20AF993E1CF639E900D21D78 /* SIGTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGTracking.m; sourceTree = "<group>"; };
 		49174F511C50158D00330C56 /* SIGSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGSettingsController.h; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		49534F811C440938008C6300 = {
 			isa = PBXGroup;
 			children = (
+				2029D14D1CF8BAEF006B3DCE /* GoogleService-Info.plist */,
 				49534F8C1C440938008C6300 /* Signal Commerce */,
 				49534FA61C440938008C6300 /* Signal CommerceTests */,
 				49534F8B1C440938008C6300 /* Products */,
@@ -205,8 +208,6 @@
 				497B495E1C445828006A21EF /* SIGProduct.h */,
 				497B495F1C445828006A21EF /* SIGProduct.m */,
 				498D9C2F1C443F26002D72D6 /* SIGShoppingService.h */,
-				20AF993D1CF6396E00D21D78 /* SIGTracking.h */,
-				20AF993E1CF639E900D21D78 /* SIGTracking.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -239,6 +240,8 @@
 		49D4643B1C863ABB00344E73 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				20AF993D1CF6396E00D21D78 /* SIGTracking.h */,
+				20AF993E1CF639E900D21D78 /* SIGTracking.m */,
 				492F04F21C46F09400F5AF98 /* SIGImageCache.h */,
 				492F04F31C46F09400F5AF98 /* SIGImageCache.m */,
 				49174F8C1C52D44000330C56 /* SIGPreferences.h */,
@@ -352,6 +355,7 @@
 			files = (
 				49534F9D1C440938008C6300 /* LaunchScreen.storyboard in Resources */,
 				49174F831C5183C300330C56 /* iPadMain.storyboard in Resources */,
+				2029D14E1CF8BAEF006B3DCE /* GoogleService-Info.plist in Resources */,
 				49534F9A1C440938008C6300 /* Assets.xcassets in Resources */,
 				49534F981C440938008C6300 /* Main.storyboard in Resources */,
 			);
@@ -588,7 +592,7 @@
 					"\"MMDrawerController_Storyboard\"",
 					"-lsqlite3",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "co.signal.Signal-Commerce";
+				PRODUCT_BUNDLE_IDENTIFIER = co.signal.Commerce;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -619,7 +623,7 @@
 					"\"MMDrawerController_Storyboard\"",
 					"-lsqlite3",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "co.signal.Signal-Commerce";
+				PRODUCT_BUNDLE_IDENTIFIER = co.signal.Commerce;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

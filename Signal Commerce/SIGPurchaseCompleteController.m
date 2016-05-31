@@ -31,7 +31,7 @@
     BOOL preferred = [[self appDelegate].userService preferred];
 
     // Event for analytics
-    [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_VIEW withDictionary:@{SIG_VIEW_NAME: @"PurchaseCompleteView"}];
+    [SIGTracking trackView:@"PurchaseCompleteView"];
 
     // Event for data feed
     [[[SignalInc sharedInstance] defaultTracker] publish: @"action:purchase"

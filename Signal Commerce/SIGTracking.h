@@ -6,9 +6,6 @@
 //  Copyright © 2016 Signal. All rights reserved.
 //
 
-#ifndef SIGTracking_h
-#define SIGTracking_h
-
 // Main Types
 OBJC_EXPORT NSString* SIG_TRACK_VIEW;
 OBJC_EXPORT NSString* SIG_TRACK_EVENT;
@@ -43,4 +40,12 @@ OBJC_EXPORT NSString* SIG_FRAGMENT;
 OBJC_EXPORT NSString* SIG_CHECKOUT_NEXT;
 OBJC_EXPORT NSString* SIG_CHECKOUT_BACK;
 
-#endif /* SIGTracking_h */
+@interface SIGTracking : NSObject
+
++(void) initTrackers;
++(void) trackEvent:(NSString *)category action:(NSString *)action;
++(void) trackEvent:(NSString *)category action:(NSString *)action label:(NSString *)label value:(NSNumber *)value;
++(void) trackEvent:(NSString *)category action:(NSString *)action label:(NSString *)label value:(NSNumber *)value extras:(NSDictionary *)extras;
++(void) trackView:(NSString *)viewName;
+
+@end

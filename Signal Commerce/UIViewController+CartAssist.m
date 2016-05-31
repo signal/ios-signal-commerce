@@ -43,10 +43,7 @@
     SIGCartController* cartController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SIGCartController"];
 
     [self.navigationController pushViewController:cartController animated:YES];
-    [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_EVENT
-                                        withDictionary:@{SIG_CATEGORY: SIG_CLICK,
-                                                         SIG_ACTION: @"checkout"}];
-
+    [SIGTracking trackEvent:SIG_CLICK action:@"checkout"];
 }
 
 @end

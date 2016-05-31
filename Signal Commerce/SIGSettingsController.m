@@ -88,7 +88,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated {
-    [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_VIEW withDictionary:@{SIG_VIEW_NAME: @"SettingsView"}];
+    [SIGTracking trackView:@"SettingsView"];
 }
 
 -(void)viewDidDisappear:(BOOL)animated {

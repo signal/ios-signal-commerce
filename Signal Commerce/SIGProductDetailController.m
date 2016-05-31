@@ -62,7 +62,7 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self refreshCart:self.navigationItem.rightBarButtonItem];
-    [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_VIEW withDictionary:@{SIG_VIEW_NAME: @"ProductDetailsView"}];
+    [SIGTracking trackView:@"ProductDetailsView"];
 }
 
 -(void)updateImageAt:(int)index {
@@ -82,12 +82,10 @@
 -(void)refreshImages {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         _productImages = [[self appDelegate].shoppingService findAllImagesForProduct:_product.sku];
-        
-        [[[SignalInc sharedInstance] defaultTracker] publish:SIG_TRACK_EVENT
-                                              withDictionary:@{SIG_CATEGORY: SIG_LOAD,
-                                                               SIG_ACTION: SIG_IMAGES,
-                                                               SIG_LABEL: SIG_RESULTS,
-                                                               SIG_VALUE: [@(_productImages.count) stringValue]}];
+        [SIGTracking trackEvent:SIG_LOAD
+                         action:SIG_IMAGES
+                          label:SIG_RESULTS
+                          value:[NSNumber numberWithInt:_productImages.count]];
         [self performSelectorOnMainThread:@selector(updateImageIndices) withObject:nil waitUntilDone:NO];
     });
 }
@@ -111,14 +109,13 @@
 }
 
 - (IBAction)addToCartClicked:(id)sender {
-    [[[SignalInc sharedInstance] defaultTracker] publish:SIG_TRACK_EVENT
-                                          withDictionary:@{SIG_CATEGORY: SIG_SHOP,
-                                                           SIG_ACTION: SIG_CART_ADD,
-                                                           SIG_LABEL: @"productId",
-                                                           SIG_VALUE: _product.productId,
-                                                           @"productId" : _product.productId,
-                                                           @"sku" : _product.sku,
-                                                           @"price" : [_product.costWithTax description]}];
+    [SIGTracking trackEvent:SIG_SHOP
+                     action:SIG_CART_ADD
+                      label:nil
+                      value:nil
+                     extras:@{@"productId" : _product.productId,
+                              @"sku" : _product.sku,
+                              @"price" : [_product.costWithTax description]}];
     [[self appDelegate].cart add: _product withQuantity: 1];
     [self refreshCart: self.navigationItem.rightBarButtonItem];
 }

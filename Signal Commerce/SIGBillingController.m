@@ -36,7 +36,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated {
-    [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_VIEW withDictionary:@{SIG_VIEW_NAME: @"BillingView"}];
+    [SIGTracking trackView:@"BillingView"];
 }
 
 - (IBAction)purchaseClick:(id)sender {
@@ -49,11 +49,10 @@
     });
     
     SIGCart *cart = [self appDelegate].cart;
-    [[[SignalInc sharedInstance] defaultTracker] publish: SIG_TRACK_EVENT
-                                          withDictionary: @{SIG_CATEGORY: SIG_CLICK,
-                                                            SIG_ACTION: SIG_PURCHASE,
-                                                            SIG_LABEL: @"items",
-                                                            SIG_VALUE: [NSString stringWithFormat:@"%d", [cart itemCount]]}];
+    [SIGTracking trackEvent:SIG_CLICK
+                     action:SIG_PURCHASE
+                      label:@"items"
+                      value:[NSNumber numberWithInt:[cart itemCount]]];
 }
 
 -(void)launchPurchaseComplete {

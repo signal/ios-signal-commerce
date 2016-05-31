@@ -6,7 +6,6 @@
 //  Copyright © 2016 Signal. All rights reserved.
 //
 #import "BBBadgeBarButtonItem.h"
-#import <SignalSDK/SignalInc.h>
 #import <UIKit/UIKit.h>
 
 #import "MMDrawerController.h"
@@ -65,20 +64,18 @@
     BBBadgeBarButtonItem *cartButton = (BBBadgeBarButtonItem *)self.navigationItem.rightBarButtonItems[1];
     [self refreshCart:cartButton];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_VIEW withDictionary:@{SIG_VIEW_NAME: @"CategoryListView"}];
-
+    [SIGTracking trackView:@"CategoryListView"];
 }
 
 -(void)publishLoadCategories {
     NSString *type = _parentCategory == nil ? @"main" : @"sub";
     NSString *categoryId = _parentCategory == nil ? @"" : _parentCategory.categoryId;
-    [[[SignalInc sharedInstance] defaultTracker] publish: SIG_TRACK_EVENT
-                                          withDictionary: @{SIG_CATEGORY: SIG_LOAD,
-                                                            SIG_ACTION: SIG_CATEGORIES,
-                                                            SIG_LABEL: SIG_RESULTS,
-                                                            SIG_VALUE: [NSString stringWithFormat: @"%d", _categories.count],
-                                                            @"categoryType": type,
-                                                            @"categoryId": categoryId}];
+    [SIGTracking trackEvent:SIG_LOAD
+                     action:SIG_CATEGORIES
+                      label:SIG_RESULTS
+                      value:[NSNumber numberWithInt:_categories.count]
+                     extras:@{@"categoryType": type, @"categoryId": categoryId}];
+
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(nullable id)sender {
@@ -97,12 +94,11 @@
         }
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         controller.product = _products[indexPath.row];
-        [[[SignalInc sharedInstance] defaultTracker] publish: SIG_TRACK_EVENT
-                                              withDictionary: @{SIG_CATEGORY: SIG_CLICK,
-                                                                  SIG_ACTION: SIG_DETAILS,
-                                                                   SIG_LABEL: @"productId",
-                                                                   SIG_VALUE: controller.product.productId,
-                                                                @"productId": controller.product.productId}];
+        [SIGTracking trackEvent:SIG_CLICK
+                         action:SIG_DETAILS
+                          label:nil
+                          value:nil
+                         extras:@{@"productId": controller.product.productId}];
     }
 }
 
@@ -113,12 +109,11 @@
         SIGCategoryListController *dest = [storyboard instantiateViewControllerWithIdentifier: @"CategoryList"];
         dest.parentCategory = _categories[indexPath.row];
         [self.navigationController pushViewController:dest animated:NO];
-        [[[SignalInc sharedInstance] defaultTracker] publish: SIG_TRACK_EVENT
-                                              withDictionary: @{SIG_CATEGORY: SIG_CLICK,
-                                                                SIG_ACTION: SIG_CATEGORY,
-                                                                SIG_LABEL: @"categoryId",
-                                                                SIG_VALUE: dest.parentCategory.categoryId,
-                                                                @"categoryId": dest.parentCategory.categoryId}];
+        [SIGTracking trackEvent:SIG_CLICK
+                         action:SIG_CATEGORY
+                          label:nil
+                          value:nil
+                         extras:@{@"categoryId": dest.parentCategory.categoryId}];
     }
 }
 
