@@ -48,7 +48,7 @@ NSString* SIG_FRAGMENT = @"fragment";
 NSString* SIG_CHECKOUT_NEXT = @"checkout_next";
 NSString* SIG_CHECKOUT_BACK = @"checkout_back";
 
-bool gaienabled = true;
+bool ga_enabled = true;
 
 @implementation SIGTracking
 
@@ -77,7 +77,7 @@ bool gaienabled = true;
 
     [[SignalInc sharedInstance] trackerWithSiteId: [SignalInc sharedInstance].signalConfig.defaultSiteId];
 
-    if (!gaienabled) {
+    if (!ga_enabled) {
         return;
     }
 
@@ -121,7 +121,7 @@ bool gaienabled = true;
 
     [[[SignalInc sharedInstance] defaultTracker] publish:SIG_TRACK_EVENT withDictionary:eventValues];
     
-    if (!gaienabled) {
+    if (!ga_enabled) {
         return;
     }
     
@@ -137,7 +137,7 @@ bool gaienabled = true;
     // Signal
     [[SignalInc sharedInstance].defaultTracker publish:SIG_TRACK_VIEW withDictionary:@{SIG_VIEW_NAME: viewName}];
 
-    if (!gaienabled) {
+    if (!ga_enabled) {
         return;
     }
 

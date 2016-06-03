@@ -136,7 +136,7 @@
     if (indexPath.section == 0) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"CategoryName"];
         cell.textLabel.text = _categories[indexPath.row].name;
-        cell.detailTextLabel.text = _categories[indexPath.row].memberCount;
+        cell.detailTextLabel.text = _parentCategory == nil ? _categories[indexPath.row].memberCount : @"";
         return cell;
     } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"ProductDescription"];
@@ -187,7 +187,7 @@
         _categories = [[self appDelegate].shoppingService findAllCategories:_parentCategory.categoryId];
         [self publishLoadCategories];
         [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
-        if (_parentCategory) {
+        if (_parentCategory != nil && [_parentCategory.memberCount isEqualToString:@"0"]) {
             _products = [[self appDelegate].shoppingService findProductsForCategory:_parentCategory];
             [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
         }
