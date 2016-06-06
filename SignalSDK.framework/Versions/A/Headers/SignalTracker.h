@@ -22,6 +22,20 @@
  */
 @property(nonatomic, copy, readonly) NSString *siteId;
 
+/*
+ @name Debugging the SDK
+ */
+
+/*!
+ @name Crash handling
+ */
+
+/*!
+ Adds an optional crash handler, which will send a high-level description of the crash to
+ Signal's server.
+ */
+- (void)addUncaughtExceptionHandler;
+
 /*!
  @name Publishing Events
  */
@@ -57,11 +71,5 @@
  @param data The associated data elements
  */
 - (void)publish:(NSString *)event withDictionary:(NSDictionary *)data;
-
-- (void)save:(NSString *)event withDictionary:(NSDictionary *)data;
-
-- (NSDictionary *)lifecycleEventDictionary;
-
--(void)publishStop;
 
 @end

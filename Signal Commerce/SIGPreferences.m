@@ -23,8 +23,6 @@ static NSString * const kNetworkOnWifiOnly = @"SignalnetworkOnWifiOnly";
 static NSString * const kMagentoServer = @"SignalMagentoServer";
 static NSString * const kLoggedInUser = @"SignalLoggedInUser";
 static NSString * const kStandardFields = @"SignalStandardFields";
-static NSString * const kLifecycleEventsEnabled = @"SignalLifecycleEventsEnabled";
-static NSString * const kProfileDataStoreEnabled = @"SignalProfileDataStoreEnabled";
 static NSString * const kBackgroundDrainEnabled = @"SignalBackgroundDrainEnabled";
 static NSString * const kInitialized = @"SignalInitialized";
 
@@ -44,8 +42,6 @@ static NSString * const kInitialized = @"SignalInitialized";
     [userDefaults setBool: config.networkOnWifiOnly forKey: kNetworkOnWifiOnly ];
     [userDefaults setBool: config.debug forKey: kDebug ];
     [userDefaults setBool: config.datastoreDebug forKey: kDatastoreDebug];
-    [userDefaults setBool: config.lifecycleEventsEnabled forKey: kLifecycleEventsEnabled];
-    [userDefaults setBool: config.profileDataEnabled forKey: kProfileDataStoreEnabled];
 
     [userDefaults setBool:YES forKey:kInitialized];
     [userDefaults synchronize];
@@ -67,7 +63,6 @@ static NSString * const kInitialized = @"SignalInitialized";
     config.networkOnWifiOnly = [userDefaults boolForKey: kNetworkOnWifiOnly];
     config.debug = [userDefaults boolForKey: kDebug];
     config.datastoreDebug = [userDefaults boolForKey: kDatastoreDebug];
-    config.profileDataEnabled = [userDefaults boolForKey:kProfileDataStoreEnabled];
     
     NSArray *standardFields = [userDefaults arrayForKey: kStandardFields];
     if (standardFields != nil) {

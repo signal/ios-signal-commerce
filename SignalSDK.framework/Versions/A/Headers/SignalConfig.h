@@ -61,13 +61,6 @@ typedef NS_ENUM(NSUInteger, StandardField) {
 @property (nonatomic, readonly, nonnull) NSDictionary *customFields;
 /*! YES to enable network activity only when on a Wifi network */
 @property (nonatomic) BOOL networkOnWifiOnly;
-/*! YES to enable the profile data store.  If NO profile data store will always be empty */
-@property (nonatomic) BOOL profileDataEnabled;
-/*! YES to enable lifecycle events (this is YES by default). */
-@property (nonatomic) BOOL lifecycleEventsEnabled;
-/*! YES to enable draining of all events, when app is backgrounded.  This keeps the app alive long enough to send all events through (or until it gets forced to stop by the OS).  Default is YES.
- */
-@property (nonatomic) BOOL backgroundDrain;
 /*!
  Number of seconds of idle time in between data loads
  */

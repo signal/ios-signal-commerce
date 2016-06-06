@@ -1,5 +1,5 @@
 // Copyright (c) 2015 Signal, Inc. All rights reserved.
-// Signal SDK 2.1.0
+// Signal SDK 2.0.9
 
 #import <Foundation/Foundation.h>
 #import "SignalTracker.h"
@@ -7,8 +7,6 @@
 #import "SignalProcessingDelegate.h"
 #import "SignalServerDirectRequest.h"
 #import "SignalServerDirectResponse.h"
-#import "SignalProfileStore.h"
-#import "SignalProfile.h"
 
 typedef void (^config_block_t)(SignalConfig * _Nonnull);
 
@@ -32,11 +30,6 @@ typedef void (^config_block_t)(SignalConfig * _Nonnull);
 @property(nonatomic, strong, readonly, nonnull) SignalConfig *signalConfig;
 
 /*!
- The profile store, that stores profile data for each site
- */
-@property(nonatomic, strong, readonly, nonnull) id<SignalProfileStore> profileStore;
-
-/*!
  @name Creating a Signal Manager
  */
 
@@ -48,11 +41,6 @@ typedef void (^config_block_t)(SignalConfig * _Nonnull);
  @param configBlock an optional configuration block
  */
 + (instancetype _Nonnull)initInstance:(id<SignalProcessingDelegate> _Nullable) delegate config:(config_block_t _Nonnull)configBlock;
-
-/*! Provides custom initialization.  Should be called before the sharedInstance method is invoked.
- @param configBlock a configuration block
- */
-+ (instancetype _Nonnull)initInstanceWithConfig:(config_block_t _Nonnull)configBlock;
 
 /*! Return the SDK version */
 + (NSString * _Nonnull)sdkVersion;

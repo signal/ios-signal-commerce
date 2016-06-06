@@ -31,8 +31,9 @@
 }
 
 -(BOOL)preferred {
-    id<SignalProfileStore> store = [SignalInc sharedInstance].profileStore;
-    return [@"true" isEqualToString: [store dataFromKey: @"Preferred"]];
+//    id<SignalProfileStore> store = [SignalInc sharedInstance].profileStore;
+//    return [@"true" isEqualToString: [store dataFromKey: @"Preferred"]];
+    return NO;
 }
 
 -(NSString * _Nullable)loggedInAs {

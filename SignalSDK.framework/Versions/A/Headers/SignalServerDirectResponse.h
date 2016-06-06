@@ -2,15 +2,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class SignalProfile;
-
 /*!
  Immutable Signal server-direct response value object.
  */
 @protocol SignalServerDirectResponse <NSObject>
 
 /*!
- The number of tags fired for the request
+ The number of tags fired for the request.
  
  This property is read-only.
  */
@@ -28,11 +26,6 @@
  
  This property is read-only.
  */
-@property(nonatomic, copy, readonly, nullable) NSString *details;
-
-/*!
- Any profile data that may have been returned in the response.
- */
-@property(nonatomic, readonly, nullable) SignalProfile *profileData;
+@property(nonatomic, copy, readonly) NSString *details;
 
 @end

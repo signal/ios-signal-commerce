@@ -44,7 +44,7 @@
 
 - (IBAction)clearProfileData:(id)sender {
     [SIGTracking trackEvent:SIG_CLICK action:SIG_MENU label:@"profileClear" value:nil];
-    [[SignalInc sharedInstance].profileStore clear];
+//    [[SignalInc sharedInstance].profileStore clear];
 }
 
 - (AppDelegate *)appDelegate {
