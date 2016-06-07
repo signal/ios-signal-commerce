@@ -9,7 +9,6 @@
 #import "MagentoShoppingService.h"
 #import "SIGCategory.h"
 #import "SIGProduct.h"
-#import "SIGPreferences.h"
 
 #ifdef DEBUG
 #define SLog(...) NSLog(__VA_ARGS__);
@@ -52,7 +51,7 @@
 #pragma mark - private methods
 
 - (NSString *)commerceUrl {
-    return [SIGPreferences magentoServer];
+    return @"https://commerce.signal.ninja/api/rest";
 }
 
 - (id)request:(NSString *)url {

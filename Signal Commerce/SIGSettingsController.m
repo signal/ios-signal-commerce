@@ -14,7 +14,6 @@
 @interface SIGSettingsController()
 
 @property (weak, nonatomic) IBOutlet UITextField *siteCode;
-@property (weak, nonatomic) IBOutlet UITextField *serverEndpoint;
 @property (weak, nonatomic) IBOutlet UISlider *batteryThreshold;
 @property (weak, nonatomic) IBOutlet UILabel *batteryThresholdValue;
 @property (weak, nonatomic) IBOutlet UISlider *dispatchIntervalSlider;
@@ -36,7 +35,6 @@
 @property (weak, nonatomic) IBOutlet UISwitch *applicationVersionSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *osVersionSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *carrierSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *odinSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *deviceIdSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *deviceIDMD5;
 @property (weak, nonatomic) IBOutlet UISwitch *deviceIDSHA1;
@@ -44,14 +42,19 @@
 @property (weak, nonatomic) IBOutlet UISwitch *activeNetwork;
 @property (weak, nonatomic) IBOutlet UISwitch *deviceInfoSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *deviceIdTypeSwitch;
-@property (weak, nonatomic) IBOutlet UITextField *magentoField;
 @property (weak, nonatomic) IBOutlet UISwitch *profileDataEnabledField;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *endpointProtocol;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *endpointHost;
+@property (strong, nonatomic, readonly) NSArray *endpointHosts;
 
 @end
 
 @implementation SIGSettingsController
 
 -(void)viewDidLoad {
+    [super viewDidLoad];
+
     SignalConfig *config = [SignalInc sharedInstance].signalConfig;
     float batteryValue = config.batteryPercentage;
     [_batteryThreshold setValue: batteryValue];
@@ -74,8 +77,6 @@
     [_networkOnWifiOnlySwitch setOn: config.networkOnWifiOnly];
 
     [_siteCode setText: config.defaultSiteId];
-    [_serverEndpoint setText: config.endpoint];
-    [_magentoField setText: [SIGPreferences magentoServer]];
 
     [_profileDataEnabledField setOn: config.profileDataEnabled];
 
@@ -84,6 +85,16 @@
     for (standardField=ApplicationName; standardField <= DeviceIdType; standardField++) {
         UISwitch *uiSwitch = [self mappedControl: standardField];
         [uiSwitch setOn:[fieldArr containsObject:@(standardField)]];
+    }
+
+    // Parse the endpoint and set the segments
+    _endpointHosts = @[@"s.thebrighttag.com", @"mobile-stage.signal.ninja", @"tagserve.dv2.thebrighttag.com", @"tagserve.vg1.signal.co", @"127.0.0.1"];
+    _endpointProtocol.selectedSegmentIndex = [config.endpoint containsString:@"https"] ? 1 : 0;
+    for (int i=0; i < _endpointHosts.count; i++) {
+        if ([config.endpoint containsString:_endpointHosts[i]]) {
+            _endpointHost.selectedSegmentIndex = i;
+            break;
+        }
     }
 }
 
@@ -108,16 +119,18 @@
 - (IBAction)siteCodeChanged:(id)sender {
     [SignalInc sharedInstance].signalConfig.defaultSiteId = [_siteCode text];
 }
-- (IBAction)serverEndpointChanged:(id)sender {
-    [SignalInc sharedInstance].signalConfig.endpoint = [_serverEndpoint text];
-}
 
 -(void)updateDispatchInterval:(float)value {
     [_dispatchIntervalValue setText: [NSString stringWithFormat:@"%1.0fs", value]];
 }
 
-- (IBAction)magentoFieldChanged:(id)sender {
-    [SIGPreferences setMagentoServer: [_magentoField text]];
+- (IBAction)endpointChanged:(id)sender {
+    NSMutableString *newEndpoint = [[NSMutableString alloc] init];
+    [newEndpoint appendString:_endpointProtocol.selectedSegmentIndex == 0 ? @"http" : @"https"];
+    [newEndpoint appendString:@"://"];
+    [newEndpoint appendString:_endpointHosts[_endpointHost.selectedSegmentIndex]];
+    [newEndpoint appendString:@"/mobile"];
+    [SignalInc sharedInstance].signalConfig.endpoint = newEndpoint;
 }
 
 - (IBAction)databaseDebugChanged:(id)sender {
@@ -194,12 +207,8 @@
     [self toggleStandardField:Carrier on: [_carrierSwitch isOn]];
 }
 
-- (IBAction)toggleODINSwitch:(id)sender {
-    [self toggleStandardField:ODIN on: [_odinSwitch isOn]];
-}
-
 - (IBAction)toggleDeviceID:(id)sender {
-    [self toggleStandardField:DeviceId on: [_odinSwitch isOn]];
+    [self toggleStandardField:DeviceId on: [_deviceIdSwitch isOn]];
 }
 
 - (IBAction)toggleActiveNetwork:(id)sender {

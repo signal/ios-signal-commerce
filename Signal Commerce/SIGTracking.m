@@ -91,7 +91,7 @@ bool ga_enabled = true;
     // Optional: configure GAI options.
     GAI *gai = [GAI sharedInstance];
     //gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
-    gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app release
+    //gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app release
 }
 
 +(void) trackEvent:(NSString *)category action:(NSString *)action {
