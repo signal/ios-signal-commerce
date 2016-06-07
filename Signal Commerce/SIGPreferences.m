@@ -55,9 +55,9 @@ static NSString * const kInitialized = @"SignalInitialized";
     SignalConfig *config = [[SignalInc sharedInstance] signalConfig];
     config.batteryPercentage = [userDefaults floatForKey:kBatteryPercentage];
     config.dispatchInterval = [userDefaults doubleForKey:kDispatchInterval];
-    config.maxQueuedMessages =[userDefaults doubleForKey:kMaxQueuedMessages];
-    config.messageRetryCount =[userDefaults doubleForKey:kMessageRetryCount];
-    config.messageExpiration =[userDefaults doubleForKey:kMessageExpiration];
+    config.maxQueuedMessages = [userDefaults doubleForKey:kMaxQueuedMessages];
+    config.messageRetryCount = [userDefaults doubleForKey:kMessageRetryCount];
+    config.messageExpiration = [userDefaults doubleForKey:kMessageExpiration];
     config.endpoint = [userDefaults stringForKey: kEndpoint];
     config.defaultSiteId = [userDefaults stringForKey:kDefaultSiteId];
     config.networkOnWifiOnly = [userDefaults boolForKey: kNetworkOnWifiOnly];
@@ -74,15 +74,6 @@ static NSString * const kInitialized = @"SignalInitialized";
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject: magentoServer forKey:kMagentoServer];
     [userDefaults synchronize];
-}
-
-+(NSString *)magentoServer {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *url = [userDefaults stringForKey:kMagentoServer];
-    if (url) {
-        return url;
-    }
-    return @"https://commerce.signal.ninja/api/rest";
 }
 
 +(void)setLoggedInUser:(NSString *)loggedInUser {

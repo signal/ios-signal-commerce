@@ -14,10 +14,6 @@
 
 +(void)loadPrefs;
 
-+(void)setMagentoServer:(NSString *)magentoServer;
-
-+(NSString *)magentoServer;
-
 +(void)setLoggedInUser:(NSString *)loggedInUser;
 
 +(NSString *)loggedInUser;
