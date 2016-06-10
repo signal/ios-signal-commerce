@@ -46,4 +46,44 @@
     [SIGTracking trackEvent:SIG_CLICK action:@"checkout"];
 }
 
+/*!
+ * Setup the toolbar onload, and create the bar buttons
+ */
+-(void)setupToolbar {
+    UIBarButtonItem *queue = [[UIBarButtonItem alloc] init];
+    UIBarButtonItem *event = [[UIBarButtonItem alloc] init];
+    [self setToolbarItems:[NSArray arrayWithObjects:queue, event, nil]];
+}
+
+/*!
+ * Update the toolbar once the view is showm, or re-shown, with the current values
+ */
+-(void)updateToolbar {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.activeController = self;
+    SIGEventStack *eventStack = appDelegate.eventStack;
+    UIBarButtonItem *queue = self.navigationController.toolbar.items[0];
+    queue.title = [NSString stringWithFormat:@"Queue:%d", eventStack.queueSize];
+    UIBarButtonItem *event = self.navigationController.toolbar.items[1];
+    event.title = [eventStack lastEventInfo];
+}
+
+/*!
+ * Update the queue size as it changes
+ */
+-(void)updateQueueSize:(NSNumber *)queueSize {
+    NSString *value = [NSString stringWithFormat:@"Queue:%d", [queueSize intValue]];
+    UIBarButtonItem *barBtnQueue = self.navigationController.toolbar.items[0];
+    [barBtnQueue setTitle:value];
+    if (queueSize.intValue == 0) {
+        UIBarButtonItem *barBtnEvent = self.navigationController.toolbar.items[1];
+        [barBtnEvent setTitle:@""];
+    }
+}
+
+-(void)updateEvent:(NSString *)eventInfo {
+    UIBarButtonItem *barBtnEvent = self.navigationController.toolbar.items[1];
+    [barBtnEvent setTitle:eventInfo];
+}
+
 @end

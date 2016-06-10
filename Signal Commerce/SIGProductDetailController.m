@@ -23,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *instock;
 @property (weak, nonatomic) IBOutlet UILabel *longDescription;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barBtnQueue;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barBtnEvent;
 @property (strong, nonatomic) NSArray *productImages;
 
 @end
@@ -57,12 +59,14 @@
         [self setupGestures];
     }
     self.navigationItem.rightBarButtonItem = [self setupCart];
+    [self setupToolbar];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self refreshCart:self.navigationItem.rightBarButtonItem];
     [SIGTracking trackView:@"ProductDetailsView"];
+    [self updateToolbar];
 }
 
 -(void)updateImageAt:(int)index {

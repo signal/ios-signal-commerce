@@ -88,7 +88,7 @@
     }
 
     // Parse the endpoint and set the segments
-    _endpointHosts = @[@"s.thebrighttag.com", @"mobile-stage.signal.ninja", @"tagserve.dv2.thebrighttag.com", @"tagserve.vg1.signal.co", @"127.0.0.1"];
+    _endpointHosts = @[@"s.thebrighttag.com", @"mobile-stage.signal.ninja", @"tagserve.dv2.thebrighttag.com", @"tagserve.vg1.signal.co", @"127.0.0.1:8091"];
     _endpointProtocol.selectedSegmentIndex = [config.endpoint containsString:@"https"] ? 1 : 0;
     for (int i=0; i < _endpointHosts.count; i++) {
         if ([config.endpoint containsString:_endpointHosts[i]]) {

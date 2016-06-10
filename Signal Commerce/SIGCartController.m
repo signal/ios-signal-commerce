@@ -15,14 +15,27 @@
 #import "SIGImageCache.h"
 #import "SIGPreferences.h"
 #import "SIGLoginViewController.h"
+#import "UIViewController+CartAssist.h"
 #import "SIGUserService.h"
 #import "SIGTracking.h"
 #import <SignalSDK/SignalInc.h>
 
+@interface SIGCartController()
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barBtnQueue;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barBtnEvent;
+@end
+
 @implementation SIGCartController
+
+- (void)viewDidLoad {
+    [self setupToolbar];
+}
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [self updateToolbar];
+
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     [SIGTracking trackView:@"CartView"];
 }

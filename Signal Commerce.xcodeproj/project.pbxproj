@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2029D14E1CF8BAEF006B3DCE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2029D14D1CF8BAEF006B3DCE /* GoogleService-Info.plist */; };
+		2041D6721D0AF0ED00FA6A33 /* SIGEventStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2041D6711D0AF0ED00FA6A33 /* SIGEventStack.m */; };
 		20AF993F1CF639E900D21D78 /* SIGTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF993E1CF639E900D21D78 /* SIGTracking.m */; };
 		49174F531C50158D00330C56 /* SIGSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49174F521C50158D00330C56 /* SIGSettingsController.m */; };
 		49174F551C5022A100330C56 /* SignalSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49174F541C5022A100330C56 /* SignalSDK.framework */; };
@@ -53,6 +54,8 @@
 
 /* Begin PBXFileReference section */
 		2029D14D1CF8BAEF006B3DCE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2041D6711D0AF0ED00FA6A33 /* SIGEventStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGEventStack.m; sourceTree = "<group>"; };
+		2041D6731D0AF10100FA6A33 /* SIGEventStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIGEventStack.h; sourceTree = "<group>"; };
 		20AF993D1CF6396E00D21D78 /* SIGTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIGTracking.h; sourceTree = "<group>"; };
 		20AF993E1CF639E900D21D78 /* SIGTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGTracking.m; sourceTree = "<group>"; };
 		49174F511C50158D00330C56 /* SIGSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGSettingsController.h; sourceTree = "<group>"; };
@@ -203,6 +206,8 @@
 				49E1F9091C6901AA0084408A /* SIGCartItem.m */,
 				498D9C2C1C443D93002D72D6 /* SIGCategory.h */,
 				498D9C2D1C443D93002D72D6 /* SIGCategory.m */,
+				2041D6731D0AF10100FA6A33 /* SIGEventStack.h */,
+				2041D6711D0AF0ED00FA6A33 /* SIGEventStack.m */,
 				497B49611C446165006A21EF /* SIGMoney.h */,
 				497B49621C446165006A21EF /* SIGMoney.m */,
 				497B495E1C445828006A21EF /* SIGProduct.h */,
@@ -435,6 +440,7 @@
 				49E1F90A1C6901AA0084408A /* SIGCartItem.m in Sources */,
 				492F04F41C46F09400F5AF98 /* SIGImageCache.m in Sources */,
 				498D9C361C444350002D72D6 /* MagentoShoppingService.m in Sources */,
+				2041D6721D0AF0ED00FA6A33 /* SIGEventStack.m in Sources */,
 				49D464411C86407B00344E73 /* SIGCartDAO.m in Sources */,
 				49534F921C440938008C6300 /* AppDelegate.m in Sources */,
 				49174F8E1C52D44000330C56 /* SIGPreferences.m in Sources */,

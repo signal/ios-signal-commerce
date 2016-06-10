@@ -17,9 +17,9 @@
 #import "SIGUserService.h"
 #import "SIGPreferences.h"
 #import "SIGTracking.h"
-//#import <SignalSDK/SignalInc.h>
+#import <SignalSDK/SignalInc.h>
 
-@interface AppDelegate () <UISplitViewControllerDelegate>
+@interface AppDelegate () <UISplitViewControllerDelegate,SignalProcessingDelegate>
 @property (strong, nonatomic, readonly) SIGCartDAO *cartDAO;
 @end
 
@@ -28,12 +28,14 @@
 @synthesize shoppingService = _shoppingService;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    _activeController = nil;
     _shoppingService = [[MagentoShoppingService alloc] init];
     _imageCache = [[SIGImageCache alloc] init];
     _cart = [[SIGCart alloc] init];
     _cartDAO = [[SIGCartDAO alloc] init];
     _userService = [[SIGUserService alloc] init];
     SIGCart *cart = [_cartDAO load];
+    _eventStack = [[SIGEventStack alloc] init];
     if (cart) {
         _cart = cart;
     }
@@ -52,7 +54,7 @@
         }];
     }
     
-    [SIGTracking initTrackers];
+    [SIGTracking initTrackers: self];
     return YES;
 }
 
@@ -75,6 +77,40 @@
 -(BOOL)usingSplitView {
     return NO;
 //return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
+}
+
+-(void)didPublish:(id<SignalServerDirectRequest> _Nonnull)request withResponse:(id<SignalServerDirectResponse> _Nullable)response orError:(NSError * _Nullable)error {
+    if (request != nil) {
+        [_eventStack add:request];
+        if (_activeController == nil) {
+            return;
+        }
+        NSString *eventInfo = [NSString stringWithFormat:@"%@ (%d)", request.event, [request.data count]];
+        SEL selector = NSSelectorFromString(@"updateEvent:");
+        if ([_activeController respondsToSelector:selector]) {
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                [_activeController performSelector:selector withObject:eventInfo];
+            });
+        }
+    }
+}
+
+/*!
+ Invoked when the an item has been processed from the publishing queue
+ @param queueSize the queue size when this method was invoked
+ */
+-(void)didProcessQueue:(int)queueSize {
+    _eventStack.queueSize = queueSize;
+    if (_activeController == nil) {
+        return;
+    }
+    NSNumber *size = [NSNumber numberWithInt:queueSize];
+    SEL selector = NSSelectorFromString(@"updateQueueSize:");
+    if ([_activeController respondsToSelector:selector]) {
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            [_activeController performSelector:selector withObject:size];
+        });
+    }
 }
 
 @end

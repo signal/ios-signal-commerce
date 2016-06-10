@@ -9,6 +9,7 @@
 #import "SIGBillingController.h"
 #import "SIGPurchaseCompleteController.h"
 #import "AppDelegate.h"
+#import "UIViewController+CartAssist.h"
 #import "SIGCart.h"
 #import "SIGMoney.h"
 #import "SIGUserService.h"
@@ -33,9 +34,11 @@
     [_subtotal setText: [[cart subtotal: preferred] description]];
     [_taxes setText: [[cart taxes: preferred] description]];
     [_total setText: [[cart total: preferred] description]];
+    [self setupToolbar];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
+    [self updateToolbar];
     [SIGTracking trackView:@"BillingView"];
 }
 
