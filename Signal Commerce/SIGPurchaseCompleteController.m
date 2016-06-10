@@ -9,6 +9,7 @@
 #import <SignalSDK/SignalInc.h>
 
 #import "SIGPurchaseCompleteController.h"
+#import "UIViewController+CartAssist.h"
 #import "AppDelegate.h"
 #import "SIGCart.h"
 #import "SIGMoney.h"
@@ -22,9 +23,13 @@
 
 @implementation SIGPurchaseCompleteController
 
-
+- (void)viewDidLoad {
+    [self setupToolbar];
+}
 
 -(void)viewDidAppear:(BOOL)animated {
+    [self updateToolbar];
+
     SIGCart *cart = [self appDelegate].cart;
     NSString *orderNumber = [[NSString stringWithFormat:@"%lu", (unsigned long)[[NSDate date] timeIntervalSince1970]] substringFromIndex:5];
     [_purchaseComplete setText: [NSString stringWithFormat:@"Purchase is complete. Your order number is %@", orderNumber]];

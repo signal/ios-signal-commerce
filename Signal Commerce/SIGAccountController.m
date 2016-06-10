@@ -10,6 +10,7 @@
 #import "SIGPreferences.h"
 #import <SignalSDK/SignalInc.h>
 #import "AppDelegate.h"
+#import "UIViewController+CartAssist.h"
 #import "SIGUserService.h"
 #import "SIGTracking.h"
 
@@ -25,6 +26,12 @@
     _loggedinAs.text = [@"You are logged in as " stringByAppendingString:[SIGPreferences loggedInUser ]];
     UIBarButtonItem *rightDrawerButton = [[UIBarButtonItem alloc] initWithTitle: @"Logout" style:UIBarButtonItemStylePlain target:self action: @selector(logout)];
     [self.navigationItem setRightBarButtonItem:rightDrawerButton animated:YES];
+    [self setupToolbar];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [self updateToolbar];
+    [SIGTracking trackView:@"AccountView"];
 }
 
 -(void)logout {

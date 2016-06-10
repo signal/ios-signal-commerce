@@ -32,7 +32,8 @@
 @property (strong, nonatomic) NSArray<SIGCategory *> *categories;
 @property (strong, nonatomic) SIGCategory *parentCategory;
 @property (nonatomic, strong) NSArray<SIGProduct *> *products;
-
+//@property (weak, nonatomic) IBOutlet UIBarButtonItem *barBtnQueue;
+//@property (weak, nonatomic) IBOutlet UIBarButtonItem *barBtnEvent;
 @end
 
 @implementation SIGCategoryListController
@@ -53,10 +54,14 @@
 
     UIBarButtonItem *userButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed: @"973-user-toolbar" ] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(openAccount)];
     [self.navigationItem setRightBarButtonItems:@[userButton, [self setupCart]]];
+    [self setupToolbar];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+
+    [self updateToolbar];
+
     [self refreshCategories];
     if (_parentCategory == nil) {
         [self setupLeftMenuButton];
@@ -121,6 +126,9 @@
     return 2;
 }
 
+- (IBAction)eventBtnClicked:(id)sender {
+    NSLog(@"Event Button Clicked");
+}
 
 #pragma mark - UITableViewDataSource methods
 

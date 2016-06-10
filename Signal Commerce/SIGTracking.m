@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import <SignalSDK/SignalInc.h>
 #import <Google/Analytics.h>
 
 #import "SIGTracking.h"
@@ -52,11 +51,11 @@ bool ga_enabled = true;
 
 @implementation SIGTracking
 
-+(void) initTrackers {
++(void) initTrackers: (id<SignalProcessingDelegate>)delegate {
 
     // **********************
     // Signal SDK
-    [SignalInc initInstance:nil config:^(SignalConfig *config) {
+    [SignalInc initInstance:delegate config:^(SignalConfig *config) {
         config.endpoint = @"https://mobile-stage.signal.ninja";
         config.messageRetryCount = 3;
         config.debug = YES;
