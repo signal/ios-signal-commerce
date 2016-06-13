@@ -56,14 +56,14 @@ bool ga_enabled = true;
     // **********************
     // Signal SDK
     [SignalInc initInstance:delegate config:^(SignalConfig *config) {
-        config.endpoint = @"https://mobile-stage.signal.ninja";
+        //config.endpoint = @"https://mobile-stage.signal.ninja";
         config.messageRetryCount = 3;
         config.debug = YES;
-        config.datastoreDebug = YES;
+        config.datastoreDebug = NO;
         config.dispatchInterval = 5;
         config.messageExpiration = 3600;
         config.maxQueuedMessages = 500;
-        config.defaultSiteId = @"C7cIETB";
+        config.defaultSiteId = @"KzzOeke";
     }];
 
     [SIGPreferences loadPrefs];
