@@ -37,6 +37,8 @@
 - (IBAction)login:(id)sender {
     [[self appDelegate].userService login:[_userText text] password: @""];
     [SIGTracking trackEvent:SIG_USER action:SIG_LOGIN];
+    [[[SignalInc sharedInstance] defaultTracker] publish: @"action:login", nil];
+
     [self dismissViewControllerAnimated:YES completion:^{
         [_parent.navigationController pushViewController:_handoff animated:NO];
     }];
