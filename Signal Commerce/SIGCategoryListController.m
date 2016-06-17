@@ -5,9 +5,9 @@
 //  Created by Andrew on 1/11/16.
 //  Copyright © 2016 Signal. All rights reserved.
 //
-#import "BBBadgeBarButtonItem.h"
 #import <UIKit/UIKit.h>
 
+#import "BBBadgeBarButtonItem.h"
 #import "MMDrawerController.h"
 #import "MMDrawerBarButtonItem.h"
 #import "UIViewController+MMDrawerController.h"
