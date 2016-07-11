@@ -27,7 +27,7 @@ FOUNDATION_EXPORT NSString *const _Nonnull kProfileModifiedDate;
 /*! The date this profile data was created */
 @property (strong, readonly, nonatomic, nonnull) NSDate *createdDate;
 /*! The date this profile data exires */
-@property (strong, readonly, nonatomic, nonnull) NSDate *expiryDate;
+@property (strong, readonly, nonatomic, nonnull) NSDate *expiresDate;
 /*! The date this profile data was modified */
 @property (strong, readonly, nonatomic, nonnull) NSDate *modifiedDate;
 /*! Initializes the profile data from JSON

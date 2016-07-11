@@ -16,7 +16,7 @@
 
 -(BOOL)login:(NSString * _Nonnull)user password:(NSString * _Nonnull)password {
     [SIGPreferences setLoggedInUser: user];
-    [[SignalInc sharedInstance].signalConfig addCustomFields:@{@"uid-hashed-email-sha256" : [SignalHashes sha256:user] }];
+    [[SignalInc sharedInstance].signalConfig addCustomField:[SignalHashes sha256:user] withKey:@"uid-hashed-email-sha256"];
     return YES;
 }
 

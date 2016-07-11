@@ -588,10 +588,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MzQ-r0-KTJ">
-                                                    <rect key="frame" x="8" y="8" width="382" height="30"/>
+                                                    <rect key="frame" x="8" y="8" width="390" height="30"/>
                                                     <subviews>
                                                         <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3600" minValue="1" maxValue="10000" translatesAutoresizingMaskIntoConstraints="NO" id="FhW-r9-gAd" userLabel="Message Expiration Slider">
-                                                            <rect key="frame" x="-2" y="0.0" width="386" height="31"/>
+                                                            <rect key="frame" x="-2" y="0.0" width="394" height="31"/>
                                                             <connections>
                                                                 <action selector="messageExpirationChanged:" destination="fji-RZ-LAA" eventType="valueChanged" id="GrI-0i-BCm"/>
                                                             </connections>
@@ -619,10 +619,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yi1-Ur-NMe">
-                                                    <rect key="frame" x="8" y="8" width="386" height="30"/>
+                                                    <rect key="frame" x="8" y="8" width="394" height="30"/>
                                                     <subviews>
                                                         <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="500" minValue="10" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Mhd-ll-0dm" userLabel="Max Queued Messages">
-                                                            <rect key="frame" x="-2" y="0.0" width="390" height="31"/>
+                                                            <rect key="frame" x="-2" y="0.0" width="398" height="31"/>
                                                             <connections>
                                                                 <action selector="maxQueuedChanged:" destination="fji-RZ-LAA" eventType="valueChanged" id="nul-Ge-os0"/>
                                                             </connections>
@@ -1042,10 +1042,10 @@
                             <tableViewSection headerTitle="Profile Data" id="36y-QZ-vV2" userLabel="Profile Data">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="uEW-KM-M7P" userLabel="AppName Cell">
-                                        <rect key="frame" x="0.0" y="1746.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1757" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uEW-KM-M7P" id="0yy-TV-rmA">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enabled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0z-nl-8iB" userLabel="Profile Data">
@@ -1292,6 +1292,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="pwdText" destination="x2t-A9-5TR" id="5vh-NJ-PbA"/>
                         <outlet property="userText" destination="FRF-No-y0D" id="8pp-Oj-UVf"/>
                     </connections>
                 </viewController>

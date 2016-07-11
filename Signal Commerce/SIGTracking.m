@@ -12,6 +12,7 @@
 
 #import "SIGTracking.h"
 #import "SIGPreferences.h"
+#import <SignalSDK/SignalHashes.h>
 
 // Main Types
 NSString* SIG_TRACK_VIEW = @"trackView";
@@ -47,7 +48,7 @@ NSString* SIG_FRAGMENT = @"fragment";
 NSString* SIG_CHECKOUT_NEXT = @"checkout_next";
 NSString* SIG_CHECKOUT_BACK = @"checkout_back";
 
-bool ga_enabled = true;
+BOOL ga_enabled = NO;
 
 @implementation SIGTracking
 
@@ -57,13 +58,15 @@ bool ga_enabled = true;
     // Signal SDK
     [SignalInc initInstance:delegate config:^(SignalConfig *config) {
         //config.endpoint = @"https://mobile-stage.signal.ninja";
+        config.defaultSiteId = @"KzzOeke";
         config.messageRetryCount = 3;
         config.debug = YES;
         config.datastoreDebug = NO;
-        config.dispatchInterval = 5;
+        config.dispatchInterval = 10;
         config.messageExpiration = 3600;
         config.maxQueuedMessages = 500;
-        config.defaultSiteId = @"KzzOeke";
+        config.profileDataEnabled = YES;
+        config.datastoreDebug = YES;
     }];
 
     [SIGPreferences loadPrefs];
@@ -72,6 +75,10 @@ bool ga_enabled = true;
     [config addCustomFields: @{@"demo": @"true", @"sdkVersion": [SignalInc sdkVersion]}];
     if ([[config standardFields] count] == 0) {
         [config addStandardFields: ApplicationVersion, OsVersion, ScreenResolution, DeviceId, UserLanguage, Timezone, nil];
+    }
+    NSString *user = [SIGPreferences loggedInUser];
+    if (user) {
+        [[SignalInc sharedInstance].signalConfig addCustomField:[SignalHashes sha256:user] withKey:@"uid-hashed-email-sha256" ];
     }
 
     [[SignalInc sharedInstance] trackerWithSiteId: [SignalInc sharedInstance].signalConfig.defaultSiteId];

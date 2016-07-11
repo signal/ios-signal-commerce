@@ -42,11 +42,11 @@
 }
 
 - (IBAction)loadProfileData:(id)sender {
-    // First event to retrieve the profile data, second event for analytics
+    // First event for analytics, second event to retrieve the profile data
     // Too tricky on the server side to configure both with single event
-    [[SignalInc sharedInstance].defaultTracker publish:@"profile:load", nil];
-
     [SIGTracking trackEvent:SIG_CLICK action:SIG_MENU label:@"profileLoad" value:nil];
+
+    [[SignalInc sharedInstance].defaultTracker publish:@"profile:load", nil];
 }
 
 - (IBAction)clearProfileData:(id)sender {

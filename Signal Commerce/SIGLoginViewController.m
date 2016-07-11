@@ -16,6 +16,7 @@
 
 @interface SIGLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userText;
+@property (weak, nonatomic) IBOutlet UITextField *pwdText;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 @end
@@ -35,9 +36,10 @@
 }
 
 - (IBAction)login:(id)sender {
-    [[self appDelegate].userService login:[_userText text] password: @""];
+    NSString *password = [_pwdText text];
+    [[self appDelegate].userService login:[_userText text] password: password];
     [SIGTracking trackEvent:SIG_USER action:SIG_LOGIN];
-    [[[SignalInc sharedInstance] defaultTracker] publish: @"action:login", nil];
+    [[[SignalInc sharedInstance] defaultTracker] publish: @"action:login", @"extra", password, nil];
 
     [self dismissViewControllerAnimated:YES completion:^{
         [_parent.navigationController pushViewController:_handoff animated:NO];

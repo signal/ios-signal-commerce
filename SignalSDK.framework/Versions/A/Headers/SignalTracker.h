@@ -58,10 +58,6 @@
  */
 - (void)publish:(NSString *)event withDictionary:(NSDictionary *)data;
 
-- (void)save:(NSString *)event withDictionary:(NSDictionary *)data;
-
 - (NSDictionary *)lifecycleEventDictionary;
-
--(void)publishStop;
 
 @end
