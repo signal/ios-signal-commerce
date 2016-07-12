@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *debugSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *applicationNameSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *networkOnWifiOnlySwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *backgroundDrainSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *screenResolutionSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *screenOrientationSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *userLanguageSwitch;
@@ -75,6 +76,7 @@
     [_debugSwitch setOn: config.debug];
     [_databaseDebugSwitch setOn: config.datastoreDebug];
     [_networkOnWifiOnlySwitch setOn: config.networkOnWifiOnly];
+    [_backgroundDrainSwitch setOn: config.backgroundDrain];
 
     [_siteCode setText: config.defaultSiteId];
 
@@ -225,6 +227,10 @@
 
 - (IBAction)wifiOnlyChanged:(id)sender {
     [SignalInc sharedInstance].signalConfig.networkOnWifiOnly = [_networkOnWifiOnlySwitch isOn];
+}
+
+- (IBAction)backgrounDrainChanged:(id)sender {
+    [SignalInc sharedInstance].signalConfig.backgroundDrain = [_backgroundDrainSwitch isOn];
 }
 
 -(void)toggleStandardField:(StandardField)field on:(BOOL)on {

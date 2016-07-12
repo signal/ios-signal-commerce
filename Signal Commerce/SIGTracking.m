@@ -48,7 +48,7 @@ NSString* SIG_FRAGMENT = @"fragment";
 NSString* SIG_CHECKOUT_NEXT = @"checkout_next";
 NSString* SIG_CHECKOUT_BACK = @"checkout_back";
 
-BOOL ga_enabled = NO;
+BOOL ga_enabled = YES;
 
 @implementation SIGTracking
 
@@ -67,6 +67,7 @@ BOOL ga_enabled = NO;
         config.maxQueuedMessages = 500;
         config.profileDataEnabled = YES;
         config.datastoreDebug = YES;
+        config.backgroundDrain = YES;
     }];
 
     [SIGPreferences loadPrefs];

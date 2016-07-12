@@ -598,7 +598,7 @@
 					"\"MMDrawerController_Storyboard\"",
 					"-lsqlite3",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.signal.Commerce;
+				PRODUCT_BUNDLE_IDENTIFIER = co.signal.commerce;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -629,7 +629,7 @@
 					"\"MMDrawerController_Storyboard\"",
 					"-lsqlite3",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.signal.Commerce;
+				PRODUCT_BUNDLE_IDENTIFIER = co.signal.commerce;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
