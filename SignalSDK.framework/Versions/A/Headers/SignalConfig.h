@@ -65,13 +65,14 @@ typedef NS_ENUM(NSUInteger, StandardField) {
 @property (nonatomic) BOOL profileDataEnabled;
 /*! YES to enable lifecycle events (this is YES by default). */
 @property (nonatomic) BOOL lifecycleEventsEnabled;
-/*! YES to enable draining of all events, when app is backgrounded.  This keeps the app alive long enough to send all events through (or until it gets forced to stop by the OS).  Default is YES.
- */
-@property (nonatomic) BOOL backgroundDrain;
-/*!
- Number of seconds of idle time in between data loads
- */
-@property (nonatomic) NSTimeInterval socketReadTimeout;
+/*! YES to enable draining of all events, when app is put in the backgrounded. Default is YES. */
+@property (nonatomic) BOOL backgroundDrainEnabled;
+/*! YES to enable use of the CFBundleVersion for ApplicationVersion (old way), NO to use CFBundleShortVersionString (new way). Default is NO */
+@property (nonatomic) BOOL legacyVersionEnabled;
+/*! From NSUrlSession: How long (in seconds) a task should wait for additional data to arrive before giving up (default 30) */
+@property (nonatomic) NSTimeInterval urlSessionRequestTimeout;
+/*! From NSUrlSession: how long (in seconds) to wait for an entire resource to transfer before giving up (default 120) */
+@property (nonatomic) NSTimeInterval urlSessionResourceTimeout;
 
 /*! The main initializer for this class
  @param version the version
